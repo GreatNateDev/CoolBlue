@@ -123,56 +123,67 @@ gNameChoice_Momo::
 
 gNameChoice_Suzi::
     .string "SUZI$"
-    
+
 gControlsGuide_Text_Intro::
-    .string ""
+    .string "This is how the controls for this\n"
+    .string "Game will work$"
+
 gControlsGuide_Text_DPad::
-    .string ""
+    .string "Makes ya move boi\n"
+    .string "Can also make stuff selected\n"
+    .string "YERT$"
 
 gControlsGuide_Text_AButton::
-    .string ""
+    .string "Its the A button i mean what do\n"
+    .string "You expect me to say lol.$"
+
 gControlsGuide_Text_BButton::
-    .string ""
+    .string "Again the B button used to use,\n"
+    .string "running boots XD$"
 
 gControlsGuide_Text_StartButton::
-    .string ""
+    .string "For PKMN Bag or Saving\n"
+    .string "...$"
 
 gControlsGuide_Text_SelectButton::
-    .string ""
+    .string "for bike map and other du dads\n"
+    .string "I mean what else you gonna use it for$"
 
 gControlsGuide_Text_LRButtons::
-    .string ""
+    .string "If you need help playing the\n"
+    .string "game, or on how to do things,\n"
+    .string "Use Youtube$"
 
 gOakSpeech_Text_AskPlayerGender::
-    .string "Now tell me. Are you a boy?\n"
-    .string "Or are you a girl?$"
+    .string "Now tell me. Are you a Male?\n"
+    .string "OR not?$"
 
 gPikachuIntro_Text_Page1::
     .string "In the world which you are about to\n"
     .string "enter, you will embark on a grand\n"
-    .string "adventure with you as the hero.\n"
+    .string "adventure with you as the Speedrunner.\n"
     .string "\n"
-    .string "Speak to people and check things\n"
-    .string "wherever you go, be it towns, roads,\n"
-    .string "or caves. Gather information and\n"
-    .string "hints from every source.$"
+    .string "Wasting peoples time\n"
+    .string "Wasting peoples money\n"
+    .string "and above all\n"
+    .string "subscribe to Nord VPN$"
 
 gPikachuIntro_Text_Page2::
-    .string "New paths will open to you by helping\n"
+    .string "New paths will open to you by Battling\n"
     .string "people in need, overcoming challenges,\n"
-    .string "and solving mysteries.\n"
+    .string "and solving ice puzzles >:) .\n"
     .string "\n"
     .string "At times, you will be challenged by\n"
-    .string "others and attacked by wild creatures.\n"
-    .string "Be brave and keep pushing on.$"
+    .string "others and attacked by wild slaves.\n"
+    .string "Be brave and keep googleing answers.$"
 
 gPikachuIntro_Text_Page3::
     .string "Through your adventure, we hope\n"
     .string "that you will interact with all sorts\n"
-    .string "of people and achieve personal growth.\n"
-    .string "That is our biggest objective.\n"
+    .string "of people and achieve nothing.\n"
+    .string "That is your biggest objective.\n"
     .string "\n"
-    .string "Press the A Button, and let your\n"
+    .string "Press the ! Button, and let your\n"
     .string "adventure begin!$"
 
 gOakSpeech_Text_WelcomeToTheWorld::
