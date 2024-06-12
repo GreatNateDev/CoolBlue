@@ -2,7 +2,7 @@ gOtherText_NewName::
     .string "NEW NAME$"
 
 gNameChoice_Green::
-    .string "GREEN$"
+    .string "LaryJR-JR$"
 
 gNameChoice_Red::
     .string "RED$"
@@ -14,13 +14,13 @@ gNameChoice_Fire::
     .string "FIRE$"
 
 gNameChoice_Gary::
-    .string "GARY$"
+    .string "LaryJR-JR$"
 
 gNameChoice_Kaz::
-    .string "KAZ$"
+    .string "LaryJR-JR$"
 
 gNameChoice_Toru::
-    .string "TORU$"
+    .string "LaryJR-JR$"
 
 gNameChoice_Ash::
     .string "ASH$"
@@ -123,36 +123,25 @@ gNameChoice_Momo::
 
 gNameChoice_Suzi::
     .string "SUZI$"
-
+    
 gControlsGuide_Text_Intro::
-    .string "The various buttons will be explained in\n"
-    .string "the order of their importance.$"
-
+    .string ""
 gControlsGuide_Text_DPad::
-    .string "Moves the main character.\n"
-    .string "Also used to choose various data\n"
-    .string "headings.$"
+    .string ""
 
 gControlsGuide_Text_AButton::
-    .string "Used to confirm a choice, check\n"
-    .string "things, chat, and scroll text.$"
-
+    .string ""
 gControlsGuide_Text_BButton::
-    .string "Used to exit, cancel a choice,\n"
-    .string "and cancel a mode.$"
+    .string ""
 
 gControlsGuide_Text_StartButton::
-    .string "Press this button to open the\n"
-    .string "MENU.$"
+    .string ""
 
 gControlsGuide_Text_SelectButton::
-    .string "Used to shift items and to use\n"
-    .string "a registered item.$"
+    .string ""
 
 gControlsGuide_Text_LRButtons::
-    .string "If you need help playing the\n"
-    .string "game, or on how to do things,\n"
-    .string "press the L or R Button.$"
+    .string ""
 
 gOakSpeech_Text_AskPlayerGender::
     .string "Now tell me. Are you a boy?\n"
