@@ -84,7 +84,7 @@
       "x": 13,
       "y": 1,
       "elevation": 0,
-      "var": "VAR_ABLE_LEAVE_PAL",
+      "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "PalletTown_NoMons"
     },
@@ -93,8 +93,8 @@
       "x": 12,
       "y": 1,
       "elevation": 0,
-      "var": "VAR_ABLE_LEAVE_PAL",
-      "var_value": "1",
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
       "script": "PalletTown_NoMons"
     }
   ],

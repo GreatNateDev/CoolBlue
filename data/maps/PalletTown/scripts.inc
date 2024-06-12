@@ -907,24 +907,39 @@ PalletTown_EventScript_SignLadyStartShowSign::
 
 PalletTown_NoMons::
 # 457 "data/maps/PalletTown/scripts.pory"
-	lockall
+	goto_if_unset FLAG_0x500, PalletTown_NoMons_1
+	return
+
+PalletTown_NoMons_1:
 # 458 "data/maps/PalletTown/scripts.pory"
-	msgbox PalletTown_NoMons_Text_0
+	lockall
 # 459 "data/maps/PalletTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, StopPlayer
+	msgbox PalletTown_NoMons_Text_0
 # 460 "data/maps/PalletTown/scripts.pory"
-	waitmovement 0
+	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 1
 # 461 "data/maps/PalletTown/scripts.pory"
+	clearflag FLAG_HIDE_OAK_IN_HIS_LAB
+# 462 "data/maps/PalletTown/scripts.pory"
+	setvar VAR_MAP_SCENE_PALLET_TOWN_OAK, 1
+# 463 "data/maps/PalletTown/scripts.pory"
+	setflag FLAG_HIDE_OAK_IN_PALLET_TOWN
+# 464 "data/maps/PalletTown/scripts.pory"
+	setflag FLAG_DONT_TRANSITION_MUSIC
+# 465 "data/maps/PalletTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, StopPlayer
+# 466 "data/maps/PalletTown/scripts.pory"
+	waitmovement 0
+# 467 "data/maps/PalletTown/scripts.pory"
 	releaseall
 	return
 
 
-# 463 "data/maps/PalletTown/scripts.pory"
+# 470 "data/maps/PalletTown/scripts.pory"
 StopPlayer:
-# 464 "data/maps/PalletTown/scripts.pory"
+# 471 "data/maps/PalletTown/scripts.pory"
 	walk_down
 	step_end
 
 PalletTown_NoMons_Text_0:
-# 458 "data/maps/PalletTown/scripts.pory"
-	.string "Wait... i should not go out yet\n I dont have a mon!$"
+# 459 "data/maps/PalletTown/scripts.pory"
+	.string "Wait... i should not go out yet\nI dont have a mon!$"

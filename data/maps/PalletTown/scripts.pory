@@ -454,11 +454,18 @@ PalletTown_EventScript_SignLadyStartShowSign::
 
 `
 script PalletTown_NoMons {
+    if (flag(FLAG_0x500) == false) {
     lockall
-    msgbox("Wait... i should not go out yet\n I dont have a mon!")
+    msgbox("Wait... i should not go out yet\nI dont have a mon!")
+    setvar (VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 1)
+	clearflag (FLAG_HIDE_OAK_IN_HIS_LAB)
+	setvar (VAR_MAP_SCENE_PALLET_TOWN_OAK, 1)
+	setflag(FLAG_HIDE_OAK_IN_PALLET_TOWN)
+	setflag(FLAG_DONT_TRANSITION_MUSIC)
     applymovement(OBJ_EVENT_ID_PLAYER, StopPlayer)
     waitmovement(0)
     releaseall
+    }
 }
 movement StopPlayer {
     walk_down
