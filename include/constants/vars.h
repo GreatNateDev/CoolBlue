@@ -332,7 +332,7 @@
 #define VAR_TEXT_COLOR             0x8012
 #define VAR_PREV_TEXT_COLOR        0x8013
 #define VAR_0x8014                 0x8014 // Unknown/unused
-
+#define VAR_ABLE_LEAVE_PAL         0x8015
 #define SPECIAL_VARS_END           0x8015
 
 // Text color ids for VAR_TEXT_COLOR / VAR_PREV_TEXT_COLOR

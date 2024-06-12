@@ -2616,27 +2616,3 @@ PalletTown_ProfessorOaksLab_EventScript_RightSignAlt::
 	releaseall
 # 1309 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	end
-
-PalletTown_NoMons::
-# 1313 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
-	lockall
-# 1314 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
-	msgbox PalletTown_NoMons_Text_0
-# 1315 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, StopPlayer
-# 1316 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
-	waitmovement 0
-# 1317 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
-	releaseall
-	return
-
-
-# 1319 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
-StopPlayer:
-# 1320 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
-	walk_down
-	step_end
-
-PalletTown_NoMons_Text_0:
-# 1314 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
-	.string "Wait... i should not go out yet\n I dont have a mon!$"

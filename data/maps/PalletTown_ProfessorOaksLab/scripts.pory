@@ -1309,13 +1309,3 @@ PalletTown_ProfessorOaksLab_EventScript_RightSignAlt::
 	end
 
 `
-script PalletTown_NoMons {
-    lockall
-    msgbox("Wait... i should not go out yet\n I dont have a mon!")
-    applymovement(OBJ_EVENT_ID_PLAYER, StopPlayer)
-    waitmovement(0)
-    releaseall
-}
-movement StopPlayer {
-    walk_down
-}
