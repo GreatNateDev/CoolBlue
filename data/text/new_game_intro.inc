@@ -190,22 +190,22 @@ gOakSpeech_Text_WelcomeToTheWorld::
     .string "Hello, there!\n"
     .string "Glad to meet you!\p"
     .string "Welcome to the world of POKéMON!\p"
-    .string "My name is OAK.\p"
+    .string "My name is LARRY JR.\p"
     .string "People affectionately refer to me\n"
-    .string "as the POKéMON PROFESSOR.\p$"
+    .string "as the LARRY JR.\p$"
 
 gOakSpeech_Text_ThisWorld::
     .string "This world…$"
 
 gOakSpeech_Text_IsInhabitedFarAndWide::
     .string "…is inhabited far and wide by\n"
-    .string "creatures called POKéMON.\p$"
+    .string "creatures called PKMN.\p$"
 
 gOakSpeech_Text_IStudyPokemon::
-    .string "For some people, POKéMON are pets.\n"
-    .string "Others use them for battling.\p"
+    .string "For some people, POKéMON are slaves.\n"
+    .string "Others use them for NUZLOCKING.\p"
     .string "As for myself…\p"
-    .string "I study POKéMON as a profession.\p$"
+    .string "I am a npc.\p$"
 
 gOakSpeech_Text_TellMeALittleAboutYourself::
     .string "But first, tell me a little about\n"
@@ -213,7 +213,7 @@ gOakSpeech_Text_TellMeALittleAboutYourself::
 
 gOakSpeech_Text_YourNameWhatIsIt::
     .string "Let's begin with your name.\n"
-    .string "What is it?\p$"
+    .string "What is it?!\p$"
 
 gOakSpeech_Text_SoYourNameIsPlayer::
     .string "Right…\n"
@@ -237,7 +237,7 @@ gOakSpeech_Text_RememberRivalsName::
 
 gOakSpeech_Text_LetsGo::
     .string "{PLAYER}!\p"
-    .string "Your very own POKéMON legend is\n"
+    .string "Your very own POKéMON Speedrun is\n"
     .string "about to unfold!\p"
-    .string "A world of dreams and adventures\n"
-    .string "with POKéMON awaits! Let's go!$"
+    .string "A world of pain\n"
+    .string "with POKéMON awaits! GO!$"
