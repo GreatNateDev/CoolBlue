@@ -46,3 +46,24 @@ text intro_txt_girl_trainer_btl {
 text lose_text_girl_trainer_btl {
     "Oh i didnt expect that!"    
 }
+script girl_not_so_fast {
+    lockall
+    applymovement(3,girl_not_so_fast_mvnt)
+    waitmovement(3)
+    msgbox("Hey not so fast lets do a rematch >:)")
+    trainerbattle_single(ROUTE1_EMILY, intro_txt_girl_trainer_btl, lose_text_girl_trainer_btl)
+    msgbox("fr again come on i thought i had you!")
+    applymovement(3, girl_leave_alone)
+    waitmovement(3)
+    releaseall
+}
+movement girl_not_so_fast_mvnt {
+    walk_left * 5
+    face_up
+    walk_up * 3
+}
+movement girl_leave_alone {
+    face_left
+    walk_left
+    face_down
+}

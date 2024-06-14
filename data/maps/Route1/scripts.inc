@@ -77,6 +77,68 @@ girl_trainer_btl::
 	return
 
 
+girl_not_so_fast::
+# 50 "data/maps/Route1/scripts.pory"
+	lockall
+# 51 "data/maps/Route1/scripts.pory"
+	applymovement 3, girl_not_so_fast_mvnt
+# 52 "data/maps/Route1/scripts.pory"
+	waitmovement 3
+# 53 "data/maps/Route1/scripts.pory"
+	msgbox girl_not_so_fast_Text_0
+# 54 "data/maps/Route1/scripts.pory"
+	trainerbattle_single ROUTE1_EMILY, intro_txt_girl_trainer_btl, lose_text_girl_trainer_btl
+# 55 "data/maps/Route1/scripts.pory"
+	msgbox girl_not_so_fast_Text_1
+# 56 "data/maps/Route1/scripts.pory"
+	applymovement 3, girl_leave_alone
+# 57 "data/maps/Route1/scripts.pory"
+	waitmovement 3
+# 58 "data/maps/Route1/scripts.pory"
+	releaseall
+	return
+
+
+# 60 "data/maps/Route1/scripts.pory"
+girl_not_so_fast_mvnt:
+# 61 "data/maps/Route1/scripts.pory"
+	walk_left
+# 61 "data/maps/Route1/scripts.pory"
+	walk_left
+# 61 "data/maps/Route1/scripts.pory"
+	walk_left
+# 61 "data/maps/Route1/scripts.pory"
+	walk_left
+# 61 "data/maps/Route1/scripts.pory"
+	walk_left
+# 62 "data/maps/Route1/scripts.pory"
+	face_up
+# 63 "data/maps/Route1/scripts.pory"
+	walk_up
+# 63 "data/maps/Route1/scripts.pory"
+	walk_up
+# 63 "data/maps/Route1/scripts.pory"
+	walk_up
+	step_end
+
+# 65 "data/maps/Route1/scripts.pory"
+girl_leave_alone:
+# 66 "data/maps/Route1/scripts.pory"
+	face_left
+# 67 "data/maps/Route1/scripts.pory"
+	walk_left
+# 68 "data/maps/Route1/scripts.pory"
+	face_down
+	step_end
+
+girl_not_so_fast_Text_0:
+# 53 "data/maps/Route1/scripts.pory"
+	.string "Hey not so fast lets do a rematch >:)$"
+
+girl_not_so_fast_Text_1:
+# 55 "data/maps/Route1/scripts.pory"
+	.string "fr again come on i thought i had you!$"
+
 intro_txt_girl_trainer_btl::
 # 43 "data/maps/Route1/scripts.pory"
 	.string "You're toast if you didnt heal!$"
