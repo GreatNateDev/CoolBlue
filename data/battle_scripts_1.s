@@ -2999,7 +2999,11 @@ BattleScript_BattleTowerTrainerBattleWon::
 BattleScript_BattleTowerEtcTrainerBattleWonSkipText::
 	pickup
 	end2
-
+BattleScript_OldBoomerActivates::
+playanimation BS_ATTACKER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printstring STRINGID_PKMNLOWERSPEED
+	waitmessage B_WAIT_TIME_LONG
+	end3
 BattleScript_SmokeBallEscape::
 	playanimation BS_ATTACKER, B_ANIM_SMOKEBALL_ESCAPE
 	printstring STRINGID_PKMNFLEDUSINGITS
