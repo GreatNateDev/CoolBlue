@@ -907,10 +907,13 @@ PalletTown_EventScript_SignLadyStartShowSign::
 
 PalletTown_NoMons::
 # 457 "data/maps/PalletTown/scripts.pory"
-	goto_if_unset FLAG_0x500, PalletTown_NoMons_1
+	goto_if_unset FLAG_0x500, PalletTown_NoMons_2
+PalletTown_NoMons_1:
+# 469 "data/maps/PalletTown/scripts.pory"
+	goto_if_set FLAG_0x500, PalletTown_NoMons_4
 	return
 
-PalletTown_NoMons_1:
+PalletTown_NoMons_2:
 # 458 "data/maps/PalletTown/scripts.pory"
 	lockall
 # 459 "data/maps/PalletTown/scripts.pory"
@@ -931,12 +934,17 @@ PalletTown_NoMons_1:
 	waitmovement 0
 # 467 "data/maps/PalletTown/scripts.pory"
 	releaseall
+	goto PalletTown_NoMons_1
+
+PalletTown_NoMons_4:
+# 470 "data/maps/PalletTown/scripts.pory"
+	releaseall
 	return
 
 
-# 470 "data/maps/PalletTown/scripts.pory"
+# 473 "data/maps/PalletTown/scripts.pory"
 StopPlayer:
-# 471 "data/maps/PalletTown/scripts.pory"
+# 474 "data/maps/PalletTown/scripts.pory"
 	walk_down
 	step_end
 

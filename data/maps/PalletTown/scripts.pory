@@ -466,6 +466,9 @@ script PalletTown_NoMons {
     waitmovement(0)
     releaseall
     }
+    if (flag(FLAG_0x500) == true) {
+    releaseall
+    }
 }
 movement StopPlayer {
     walk_down
