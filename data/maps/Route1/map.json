@@ -81,15 +81,6 @@
       "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "girl_not_so_fast"
-    },
-    {
-      "type": "trigger",
-      "x": 9,
-      "y": 31,
-      "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "girl_leave_alone"
     }
   ],
   "bg_events": [
