@@ -71,6 +71,16 @@ Route1_EventScript_RouteSign::
 # 36 "data/maps/Route1/scripts.pory"
 	end
 
-boy_trainer_btl::
+girl_trainer_btl::
+# 40 "data/maps/Route1/scripts.pory"
+	trainerbattle_single ROUTE1_EMILY, intro_txt_girl_trainer_btl, lose_text_girl_trainer_btl
 	return
 
+
+intro_txt_girl_trainer_btl::
+# 43 "data/maps/Route1/scripts.pory"
+	.string "You're toast if you didnt heal!$"
+
+lose_text_girl_trainer_btl::
+# 46 "data/maps/Route1/scripts.pory"
+	.string "Oh i didnt expect that!$"

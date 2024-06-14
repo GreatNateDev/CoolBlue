@@ -36,6 +36,13 @@ Route1_EventScript_RouteSign::
 	end
 
 `
-script boy_trainer_btl {
-    
+script girl_trainer_btl {
+    trainerbattle_single(ROUTE1_EMILY, intro_txt_girl_trainer_btl, lose_text_girl_trainer_btl)
+
+}
+text intro_txt_girl_trainer_btl {
+    "You're toast if you didnt heal!"
+}
+text lose_text_girl_trainer_btl {
+    "Oh i didnt expect that!"    
 }
