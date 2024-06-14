@@ -44,6 +44,7 @@ text lose_text_girl_trainer_btl {
 }
 script girl_trainer_btl {
     trainerbattle_single(ROUTE1_EMILY, intro_txt_girl_trainer_btl, lose_text_girl_trainer_btl)
+    msgbox("You beat me fair and square.",MSGBOX_AUTOCLOSE)
 }
 script girl_not_so_fast {
     if (flag(FLAG_0x501) == false) {
@@ -55,7 +56,7 @@ script girl_not_so_fast {
     delay(48)
     applymovement(3,girl_not_so_fast_mvnt)
     waitmovement(3)
-    msgbox("Hey lets do a rematch \n >:)")
+    msgbox("Hey lets do a rematch\n>:)")
     trainerbattle_single(ROUTE1_EMILY_REMATCH, intro_txt_girl_trainer_btl, lose_text_girl_trainer_btl,run_mvnt_on_girl)
     }
     elif (flag(FLAG_0x501) == true) {

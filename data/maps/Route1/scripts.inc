@@ -74,96 +74,102 @@ Route1_EventScript_RouteSign::
 girl_trainer_btl::
 # 46 "data/maps/Route1/scripts.pory"
 	trainerbattle_single ROUTE1_EMILY, intro_txt_girl_trainer_btl, lose_text_girl_trainer_btl
+# 47 "data/maps/Route1/scripts.pory"
+	msgbox girl_trainer_btl_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 girl_not_so_fast::
-# 49 "data/maps/Route1/scripts.pory"
+# 50 "data/maps/Route1/scripts.pory"
 	goto_if_unset FLAG_0x501, girl_not_so_fast_1
-# 61 "data/maps/Route1/scripts.pory"
+# 62 "data/maps/Route1/scripts.pory"
 	goto_if_set FLAG_0x501, girl_not_so_fast_2
 	return
 
 girl_not_so_fast_1:
-# 50 "data/maps/Route1/scripts.pory"
-	setflag FLAG_0x501
 # 51 "data/maps/Route1/scripts.pory"
-	lockall
+	setflag FLAG_0x501
 # 52 "data/maps/Route1/scripts.pory"
-	applymovement 3, girl_not_so_fast_exc
+	lockall
 # 53 "data/maps/Route1/scripts.pory"
-	playse SE_PIN
+	applymovement 3, girl_not_so_fast_exc
 # 54 "data/maps/Route1/scripts.pory"
-	waitmovement 3
+	playse SE_PIN
 # 55 "data/maps/Route1/scripts.pory"
-	delay 48
-# 56 "data/maps/Route1/scripts.pory"
-	applymovement 3, girl_not_so_fast_mvnt
-# 57 "data/maps/Route1/scripts.pory"
 	waitmovement 3
+# 56 "data/maps/Route1/scripts.pory"
+	delay 48
+# 57 "data/maps/Route1/scripts.pory"
+	applymovement 3, girl_not_so_fast_mvnt
 # 58 "data/maps/Route1/scripts.pory"
-	msgbox girl_not_so_fast_Text_0
+	waitmovement 3
 # 59 "data/maps/Route1/scripts.pory"
+	msgbox girl_not_so_fast_Text_0
+# 60 "data/maps/Route1/scripts.pory"
 	trainerbattle_single ROUTE1_EMILY_REMATCH, intro_txt_girl_trainer_btl, lose_text_girl_trainer_btl, run_mvnt_on_girl
 	return
 
 girl_not_so_fast_2:
-# 62 "data/maps/Route1/scripts.pory"
+# 63 "data/maps/Route1/scripts.pory"
 	releaseall
 	return
 
 
-# 65 "data/maps/Route1/scripts.pory"
+# 66 "data/maps/Route1/scripts.pory"
 girl_not_so_fast_mvnt:
-# 66 "data/maps/Route1/scripts.pory"
-	walk_left
-# 66 "data/maps/Route1/scripts.pory"
-	walk_left
-# 66 "data/maps/Route1/scripts.pory"
-	walk_left
-# 66 "data/maps/Route1/scripts.pory"
-	walk_left
-# 66 "data/maps/Route1/scripts.pory"
+# 67 "data/maps/Route1/scripts.pory"
 	walk_left
 # 67 "data/maps/Route1/scripts.pory"
+	walk_left
+# 67 "data/maps/Route1/scripts.pory"
+	walk_left
+# 67 "data/maps/Route1/scripts.pory"
+	walk_left
+# 67 "data/maps/Route1/scripts.pory"
+	walk_left
+# 68 "data/maps/Route1/scripts.pory"
 	face_up
-# 68 "data/maps/Route1/scripts.pory"
+# 69 "data/maps/Route1/scripts.pory"
 	walk_up
-# 68 "data/maps/Route1/scripts.pory"
+# 69 "data/maps/Route1/scripts.pory"
 	walk_up
-# 68 "data/maps/Route1/scripts.pory"
+# 69 "data/maps/Route1/scripts.pory"
 	walk_up
 	step_end
 
-# 70 "data/maps/Route1/scripts.pory"
-girl_not_so_fast_exc:
 # 71 "data/maps/Route1/scripts.pory"
+girl_not_so_fast_exc:
+# 72 "data/maps/Route1/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 74 "data/maps/Route1/scripts.pory"
-girl_leave_alone_mvnt:
 # 75 "data/maps/Route1/scripts.pory"
-	face_left
+girl_leave_alone_mvnt:
 # 76 "data/maps/Route1/scripts.pory"
-	walk_left
+	face_left
 # 77 "data/maps/Route1/scripts.pory"
+	walk_left
+# 78 "data/maps/Route1/scripts.pory"
 	face_down
 	step_end
 
 run_mvnt_on_girl::
-# 80 "data/maps/Route1/scripts.pory"
-	applymovement 3, girl_leave_alone_mvnt
 # 81 "data/maps/Route1/scripts.pory"
-	waitmovement 3
+	applymovement 3, girl_leave_alone_mvnt
 # 82 "data/maps/Route1/scripts.pory"
+	waitmovement 3
+# 83 "data/maps/Route1/scripts.pory"
 	releaseall
 	return
 
 
+girl_trainer_btl_Text_0:
+# 47 "data/maps/Route1/scripts.pory"
+	.string "You beat me fair and square.$"
+
 girl_not_so_fast_Text_0:
-# 58 "data/maps/Route1/scripts.pory"
-	.string "Hey lets do a rematch \n >:)$"
+# 59 "data/maps/Route1/scripts.pory"
+	.string "Hey lets do a rematch\n>:)$"
 
 intro_txt_girl_trainer_btl::
 # 39 "data/maps/Route1/scripts.pory"
