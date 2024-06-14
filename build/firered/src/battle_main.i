@@ -13562,6 +13562,7 @@ static const u8 sPurePowerDescription[] = _("Raises ATTACK.");
 static const u8 sShellArmorDescription[] = _("Blocks critical hits.");
 static const u8 sCacophonyDescription[] = _("Avoids sound-based moves.");
 static const u8 sAirLockDescription[] = _("Negates weather effects.");
+static const u8 sOldBoomerDescription[] = ("Pokemon are slower of old age.")
 
 const u8 *const gAbilityDescriptionPointers[78] =
 {
@@ -13643,6 +13644,7 @@ const u8 *const gAbilityDescriptionPointers[78] =
     [75] = sShellArmorDescription,
     [76] = sCacophonyDescription,
     [77] = sAirLockDescription,
+    [ABILITY_OLD_BOOMER] = sOldBoomerDescription,
 };
 
 const u8 gAbilityNames[78][12 + 1] =
@@ -13725,6 +13727,7 @@ const u8 gAbilityNames[78][12 + 1] =
     [75] = _("SHELL ARMOR"),
     [76] = _("CACOPHONY"),
     [77] = _("AIR LOCK"),
+    [ABILITY_OLD_BOOMER] = _("OLD BOOMER")
 };
 # 561 "src/battle_main.c" 2
 

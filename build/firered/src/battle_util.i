@@ -7749,6 +7749,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                     gSpecialStatuses[battler].intimidatedMon = 1;
                 }
                 break;
+            case 78:
+                gBattleMons[battler].statStages[3]++;
             case 59:
                 effect = CastformDataTypeChange(battler);
                 if (effect != 0)
@@ -8420,7 +8422,7 @@ enum
     ITEM_HP_CHANGE,
     ITEM_STATS_CHANGE,
 };
-# 2484 "src/battle_util.c"
+# 2486 "src/battle_util.c"
 u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
 {
     int i = 0;

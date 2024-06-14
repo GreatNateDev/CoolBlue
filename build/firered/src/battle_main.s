@@ -3623,89 +3623,11 @@ sAirLockDescription:
 	.byte	0xad
 	.byte	0xff
 	.size	 sAirLockDescription,25
-	.globl	gAbilityDescriptionPointers
 	.align	2, 0
-	.type	 gAbilityDescriptionPointers,object
-	.size	 gAbilityDescriptionPointers,312
-gAbilityDescriptionPointers:
-	.word	sNoneDescription
-	.word	sStenchDescription
-	.word	sDrizzleDescription
-	.word	sSpeedBoostDescription
-	.word	sBattleArmorDescription
-	.word	sSturdyDescription
-	.word	sDampDescription
-	.word	sLimberDescription
-	.word	sSandVeilDescription
-	.word	sStaticDescription
-	.word	sVoltAbsorbDescription
-	.word	sWaterAbsorbDescription
-	.word	sObliviousDescription
-	.word	sCloudNineDescription
-	.word	sCompoundEyesDescription
-	.word	sInsomniaDescription
-	.word	sColorChangeDescription
-	.word	sImmunityDescription
-	.word	sFlashFireDescription
-	.word	sShieldDustDescription
-	.word	sOwnTempoDescription
-	.word	sSuctionCupsDescription
-	.word	sIntimidateDescription
-	.word	sShadowTagDescription
-	.word	sRoughSkinDescription
-	.word	sWonderGuardDescription
-	.word	sLevitateDescription
-	.word	sEffectSporeDescription
-	.word	sSynchronizeDescription
-	.word	sClearBodyDescription
-	.word	sNaturalCureDescription
-	.word	sLightningRodDescription
-	.word	sSereneGraceDescription
-	.word	sSwiftSwimDescription
-	.word	sChlorophyllDescription
-	.word	sIlluminateDescription
-	.word	sTraceDescription
-	.word	sHugePowerDescription
-	.word	sPoisonPointDescription
-	.word	sInnerFocusDescription
-	.word	sMagmaArmorDescription
-	.word	sWaterVeilDescription
-	.word	sMagnetPullDescription
-	.word	sSoundproofDescription
-	.word	sRainDishDescription
-	.word	sSandStreamDescription
-	.word	sPressureDescription
-	.word	sThickFatDescription
-	.word	sEarlyBirdDescription
-	.word	sFlameBodyDescription
-	.word	sRunAwayDescription
-	.word	sKeenEyeDescription
-	.word	sHyperCutterDescription
-	.word	sPickupDescription
-	.word	sTruantDescription
-	.word	sHustleDescription
-	.word	sCuteCharmDescription
-	.word	sPlusDescription
-	.word	sMinusDescription
-	.word	sForecastDescription
-	.word	sStickyHoldDescription
-	.word	sShedSkinDescription
-	.word	sGutsDescription
-	.word	sMarvelScaleDescription
-	.word	sLiquidOozeDescription
-	.word	sOvergrowDescription
-	.word	sBlazeDescription
-	.word	sTorrentDescription
-	.word	sSwarmDescription
-	.word	sRockHeadDescription
-	.word	sDroughtDescription
-	.word	sArenaTrapDescription
-	.word	sVitalSpiritDescription
-	.word	sWhiteSmokeDescription
-	.word	sPurePowerDescription
-	.word	sShellArmorDescription
-	.word	sCacophonyDescription
-	.word	sAirLockDescription
+	.type	 sOldBoomerDescription,object
+	.size	 sOldBoomerDescription,31
+sOldBoomerDescription:
+	.ascii	"Pokemon are slower of old age.\000"
 	.globl	gAbilityNames
 	.type	 gAbilityNames,object
 	.size	 gAbilityNames,1014
@@ -4569,6 +4491,18 @@ gAbilityNames:
 	.byte	0xc5
 	.byte	0xff
 	.space	4
+	.byte	0xc9
+	.byte	0xc6
+	.byte	0xbe
+	.byte	0x0
+	.byte	0xbc
+	.byte	0xc9
+	.byte	0xc9
+	.byte	0xc7
+	.byte	0xbf
+	.byte	0xcc
+	.byte	0xff
+	.space	2
 	.align	2, 0
 	.type	 sTurnActionsFuncsTable,object
 sTurnActionsFuncsTable:
@@ -19445,6 +19379,3 @@ HandleAction_ActionFinished:
 	.comm	gMultiUsePlayerCursor, 4	@ 1
 	.comm	gNumberOfMovesToChoose, 4	@ 1
 	.comm	gLeveledUpInBattle, 4	@ 1
-.text
-	.align	2, 0 @ Don't pad with nop
-
