@@ -2819,7 +2819,7 @@ struct QuestLogScene
                s16 x;
                s16 y;
                struct QuestLogObjectEvent objectEvents[16];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                struct QuestLogObjectEventTemplate objectEventTemplates[64];
                u16 script[128];
@@ -3087,7 +3087,7 @@ struct SaveBlock1
                u8 __attribute__((aligned(2))) trainerRematches[100];
                struct ObjectEvent objectEvents[16];
                struct ObjectEventTemplate objectEventTemplates[64];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                u32 gameStats[64];
                struct QuestLogScene questLog[4];
@@ -7965,7 +7965,7 @@ static void InitRegionMapType(void)
     {
         sRegionMap->permissions[i] = sRegionMapPermissions[sRegionMap->type][i];
     }
-    if (!FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x45)))
+    if (!FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x45)))
         sRegionMap->permissions[MAPPERM_HAS_SWITCH_BUTTON] = 0;
     region = REGIONMAP_KANTO;
     j = REGIONMAP_KANTO;
@@ -8458,9 +8458,9 @@ static void BufferRegionMapBg(u8 bg, u16 *map)
         whichMap = sSwitchMapMenu->currentSelection;
     else
         whichMap = sRegionMap->selectedRegion;
-    if (whichMap == REGIONMAP_SEVII45 && !FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xB5)))
+    if (whichMap == REGIONMAP_SEVII45 && !FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xB5)))
         FillBgTilemapBufferRect_Palette0(0, 0x003, 13, 11, 3, 2);
-    if (whichMap == REGIONMAP_SEVII67 && !FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xC2)))
+    if (whichMap == REGIONMAP_SEVII67 && !FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xC2)))
         FillBgTilemapBufferRect_Palette0(0, 0x003, 21, 16, 3, 3);
 }
 
@@ -8493,9 +8493,9 @@ static void SetRegionMapPlayerIsOn(u8 region)
 static void InitSwitchMapMenu(u8 whichMap, u8 taskId, TaskFunc taskFunc)
 {
     sSwitchMapMenu = AllocZeroed(sizeof(struct SwitchMapMenu));
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x46)))
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x46)))
         sSwitchMapMenu->maxSelection = 3;
-    else if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x45)))
+    else if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x45)))
         sSwitchMapMenu->maxSelection = 1;
     else
         sSwitchMapMenu->maxSelection = 0;
@@ -9869,7 +9869,7 @@ static u16 GetMapsecUnderCursor(void)
         return 0xC5;
 
     mapsec = GetSelectedMapSection(GetSelectedRegionMap(), LAYER_MAP, sMapCursor->y, sMapCursor->x);
-    if ((mapsec == 0xAE || mapsec == 0xBB) && !FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xB5)))
+    if ((mapsec == 0xAE || mapsec == 0xBB) && !FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xB5)))
         mapsec = 0xC5;
     return mapsec;
 }
@@ -9884,7 +9884,7 @@ static u16 GetDungeonMapsecUnderCursor(void)
         return 0xC5;
 
     mapsec = GetSelectedMapSection(GetSelectedRegionMap(), LAYER_DUNGEON, sMapCursor->y, sMapCursor->x);
-    if (mapsec == 0x8D && !FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x44)))
+    if (mapsec == 0x8D && !FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x44)))
         mapsec = 0xC5;
     return mapsec;
 }
@@ -9894,47 +9894,47 @@ static u8 GetMapsecType(u8 mapsec)
     switch (mapsec)
     {
     case 0x58:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x90)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x90)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x59:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x91)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x91)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x5A:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x92)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x92)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x5B:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x93)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x93)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x5C:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x94)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x94)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x5D:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x95)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x95)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x5E:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x96)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x96)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x5F:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x97)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x97)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x60:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x98)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x98)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x61:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x99)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x99)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x62:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x9A)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x9A)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x8F:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x9B)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x9B)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x90:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x9C)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x9C)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x91:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x9D)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x9D)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x92:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x9E)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x9E)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x93:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x9F)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x9F)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x94:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xA0)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xA0)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x95:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xA1)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xA1)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x63:
         if (!GetRegionMapPermission(MAPPERM_HAS_FLY_DESTINATIONS))
             return MAPSECTYPE_NONE;
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xA2)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xA2)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x64:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xA3)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xA3)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0xC5:
         return MAPSECTYPE_NONE;
     default:
@@ -9949,67 +9949,67 @@ static u8 GetDungeonMapsecType(u8 mapsec)
     case 0xC5:
         return MAPSECTYPE_NONE;
     case 0x7E:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xA4)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xA4)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x7F:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xA5)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xA5)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x80:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xA6)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xA6)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x81:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xA7)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xA7)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x82:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xA8)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xA8)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x83:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xA9)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xA9)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x84:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xAA)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xAA)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x85:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xAB)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xAB)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x86:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xAC)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xAC)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x87:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xAD)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xAD)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x88:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xAE)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xAE)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x89:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xAF)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xAF)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x8A:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xB0)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xB0)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x8B:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xB1)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xB1)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x8C:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xB2)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xB2)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x8D:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xB3)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xB3)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0x8E:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xB4)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xB4)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0xAE:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xB5)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xB5)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0xAF:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xB6)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xB6)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0xB0:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xB7)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xB7)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0xB1:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xB8)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xB8)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0xB2:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xB9)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xB9)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0xB3:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xBA)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xBA)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0xB4:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xBB)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xBB)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0xB5:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xBC)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xBC)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0xB6:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xBD)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xBD)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0xB7:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xBE)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xBE)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0xB8:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xBF)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xBF)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0xB9:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xC0)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xC0)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0xBA:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xC1)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xC1)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case 0xBB:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xC2)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xC2)) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     default:
         return MAPSECTYPE_ROUTE;
     }
@@ -10532,7 +10532,7 @@ static void CreateDungeonIcons(void)
                 mapsec = GetSelectedMapSection(i, LAYER_DUNGEON, y, x);
                 if (mapsec == 0xC5)
                     continue;
-                if (mapsec == 0x8D && !FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x44)))
+                if (mapsec == 0x8D && !FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x44)))
                     continue;
                 CreateDungeonIconSprite(i, numIcons, x, y, numIcons + 35, 10);
                 if (GetDungeonMapsecType(mapsec) != 2)

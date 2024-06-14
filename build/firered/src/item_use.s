@@ -888,7 +888,7 @@ FieldUseFunc_Bike:
 .L71:
 	.align	2, 0
 .L70:
-	.word	0x831
+	.word	0x833
 	.word	gTasks
 	.word	gText_CantDismountBike
 .L65:
@@ -2079,8 +2079,8 @@ FieldUseFunc_BlackWhiteFlute:
 .L235:
 	.word	gSpecialVar_ItemId
 	.word	0xffff
-	.word	0x804
-	.word	0x805
+	.word	0x806
+	.word	0x807
 	.word	gStringVar2
 	.word	gStringVar4
 	.word	gText_UsedVar2WildLured
@@ -2115,8 +2115,8 @@ FieldUseFunc_BlackWhiteFlute:
 .L238:
 	.align	2, 0
 .L237:
-	.word	0x805
-	.word	0x804
+	.word	0x807
+	.word	0x806
 	.word	gStringVar2
 	.word	gStringVar4
 	.word	gText_UsedVar2WildRepelled

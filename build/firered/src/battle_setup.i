@@ -2819,7 +2819,7 @@ struct QuestLogScene
                s16 x;
                s16 y;
                struct QuestLogObjectEvent objectEvents[16];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                struct QuestLogObjectEventTemplate objectEventTemplates[64];
                u16 script[128];
@@ -3087,7 +3087,7 @@ struct SaveBlock1
                u8 __attribute__((aligned(2))) trainerRematches[100];
                struct ObjectEvent objectEvents[16];
                struct ObjectEventTemplate objectEventTemplates[64];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                u32 gameStats[64];
                struct QuestLogScene questLog[4];
@@ -9612,7 +9612,7 @@ static u8 TrainerBattleLoadArg8(const u8 *ptr)
 
 static u16 GetTrainerAFlag(void)
 {
-    return (0x500 + 1) + gTrainerBattleOpponent_A;
+    return (0x502 + 1) + gTrainerBattleOpponent_A;
 }
 
 static bool32 IsPlayerDefeated(u32 battleOutcome)
@@ -9769,7 +9769,7 @@ bool32 GetTrainerFlagFromScriptPointer(const u8 *data)
 {
     u32 flag = TrainerBattleLoadArg16(data + 2);
 
-    return FlagGet((0x500 + 1) + flag);
+    return FlagGet((0x502 + 1) + flag);
 }
 
 void SetUpTrainerMovement(void)
@@ -9807,17 +9807,17 @@ static void SetBattledTrainerFlag2(void)
 
 bool8 HasTrainerBeenFought(u16 trainerId)
 {
-    return FlagGet((0x500 + 1) + trainerId);
+    return FlagGet((0x502 + 1) + trainerId);
 }
 
 void SetTrainerFlag(u16 trainerId)
 {
-    FlagSet((0x500 + 1) + trainerId);
+    FlagSet((0x502 + 1) + trainerId);
 }
 
 void ClearTrainerFlag(u16 trainerId)
 {
-    FlagClear((0x500 + 1) + trainerId);
+    FlagClear((0x502 + 1) + trainerId);
 }
 
 void StartTrainerBattle(void)

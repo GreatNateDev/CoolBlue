@@ -1571,7 +1571,7 @@ HelpSystemRenderText:
 	.align	2, 0
 .L272:
 	.word	gString_Someone
-	.word	0x835
+	.word	0x837
 	.word	gString_Bill
 .L224:
 	ldr	r7, [sp, #0x34]

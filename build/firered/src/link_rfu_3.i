@@ -2819,7 +2819,7 @@ struct QuestLogScene
                s16 x;
                s16 y;
                struct QuestLogObjectEvent objectEvents[16];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                struct QuestLogObjectEventTemplate objectEventTemplates[64];
                u16 script[128];
@@ -3087,7 +3087,7 @@ struct SaveBlock1
                u8 __attribute__((aligned(2))) trainerRematches[100];
                struct ObjectEvent objectEvents[16];
                struct ObjectEventTemplate objectEventTemplates[64];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                u32 gameStats[64];
                struct QuestLogScene questLog[4];
@@ -5581,9 +5581,9 @@ void InitHostRfuGameData(struct RfuGameData *data, u8 activity, bool32 startedAc
     data->compatibility.hasNews = 0;
     data->compatibility.hasCard = 0;
     data->compatibility.unknown = 0;
-    data->compatibility.canLinkNationally = FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x44));
+    data->compatibility.canLinkNationally = FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x44));
     data->compatibility.hasNationalDex = IsNationalPokedexEnabled();
-    data->compatibility.gameClear = FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x2C));
+    data->compatibility.gameClear = FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x2C));
 }
 # 682 "src/link_rfu_3.c"
 bool8 Rfu_GetCompatiblePlayerData(struct RfuGameData *gameData, u8 *username, u8 idx)

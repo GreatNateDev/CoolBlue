@@ -2819,7 +2819,7 @@ struct QuestLogScene
                s16 x;
                s16 y;
                struct QuestLogObjectEvent objectEvents[16];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                struct QuestLogObjectEventTemplate objectEventTemplates[64];
                u16 script[128];
@@ -3087,7 +3087,7 @@ struct SaveBlock1
                u8 __attribute__((aligned(2))) trainerRematches[100];
                struct ObjectEvent objectEvents[16];
                struct ObjectEventTemplate objectEventTemplates[64];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                u32 gameStats[64];
                struct QuestLogScene questLog[4];
@@ -6876,7 +6876,7 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     if (input->pressedStartButton)
     {
         gFieldInputRecord.pressedStartButton = 1;
-        FlagSet(((((0x500 + 1) + 768 - 1) + 1) + 0x3E));
+        FlagSet(((((0x502 + 1) + 768 - 1) + 1) + 0x3E));
         PlaySE(6);
         ShowStartMenu();
         return 1;
@@ -7194,12 +7194,12 @@ static const u8 *GetInteractedWaterScript(struct MapPosition *unused1, u8 metati
 {
     if (MetatileBehavior_IsFastWater(metatileBehavior) == 1 && PartyHasMonWithSurf() == 1)
         return EventScript_CurrentTooFast;
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x24)) == 1 && PartyHasMonWithSurf() == 1 && IsPlayerFacingSurfableFishableWater() == 1)
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x24)) == 1 && PartyHasMonWithSurf() == 1 && IsPlayerFacingSurfableFishableWater() == 1)
         return EventScript_UseSurf;
 
     if (MetatileBehavior_IsWaterfall(metatileBehavior) == 1)
     {
-        if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x26)) == 1 && IsPlayerSurfingNorth() == 1)
+        if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x26)) == 1 && IsPlayerSurfingNorth() == 1)
             return EventScript_Waterfall;
         else
             return EventScript_CantUseWaterfall;

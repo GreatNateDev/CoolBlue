@@ -2819,7 +2819,7 @@ struct QuestLogScene
                s16 x;
                s16 y;
                struct QuestLogObjectEvent objectEvents[16];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                struct QuestLogObjectEventTemplate objectEventTemplates[64];
                u16 script[128];
@@ -3087,7 +3087,7 @@ struct SaveBlock1
                u8 __attribute__((aligned(2))) trainerRematches[100];
                struct ObjectEvent objectEvents[16];
                struct ObjectEventTemplate objectEventTemplates[64];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                u32 gameStats[64];
                struct QuestLogScene questLog[4];
@@ -9609,7 +9609,7 @@ static bool8 IsInDungeonMap(void)
             if (
                    sDungeonMaps[i][0] == gSaveBlock1Ptr->location.mapGroup
                 && sDungeonMaps[i][1] + j == gSaveBlock1Ptr->location.mapNum
-                && (i != 15 || FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x49)) == 1)
+                && (i != 15 || FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x49)) == 1)
             )
                 return 1;
         }
@@ -9649,10 +9649,10 @@ bool8 HelpSystem_UpdateHasntSeenIntro(void)
     if (sSeenHelpSystemIntro == 1)
         return 0;
 
-    if (gSaveFileStatus != 0 && gSaveFileStatus != 2 && FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x3C)))
+    if (gSaveFileStatus != 0 && gSaveFileStatus != 2 && FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x3C)))
         return 0;
 
-    FlagSet(((((0x500 + 1) + 768 - 1) + 1) + 0x3C));
+    FlagSet(((((0x502 + 1) + 768 - 1) + 1) + 0x3C));
     sSeenHelpSystemIntro = 1;
     return 1;
 }
@@ -9817,12 +9817,12 @@ static bool8 IsHelpSystemSubmenuEnabled(u8 id)
         case HELP_RAN_OUT_OF_POTIONS:
         case HELP_WHATS_POKEMON_CENTER:
         case HELP_WHATS_POKEMON_MART:
-            return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x91));
+            return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x91));
         case HELP_I_CANT_GO_ON:
-            return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x95));
+            return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x95));
         case HELP_HOW_ARE_ROADS_FORESTS_DIFFERENT:
         case HELP_WHATS_A_TRAINER:
-            return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xA4));
+            return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xA4));
         case HELP_WHAT_HAPPENED_TO_ITEM_I_GOT:
         case HELP_WHEN_CAN_I_USE_ITEM:
         case HELP_HOW_DO_I_PROGRESS:
@@ -9834,24 +9834,24 @@ static bool8 IsHelpSystemSubmenuEnabled(u8 id)
         case HELP_WHAT_MOVES_SHOULD_I_USE:
         case HELP_WANT_TO_MAKE_MON_STRONGER:
         case HELP_WANT_TO_END_GAME:
-            return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x28));
+            return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x28));
         case HELP_CANT_CATCH_MONS:
         case HELP_CAN_I_BUY_POKEBALLS:
-            return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x29));
+            return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x29));
         case HELP_HOW_ARE_CAVES_DIFFERENT:
         case HELP_WHAT_DO_I_DO_IN_CAVE:
         case HELP_HOW_DO_I_WIN_AGAINST_TRAINER:
         case HELP_FOE_MONS_TOO_STRONG:
         case HELP_WHAT_ARE_MOVES:
         case HELP_WANT_TO_ADD_MORE_MOVES:
-            return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x20));
+            return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x20));
         case HELP_WHAT_ARE_HIDDEN_MOVES:
         case HELP_WHAT_DOES_HIDDEN_MOVE_DO:
             return HasGottenAtLeastOneHM();
         case HELP_WHAT_IS_THAT_PERSON_LIKE:
             return FlagGet(0x29B);
         case HELP_WHAT_IS_A_GYM:
-            return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x92));
+            return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x92));
         }
         return 0;
     }
@@ -9888,7 +9888,7 @@ static bool8 IsHelpSystemSubmenuEnabled(u8 id)
         case HELP_USING_POKEDEX:
         case HELP_USING_PROF_OAKS_PC:
         case HELP_READING_POKEDEX:
-            return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x29));
+            return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x29));
         case HELP_USING_TOWN_MAP:
             return CheckBagHasItem(361, 1);
         case HELP_USING_POKEMON:
@@ -9903,7 +9903,7 @@ static bool8 IsHelpSystemSubmenuEnabled(u8 id)
         case HELP_USING_SUMMARY2:
         case HELP_USING_RUN:
         case HELP_REGISTER_KEY_ITEM:
-            return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x28));
+            return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x28));
         case HELP_USING_SWITCH:
         case HELP_USING_SHIFT:
 
@@ -9911,14 +9911,14 @@ static bool8 IsHelpSystemSubmenuEnabled(u8 id)
                 return 1;
             return 0;
         case HELP_USING_TM:
-            return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x20));
+            return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x20));
         case HELP_USING_HM:
         case HELP_USING_MOVE_OUTSIDE_OF_BATTLE:
             return HasGottenAtLeastOneHM();
         case HELP_RIDING_BICYCLE:
             return FlagGet(0x271);
         case HELP_USING_HALL_OF_FAME:
-            return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x2C));
+            return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x2C));
         }
         return 0;
     }
@@ -9970,7 +9970,7 @@ static bool8 IsHelpSystemSubmenuEnabled(u8 id)
         case HELP_TERM_POWER:
         case HELP_TERM_ACCURACY:
         case HELP_TERM_FNT:
-            return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x28));
+            return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x28));
         case HELP_TERM_HM:
         case HELP_TERM_HM_MOVE:
             return HasGottenAtLeastOneHM();
@@ -9978,7 +9978,7 @@ static bool8 IsHelpSystemSubmenuEnabled(u8 id)
         case HELP_TERM_MOVE_TYPE:
         case HELP_TERM_PP:
         case HELP_TERM_STATUS_PROBLEM:
-            return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xA4));
+            return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xA4));
         }
         return 1;
     }
@@ -9987,9 +9987,9 @@ static bool8 IsHelpSystemSubmenuEnabled(u8 id)
         switch (id)
         {
         case HELP_GAME_FUNDAMENTALS_2:
-            return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x20));
+            return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x20));
         case HELP_GAME_FUNDAMENTALS_3:
-            return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x21));
+            return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x21));
         }
         return 1;
     }

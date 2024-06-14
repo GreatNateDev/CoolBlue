@@ -15193,7 +15193,7 @@ CursorCB_FieldMove:
 .L1721:
 	.align	2, 0
 .L1720:
-	.word	0x821
+	.word	0x823
 	.word	gText_CantUseUntilNewBadge
 	.word	gTasks
 	.word	Task_ReturnToChooseMonAfterText
@@ -15629,7 +15629,7 @@ DisplayCantUseFlashMessage:
 .L1772:
 	.align	2, 0
 .L1771:
-	.word	0x807
+	.word	0x809
 .L1769:
 	mov	r0, #0xd
 	bl	DisplayPartyMenuStdMessage

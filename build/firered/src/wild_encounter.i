@@ -2819,7 +2819,7 @@ struct QuestLogScene
                s16 x;
                s16 y;
                struct QuestLogObjectEvent objectEvents[16];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                struct QuestLogObjectEventTemplate objectEventTemplates[64];
                u16 script[128];
@@ -3087,7 +3087,7 @@ struct SaveBlock1
                u8 __attribute__((aligned(2))) trainerRematches[100];
                struct ObjectEvent objectEvents[16];
                struct ObjectEventTemplate objectEventTemplates[64];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                u32 gameStats[64];
                struct QuestLogScene questLog[4];
@@ -10391,7 +10391,7 @@ static u16 GetCurrentMapWildMonHeaderId(void)
 
 static bool8 UnlockedTanobyOrAreNotInTanoby(void)
 {
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x49)))
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x49)))
         return 1;
     if (gSaveBlock1Ptr->location.mapGroup != ((30 | (2 << 8)) >> 8))
         return 1;
@@ -10820,9 +10820,9 @@ static void ApplyFluteEncounterRateMod(u32 *encounterRate)
 
 static u8 GetFluteEncounterRateModType(void)
 {
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x3)) == 1)
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x3)) == 1)
         return 1;
-    else if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x4)) == 1)
+    else if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x4)) == 1)
         return 2;
     else
         return 0;

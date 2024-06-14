@@ -128482,169 +128482,169 @@ sAlteringCaveMapPreviewTilemap:
 sMapPreviewScreenData:
 	.byte	0x7e
 	.byte	0x1
-	.short	0x8a5
+	.short	0x8a7
 	.word	sViridianForestMapPreviewTiles
 	.word	sViridianForestMapPreviewTilemap
 	.word	sViridianForestMapPreviewPalette
 	.byte	0x7f
 	.byte	0x0
-	.short	0x8a6
+	.short	0x8a8
 	.word	sMtMoonMapPreviewTiles
 	.word	sMtMoonMapPreviewTilemap
 	.word	sMtMoonMapPreviewPalette
 	.byte	0x83
 	.byte	0x0
-	.short	0x8aa
+	.short	0x8ac
 	.word	sDiglettsCaveMapPreviewTiles
 	.word	sDiglettsCaveMapPreviewTilemap
 	.word	sDiglettsCaveMapPreviewPalette
 	.byte	0x8a
 	.byte	0x0
-	.short	0x8b1
+	.short	0x8b3
 	.word	sRockTunnelMapPreviewTiles
 	.word	sRockTunnelMapPreviewTilemap
 	.word	sRockTunnelMapPreviewPalette
 	.byte	0x8c
 	.byte	0x0
-	.short	0x8b3
+	.short	0x8b5
 	.word	sPokemonTowerMapPreviewTiles
 	.word	sPokemonTowerMapPreviewTilemap
 	.word	sPokemonTowerMapPreviewPalette
 	.byte	0x88
 	.byte	0x1
-	.short	0x8af
+	.short	0x8b1
 	.word	sSafariZoneMapPreviewTiles
 	.word	sSafariZoneMapPreviewTilemap
 	.word	sSafariZoneMapPreviewPalette
 	.byte	0x8b
 	.byte	0x0
-	.short	0x8b2
+	.short	0x8b4
 	.word	sSeafoamIslandsMapPreviewTiles
 	.word	sSeafoamIslandsMapPreviewTilemap
 	.word	sSeafoamIslandsMapPreviewPalette
 	.byte	0x87
 	.byte	0x1
-	.short	0x8ae
+	.short	0x8b0
 	.word	sPokemonMansionMapPreviewTiles
 	.word	sPokemonMansionMapPreviewTilemap
 	.word	sPokemonMansionMapPreviewPalette
 	.byte	0x85
 	.byte	0x1
-	.short	0x8ac
+	.short	0x8ae
 	.word	sRocketHideoutMapPreviewTiles
 	.word	sRocketHideoutMapPreviewTilemap
 	.word	sRocketHideoutMapPreviewPalette
 	.byte	0x86
 	.byte	0x0
-	.short	0x8ad
+	.short	0x8af
 	.word	sSilphCoMapPreviewTiles
 	.word	sSilphCoMapPreviewTilemap
 	.word	sSilphCoMapPreviewPalette
 	.byte	0x84
 	.byte	0x0
-	.short	0x8ab
+	.short	0x8ad
 	.word	sVictoryRoadMapPreviewTiles
 	.word	sVictoryRoadMapPreviewTilemap
 	.word	sVictoryRoadMapPreviewPalette
 	.byte	0x8d
 	.byte	0x0
-	.short	0x8b4
+	.short	0x8b6
 	.word	sCeruleanCaveMapPreviewTiles
 	.word	sCeruleanCaveMapPreviewTilemap
 	.word	sCeruleanCaveMapPreviewPalette
 	.byte	0x8e
 	.byte	0x1
-	.short	0x8b5
+	.short	0x8b7
 	.word	sPowerPlantMapPreviewTiles
 	.word	sPowerPlantMapPreviewTilemap
 	.word	sPowerPlantMapPreviewPalette
 	.byte	0xaf
 	.byte	0x0
-	.short	0x8b7
+	.short	0x8b9
 	.word	sMtEmberMapPreviewTiles
 	.word	sMtEmberMapPreviewTilemap
 	.word	sMtEmberMapPreviewPalette
 	.byte	0xb2
 	.byte	0x1
-	.short	0x8b8
+	.short	0x8ba
 	.word	sRocketWarehouseMapPreviewTiles
 	.word	sRocketWarehouseMapPreviewTilemap
 	.word	sRocketWarehouseMapPreviewPalette
 	.byte	0xbc
 	.byte	0x0
-	.short	0x8c0
+	.short	0x8c2
 	.word	sMoneanChamberMapPreviewTiles
 	.word	sMoneanChamberMapPreviewTilemap
 	.word	sMoneanChamberMapPreviewPalette
 	.byte	0xb4
 	.byte	0x0
-	.short	0x8bc
+	.short	0x8be
 	.word	sDottedHoleMapPreviewTiles
 	.word	sDottedHoleMapPreviewTilemap
 	.word	sDottedHoleMapPreviewPalette
 	.byte	0xb0
 	.byte	0x1
-	.short	0x8b8
+	.short	0x8ba
 	.word	sBerryForestMapPreviewTiles
 	.word	sBerryForestMapPreviewTilemap
 	.word	sBerryForestMapPreviewPalette
 	.byte	0xb1
 	.byte	0x0
-	.short	0x8b9
+	.short	0x8bb
 	.word	sIcefallCaveMapPreviewTiles
 	.word	sIcefallCaveMapPreviewTilemap
 	.word	sIcefallCaveMapPreviewPalette
 	.byte	0xb5
 	.byte	0x0
-	.short	0x8bd
+	.short	0x8bf
 	.word	sLostCaveMapPreviewTiles
 	.word	sLostCaveMapPreviewTilemap
 	.word	sLostCaveMapPreviewPalette
 	.byte	0xb7
 	.byte	0x0
-	.short	0x8bf
+	.short	0x8c1
 	.word	sAlteringCaveMapPreviewTiles
 	.word	sAlteringCaveMapPreviewTilemap
 	.word	sAlteringCaveMapPreviewPalette
 	.byte	0xb6
 	.byte	0x1
-	.short	0x8be
+	.short	0x8c0
 	.word	sViridianForestMapPreviewTiles
 	.word	sViridianForestMapPreviewTilemap
 	.word	sViridianForestMapPreviewPalette
 	.byte	0xbd
 	.byte	0x0
-	.short	0x8c0
+	.short	0x8c2
 	.word	sMoneanChamberMapPreviewTiles
 	.word	sMoneanChamberMapPreviewTilemap
 	.word	sMoneanChamberMapPreviewPalette
 	.byte	0xbe
 	.byte	0x0
-	.short	0x8c0
+	.short	0x8c2
 	.word	sMoneanChamberMapPreviewTiles
 	.word	sMoneanChamberMapPreviewTilemap
 	.word	sMoneanChamberMapPreviewPalette
 	.byte	0xbf
 	.byte	0x0
-	.short	0x8c0
+	.short	0x8c2
 	.word	sMoneanChamberMapPreviewTiles
 	.word	sMoneanChamberMapPreviewTilemap
 	.word	sMoneanChamberMapPreviewPalette
 	.byte	0xc0
 	.byte	0x0
-	.short	0x8c0
+	.short	0x8c2
 	.word	sMoneanChamberMapPreviewTiles
 	.word	sMoneanChamberMapPreviewTilemap
 	.word	sMoneanChamberMapPreviewPalette
 	.byte	0xc1
 	.byte	0x0
-	.short	0x8c0
+	.short	0x8c2
 	.word	sMoneanChamberMapPreviewTiles
 	.word	sMoneanChamberMapPreviewTilemap
 	.word	sMoneanChamberMapPreviewPalette
 	.byte	0xc2
 	.byte	0x0
-	.short	0x8c0
+	.short	0x8c2
 	.word	sMoneanChamberMapPreviewTiles
 	.word	sMoneanChamberMapPreviewTilemap
 	.word	sMoneanChamberMapPreviewPalette

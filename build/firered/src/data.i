@@ -2819,7 +2819,7 @@ struct QuestLogScene
                s16 x;
                s16 y;
                struct QuestLogObjectEvent objectEvents[16];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                struct QuestLogObjectEventTemplate objectEventTemplates[64];
                u16 script[128];
@@ -3087,7 +3087,7 @@ struct SaveBlock1
                u8 __attribute__((aligned(2))) trainerRematches[100];
                struct ObjectEvent objectEvents[16];
                struct ObjectEventTemplate objectEventTemplates[64];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                u32 gameStats[64];
                struct QuestLogScene questLog[4];
@@ -35660,16 +35660,16 @@ const struct Trainer gTrainers[] = {
         .aiFlags = (1 << 0),
         .party = { .NoItemDefaultMoves = sParty_Emily_rt_one }, .partySize = (sizeof(sParty_Emily_rt_one) / sizeof((sParty_Emily_rt_one)[0])), .partyFlags = 0,
     },
-    [745] = {
-        .trainerClass = 49,
-        .encounterMusic_gender = 1,
-        .trainerPic = 65,
-        .trainerName = _("EMILY"),
-        .items = {19},
-        .doubleBattle = 0,
-        .aiFlags = (1 << 0),
-        .party = { .NoItemDefaultMoves = sParty_Emily_rt_one }, .partySize = (sizeof(sParty_Emily_rt_one) / sizeof((sParty_Emily_rt_one)[0])), .partyFlags = 0,
-    }
+     [744] = {
+         .trainerClass = 49,
+         .encounterMusic_gender = 1,
+         .trainerPic = 65,
+         .trainerName = _("EMILY"),
+         .items = {19},
+         .doubleBattle = 0,
+         .aiFlags = (1 << 0),
+         .party = { .NoItemDefaultMoves = sParty_Emily_rt_one }, .partySize = (sizeof(sParty_Emily_rt_one) / sizeof((sParty_Emily_rt_one)[0])), .partyFlags = 0,
+     }
 };
 # 304 "src/data.c" 2
 # 1 "src/data/text/species_names.h" 1

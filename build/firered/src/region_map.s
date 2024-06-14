@@ -8880,7 +8880,7 @@ InitRegionMapType:
 	.word	0x4797
 	.word	sRegionMapPermissions
 	.word	0x4796
-	.word	0x846
+	.word	0x848
 	.word	gMapHeader
 	.word	sSeviiMapsecs
 .L46:
@@ -10610,8 +10610,8 @@ BufferRegionMapBg:
 	.align	2, 0
 .L292:
 	.word	0x479b
-	.word	0x8b6
-	.word	0x8c3
+	.word	0x8b8
+	.word	0x8c5
 .Lfe30:
 	.size	 BufferRegionMapBg,.Lfe30-BufferRegionMapBg
 	.align	2, 0
@@ -10731,7 +10731,7 @@ InitSwitchMapMenu:
 	.align	2, 0
 .L322:
 	.word	sSwitchMapMenu
-	.word	0x847
+	.word	0x849
 	.word	0x1ccc
 .L310:
 	ldr	r0, .L324
@@ -10748,7 +10748,7 @@ InitSwitchMapMenu:
 .L325:
 	.align	2, 0
 .L324:
-	.word	0x846
+	.word	0x848
 	.word	0x1ccc
 .L312:
 	ldr	r0, [r4]
@@ -15878,7 +15878,7 @@ GetMapsecUnderCursor:
 .L942:
 	.align	2, 0
 .L941:
-	.word	0x8b6
+	.word	0x8b8
 .Lfe92:
 	.size	 GetMapsecUnderCursor,.Lfe92-GetMapsecUnderCursor
 	.align	2, 0
@@ -15934,7 +15934,7 @@ GetDungeonMapsecUnderCursor:
 .L951:
 	.align	2, 0
 .L950:
-	.word	0x845
+	.word	0x847
 .Lfe93:
 	.size	 GetDungeonMapsecUnderCursor,.Lfe93-GetDungeonMapsecUnderCursor
 	.align	2, 0
@@ -16077,123 +16077,123 @@ GetMapsecType:
 .L1024:
 	.align	2, 0
 .L1023:
-	.word	0x891
+	.word	0x893
 .L957:
 	ldr	r0, .L1025
 	b	.L1020
 .L1026:
 	.align	2, 0
 .L1025:
-	.word	0x892
+	.word	0x894
 .L960:
 	ldr	r0, .L1027
 	b	.L1020
 .L1028:
 	.align	2, 0
 .L1027:
-	.word	0x893
+	.word	0x895
 .L963:
 	ldr	r0, .L1029
 	b	.L1020
 .L1030:
 	.align	2, 0
 .L1029:
-	.word	0x894
+	.word	0x896
 .L966:
 	ldr	r0, .L1031
 	b	.L1020
 .L1032:
 	.align	2, 0
 .L1031:
-	.word	0x895
+	.word	0x897
 .L969:
 	ldr	r0, .L1033
 	b	.L1020
 .L1034:
 	.align	2, 0
 .L1033:
-	.word	0x896
+	.word	0x898
 .L972:
 	ldr	r0, .L1035
 	b	.L1020
 .L1036:
 	.align	2, 0
 .L1035:
-	.word	0x897
+	.word	0x899
 .L975:
 	ldr	r0, .L1037
 	b	.L1020
 .L1038:
 	.align	2, 0
 .L1037:
-	.word	0x898
+	.word	0x89a
 .L978:
 	ldr	r0, .L1039
 	b	.L1020
 .L1040:
 	.align	2, 0
 .L1039:
-	.word	0x899
+	.word	0x89b
 .L981:
 	ldr	r0, .L1041
 	b	.L1020
 .L1042:
 	.align	2, 0
 .L1041:
-	.word	0x89a
+	.word	0x89c
 .L984:
 	ldr	r0, .L1043
 	b	.L1020
 .L1044:
 	.align	2, 0
 .L1043:
-	.word	0x89b
+	.word	0x89d
 .L987:
 	ldr	r0, .L1045
 	b	.L1020
 .L1046:
 	.align	2, 0
 .L1045:
-	.word	0x89c
+	.word	0x89e
 .L990:
 	ldr	r0, .L1047
 	b	.L1020
 .L1048:
 	.align	2, 0
 .L1047:
-	.word	0x89d
+	.word	0x89f
 .L993:
+	mov	r0, #0x8a
+	lsl	r0, r0, #0x4
+	b	.L1020
+.L996:
 	ldr	r0, .L1049
 	b	.L1020
 .L1050:
 	.align	2, 0
 .L1049:
-	.word	0x89e
-.L996:
+	.word	0x8a1
+.L999:
 	ldr	r0, .L1051
 	b	.L1020
 .L1052:
 	.align	2, 0
 .L1051:
-	.word	0x89f
-.L999:
-	mov	r0, #0x8a
-	lsl	r0, r0, #0x4
-	b	.L1020
+	.word	0x8a2
 .L1002:
 	ldr	r0, .L1053
 	b	.L1020
 .L1054:
 	.align	2, 0
 .L1053:
-	.word	0x8a1
+	.word	0x8a3
 .L1005:
 	ldr	r0, .L1055
 	b	.L1020
 .L1056:
 	.align	2, 0
 .L1055:
-	.word	0x8a2
+	.word	0x8a4
 .L1008:
 	mov	r0, #0x3
 	bl	GetRegionMapPermission
@@ -16209,7 +16209,7 @@ GetMapsecType:
 .L1058:
 	.align	2, 0
 .L1057:
-	.word	0x8a3
+	.word	0x8a5
 .L1012:
 	ldr	r0, .L1059
 .L1020:
@@ -16225,7 +16225,7 @@ GetMapsecType:
 .L1060:
 	.align	2, 0
 .L1059:
-	.word	0x8a4
+	.word	0x8a6
 .L1016:
 	mov	r0, #0x1
 .L1018:
@@ -16338,204 +16338,204 @@ GetDungeonMapsecType:
 .L1164:
 	.align	2, 0
 .L1163:
-	.word	0x8a5
+	.word	0x8a7
 .L1067:
 	ldr	r0, .L1165
 	b	.L1160
 .L1166:
 	.align	2, 0
 .L1165:
-	.word	0x8a6
+	.word	0x8a8
 .L1070:
 	ldr	r0, .L1167
 	b	.L1160
 .L1168:
 	.align	2, 0
 .L1167:
-	.word	0x8a7
+	.word	0x8a9
 .L1073:
 	ldr	r0, .L1169
 	b	.L1160
 .L1170:
 	.align	2, 0
 .L1169:
-	.word	0x8a8
+	.word	0x8aa
 .L1076:
 	ldr	r0, .L1171
 	b	.L1160
 .L1172:
 	.align	2, 0
 .L1171:
-	.word	0x8a9
+	.word	0x8ab
 .L1079:
 	ldr	r0, .L1173
 	b	.L1160
 .L1174:
 	.align	2, 0
 .L1173:
-	.word	0x8aa
+	.word	0x8ac
 .L1082:
 	ldr	r0, .L1175
 	b	.L1160
 .L1176:
 	.align	2, 0
 .L1175:
-	.word	0x8ab
+	.word	0x8ad
 .L1085:
 	ldr	r0, .L1177
 	b	.L1160
 .L1178:
 	.align	2, 0
 .L1177:
-	.word	0x8ac
+	.word	0x8ae
 .L1088:
 	ldr	r0, .L1179
 	b	.L1160
 .L1180:
 	.align	2, 0
 .L1179:
-	.word	0x8ad
+	.word	0x8af
 .L1091:
+	mov	r0, #0x8b
+	lsl	r0, r0, #0x4
+	b	.L1160
+.L1094:
 	ldr	r0, .L1181
 	b	.L1160
 .L1182:
 	.align	2, 0
 .L1181:
-	.word	0x8ae
-.L1094:
+	.word	0x8b1
+.L1097:
 	ldr	r0, .L1183
 	b	.L1160
 .L1184:
 	.align	2, 0
 .L1183:
-	.word	0x8af
-.L1097:
-	mov	r0, #0x8b
-	lsl	r0, r0, #0x4
-	b	.L1160
+	.word	0x8b2
 .L1100:
 	ldr	r0, .L1185
 	b	.L1160
 .L1186:
 	.align	2, 0
 .L1185:
-	.word	0x8b1
+	.word	0x8b3
 .L1103:
 	ldr	r0, .L1187
 	b	.L1160
 .L1188:
 	.align	2, 0
 .L1187:
-	.word	0x8b2
+	.word	0x8b4
 .L1106:
 	ldr	r0, .L1189
 	b	.L1160
 .L1190:
 	.align	2, 0
 .L1189:
-	.word	0x8b3
+	.word	0x8b5
 .L1109:
 	ldr	r0, .L1191
 	b	.L1160
 .L1192:
 	.align	2, 0
 .L1191:
-	.word	0x8b4
+	.word	0x8b6
 .L1112:
 	ldr	r0, .L1193
 	b	.L1160
 .L1194:
 	.align	2, 0
 .L1193:
-	.word	0x8b5
+	.word	0x8b7
 .L1115:
 	ldr	r0, .L1195
 	b	.L1160
 .L1196:
 	.align	2, 0
 .L1195:
-	.word	0x8b6
+	.word	0x8b8
 .L1118:
 	ldr	r0, .L1197
 	b	.L1160
 .L1198:
 	.align	2, 0
 .L1197:
-	.word	0x8b7
+	.word	0x8b9
 .L1121:
 	ldr	r0, .L1199
 	b	.L1160
 .L1200:
 	.align	2, 0
 .L1199:
-	.word	0x8b8
+	.word	0x8ba
 .L1124:
 	ldr	r0, .L1201
 	b	.L1160
 .L1202:
 	.align	2, 0
 .L1201:
-	.word	0x8b9
+	.word	0x8bb
 .L1127:
 	ldr	r0, .L1203
 	b	.L1160
 .L1204:
 	.align	2, 0
 .L1203:
-	.word	0x8ba
+	.word	0x8bc
 .L1130:
 	ldr	r0, .L1205
 	b	.L1160
 .L1206:
 	.align	2, 0
 .L1205:
-	.word	0x8bb
+	.word	0x8bd
 .L1133:
 	ldr	r0, .L1207
 	b	.L1160
 .L1208:
 	.align	2, 0
 .L1207:
-	.word	0x8bc
+	.word	0x8be
 .L1136:
 	ldr	r0, .L1209
 	b	.L1160
 .L1210:
 	.align	2, 0
 .L1209:
-	.word	0x8bd
+	.word	0x8bf
 .L1139:
+	mov	r0, #0x8c
+	lsl	r0, r0, #0x4
+	b	.L1160
+.L1142:
 	ldr	r0, .L1211
 	b	.L1160
 .L1212:
 	.align	2, 0
 .L1211:
-	.word	0x8be
-.L1142:
+	.word	0x8c1
+.L1145:
 	ldr	r0, .L1213
 	b	.L1160
 .L1214:
 	.align	2, 0
 .L1213:
-	.word	0x8bf
-.L1145:
-	mov	r0, #0x8c
-	lsl	r0, r0, #0x4
-	b	.L1160
+	.word	0x8c2
 .L1148:
 	ldr	r0, .L1215
 	b	.L1160
 .L1216:
 	.align	2, 0
 .L1215:
-	.word	0x8c1
+	.word	0x8c3
 .L1151:
 	ldr	r0, .L1217
 	b	.L1160
 .L1218:
 	.align	2, 0
 .L1217:
-	.word	0x8c2
+	.word	0x8c4
 .L1154:
 	ldr	r0, .L1219
 .L1160:
@@ -16551,7 +16551,7 @@ GetDungeonMapsecType:
 .L1220:
 	.align	2, 0
 .L1219:
-	.word	0x8c3
+	.word	0x8c5
 .L1157:
 	mov	r0, #0x1
 .L1159:
@@ -18420,7 +18420,7 @@ CreateDungeonIcons:
 .L1506:
 	.align	2, 0
 .L1505:
-	.word	0x845
+	.word	0x847
 	.word	sMapIcons
 .Lfe113:
 	.size	 CreateDungeonIcons,.Lfe113-CreateDungeonIcons

@@ -7706,7 +7706,7 @@ UpdateBoxToSendMons:
 	.align	2, 0
 .L1351:
 	.word	sLastUsedBox
-	.word	0x844
+	.word	0x846
 	.word	0x4037
 .Lfe82:
 	.size	 UpdateBoxToSendMons,.Lfe82-UpdateBoxToSendMons

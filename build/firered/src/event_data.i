@@ -2819,7 +2819,7 @@ struct QuestLogScene
                s16 x;
                s16 y;
                struct QuestLogObjectEvent objectEvents[16];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                struct QuestLogObjectEventTemplate objectEventTemplates[64];
                u16 script[128];
@@ -3087,7 +3087,7 @@ struct SaveBlock1
                u8 __attribute__((aligned(2))) trainerRematches[100];
                struct ObjectEvent objectEvents[16];
                struct ObjectEventTemplate objectEventTemplates[64];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                u32 gameStats[64];
                struct QuestLogScene questLog[4];
@@ -3571,11 +3571,11 @@ void ClearTempFieldEventData(void)
 {
     memset(gSaveBlock1Ptr->flags + (0x0 / 8), 0, (((0x0 + 0x1F) - 0x0 + 1) / 8));
     memset(gSaveBlock1Ptr->vars + ((0x4000 - 0x4000) * 2), 0, (((0x4000 + 0xF) - 0x4000 + 1) * 2));
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x3));
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x4));
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x5));
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x7));
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x42));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x3));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x4));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x5));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x7));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x42));
 }
 
 
@@ -3584,7 +3584,7 @@ static void DisableNationalPokedex_RSE(void)
     u16 *ptr = GetVarPointer(0x403C);
     gSaveBlock2Ptr->pokedex.unused = 0;
     *ptr = 0;
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x38));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x38));
 }
 
 
@@ -3595,7 +3595,7 @@ void EnableNationalPokedex_RSE(void)
     u16 *ptr = GetVarPointer(0x403C);
     gSaveBlock2Ptr->pokedex.unused = 0xDA;
     *ptr = 0x0302;
-    FlagSet(((((0x500 + 1) + 768 - 1) + 1) + 0x38));
+    FlagSet(((((0x502 + 1) + 768 - 1) + 1) + 0x38));
 }
 
 
@@ -3603,7 +3603,7 @@ static bool32 IsNationalPokedexEnabled_RSE(void)
 {
     if (gSaveBlock2Ptr->pokedex.unused == 0xDA
             && VarGet(0x403C) == 0x0302
-            && FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x38)))
+            && FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x38)))
         return 1;
 
     return 0;
@@ -3614,7 +3614,7 @@ void DisableNationalPokedex(void)
     u16 *nationalDexVar = GetVarPointer(0x404E);
     gSaveBlock2Ptr->pokedex.nationalMagic = 0;
     *nationalDexVar = 0;
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x40));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x40));
 }
 
 void EnableNationalPokedex(void)
@@ -3622,14 +3622,14 @@ void EnableNationalPokedex(void)
     u16 *nationalDexVar = GetVarPointer(0x404E);
     gSaveBlock2Ptr->pokedex.nationalMagic = 0xB9;
     *nationalDexVar = 0x6258;
-    FlagSet(((((0x500 + 1) + 768 - 1) + 1) + 0x40));
+    FlagSet(((((0x502 + 1) + 768 - 1) + 1) + 0x40));
 }
 
 bool32 IsNationalPokedexEnabled(void)
 {
     if (gSaveBlock2Ptr->pokedex.nationalMagic == 0xB9
             && VarGet(0x404E) == 0x6258
-            && FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x40)))
+            && FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x40)))
         return 1;
 
     return 0;
@@ -3637,17 +3637,17 @@ bool32 IsNationalPokedexEnabled(void)
 
 void DisableMysteryGift(void)
 {
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x39));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x39));
 }
 
 void EnableMysteryGift(void)
 {
-    FlagSet(((((0x500 + 1) + 768 - 1) + 1) + 0x39));
+    FlagSet(((((0x502 + 1) + 768 - 1) + 1) + 0x39));
 }
 
 bool32 IsMysteryGiftEnabled(void)
 {
-    return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x39));
+    return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x39));
 }
 
 void ClearMysteryGiftFlags(void)
@@ -3686,18 +3686,18 @@ void ClearMysteryGiftVars(void)
 void DisableResetRTC(void)
 {
     VarSet(0x4032, 0);
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x37));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x37));
 }
 
 void EnableResetRTC(void)
 {
     VarSet(0x4032, 0x0920);
-    FlagSet(((((0x500 + 1) + 768 - 1) + 1) + 0x37));
+    FlagSet(((((0x502 + 1) + 768 - 1) + 1) + 0x37));
 }
 
 bool32 CanResetRTC(void)
 {
-    if (!FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x37)))
+    if (!FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x37)))
         return 0;
     if (VarGet(0x4032) != 0x0920)
         return 0;
@@ -3740,7 +3740,7 @@ static bool8 IsFlagOrVarStoredInQuestLog(u16 idx, bool8 isVar)
     {
         if (idx < 0x230)
             return 0;
-        if (idx >= (((0x500 + 1) + 768 - 1) + 1) && idx < (((((0x500 + 1) + 768 - 1) + 1) + 0x1F) + 1))
+        if (idx >= (((0x502 + 1) + 768 - 1) + 1) && idx < (((((0x502 + 1) + 768 - 1) + 1) + 0x1F) + 1))
             return 0;
     }
     else

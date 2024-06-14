@@ -152,8 +152,8 @@ SetHasPokedexAndPokemon:
 .L6:
 	.align	2, 0
 .L5:
-	.word	0x82a
-	.word	0x829
+	.word	0x82c
+	.word	0x82b
 .Lfe1:
 	.size	 SetHasPokedexAndPokemon,.Lfe1-SetHasPokedexAndPokemon
 	.align	2, 0
@@ -250,8 +250,8 @@ SetUpStartMenu_NormalField:
 .L23:
 	.align	2, 0
 .L22:
-	.word	0x82a
-	.word	0x829
+	.word	0x82c
+	.word	0x82b
 .Lfe4:
 	.size	 SetUpStartMenu_NormalField,.Lfe4-SetUpStartMenu_NormalField
 	.align	2, 0
@@ -2597,7 +2597,7 @@ PrintSaveStats:
 	.word	gSaveStatName_Player
 	.word	gSaveStatName_Badges
 	.word	sTextColor_StatValue
-	.word	0x82a
+	.word	0x82c
 	.word	gSaveStatName_Pokedex
 	.word	gSaveStatName_Time
 .Lfe62:

@@ -369,7 +369,7 @@ SetUpFieldMove_Flash:
 	.align	2, 0
 .L8:
 	.word	gMapHeader
-	.word	0x807
+	.word	0x809
 	.word	gFieldCallback2
 	.word	FieldCallback_PrepareFadeInFromMenu
 	.word	gPostMenuFieldCallback
@@ -431,7 +431,7 @@ FldEff_UseFlash:
 .L15:
 	.align	2, 0
 .L14:
-	.word	0x807
+	.word	0x809
 	.word	EventScript_FldEffFlash
 .Lfe3:
 	.size	 FldEff_UseFlash,.Lfe3-FldEff_UseFlash

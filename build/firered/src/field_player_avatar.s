@@ -1141,13 +1141,12 @@ PlayerNotOnBikeMoving:
 	and	r5, r5, r0
 	cmp	r5, #0
 	beq	.L165	@cond_branch
-	mov	r0, #0x83
-	lsl	r0, r0, #0x4
+	ldr	r0, .L173
 	bl	FlagGet
 	lsl	r0, r0, #0x18
 	cmp	r0, #0
 	beq	.L165	@cond_branch
-	ldr	r2, .L173
+	ldr	r2, .L173+0x4
 	ldrb	r1, [r6, #0x5]
 	lsl	r0, r1, #0x3
 	add	r0, r0, r1
@@ -1167,6 +1166,7 @@ PlayerNotOnBikeMoving:
 .L174:
 	.align	2, 0
 .L173:
+	.word	0x832
 	.word	gObjectEvents
 .L166:
 	add	r0, r4, #0
@@ -1609,7 +1609,7 @@ TryPushBoulder:
 .L217:
 	.align	2, 0
 .L216:
-	.word	0x806
+	.word	0x808
 	.word	gObjectEvents
 .L212:
 	mov	r0, #0x0

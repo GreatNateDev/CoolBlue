@@ -35042,7 +35042,7 @@ Cmd_givecaughtmon:
 	.word	gStringVar2
 	.word	gStringVar3
 	.word	gBattleCommunication
-	.word	0x835
+	.word	0x837
 	.word	gBattleResults
 	.word	gBattleMons
 	.word	gBattlerAttacker

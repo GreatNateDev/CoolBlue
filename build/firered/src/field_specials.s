@@ -934,7 +934,7 @@ GiveLeadMonEffortRibbon:
 .L154:
 	.align	2, 0
 .L153:
-	.word	0x83c
+	.word	0x83e
 	.word	gPlayerParty
 .Lfe24:
 	.size	 GiveLeadMonEffortRibbon,.Lfe24-GiveLeadMonEffortRibbon
@@ -4417,7 +4417,8 @@ GetUnlockedSeviiAreas:
 	mov	r0, #0x2
 	orr	r4, r4, r0
 .L695:
-	ldr	r0, .L701+0x8
+	mov	r0, #0x8a
+	lsl	r0, r0, #0x4
 	bl	FlagGet
 	lsl	r0, r0, #0x18
 	lsr	r0, r0, #0x18
@@ -4428,7 +4429,7 @@ GetUnlockedSeviiAreas:
 	lsl	r0, r4, #0x18
 	lsr	r4, r0, #0x18
 .L696:
-	ldr	r0, .L701+0xc
+	ldr	r0, .L701+0x8
 	bl	FlagGet
 	lsl	r0, r0, #0x18
 	lsr	r0, r0, #0x18
@@ -4439,8 +4440,7 @@ GetUnlockedSeviiAreas:
 	lsl	r0, r4, #0x18
 	lsr	r4, r0, #0x18
 .L697:
-	mov	r0, #0x8a
-	lsl	r0, r0, #0x4
+	ldr	r0, .L701+0xc
 	bl	FlagGet
 	lsl	r0, r0, #0x18
 	lsr	r0, r0, #0x18
@@ -4480,12 +4480,12 @@ GetUnlockedSeviiAreas:
 .L702:
 	.align	2, 0
 .L701:
-	.word	0x89c
-	.word	0x89d
 	.word	0x89e
 	.word	0x89f
-	.word	0x8a2
 	.word	0x8a1
+	.word	0x8a2
+	.word	0x8a4
+	.word	0x8a3
 .Lfe80:
 	.size	 GetUnlockedSeviiAreas,.Lfe80-GetUnlockedSeviiAreas
 	.align	2, 0
@@ -5136,7 +5136,7 @@ QuestLog_CheckDepartingIndoorsMap:
 	.word	gSaveBlock1Ptr
 	.word	sInsideOutsidePairs
 	.word	0x404d
-	.word	0x809
+	.word	0x80b
 .L762:
 	add	r0, r4, #0x1
 	lsl	r0, r0, #0x18
@@ -5206,7 +5206,7 @@ QuestLog_TryRecordDepartedLocation:
 	.word	0x404d
 	.word	-0x100
 	.word	-0xff01
-	.word	0x809
+	.word	0x80b
 	.word	gSaveBlock1Ptr
 .L775:
 	mov	r0, #0xc0
@@ -5268,7 +5268,7 @@ QuestLog_TryRecordDepartedLocation:
 .L798:
 	.align	2, 0
 .L797:
-	.word	0x809
+	.word	0x80b
 .L777:
 	ldr	r3, [r7]
 	mov	r2, #0x4
@@ -5356,7 +5356,7 @@ QuestLog_TryRecordDepartedLocation:
 .L802:
 	.align	2, 0
 .L801:
-	.word	0x809
+	.word	0x80b
 	.word	0x404d
 .Lfe88:
 	.size	 QuestLog_TryRecordDepartedLocation,.Lfe88-QuestLog_TryRecordDepartedLocation
@@ -5490,7 +5490,7 @@ ShouldShowBoxWasFullMessage:
 .L829:
 	.align	2, 0
 .L828:
-	.word	0x844
+	.word	0x846
 	.word	0x4037
 .L826:
 	mov	r0, #0x0
@@ -5547,7 +5547,7 @@ IsDestinationBoxFull:
 	.align	2, 0
 .L845:
 	.word	0x4037
-	.word	0x844
+	.word	0x846
 .L836:
 	add	r5, r5, #0x1
 	cmp	r5, #0x1d
@@ -7004,7 +7004,7 @@ Task_DoDeoxysTriangleInteraction:
 .L977:
 	.align	2, 0
 .L976:
-	.word	0x849
+	.word	0x84b
 	.word	gSpecialVar_Result
 .L968:
 	ldr	r0, .L978
@@ -7061,7 +7061,7 @@ Task_DoDeoxysTriangleInteraction:
 .L981:
 	.align	2, 0
 .L980:
-	.word	0x849
+	.word	0x84b
 	.word	gSpecialVar_Result
 .L972:
 	add	r0, r5, #0x1

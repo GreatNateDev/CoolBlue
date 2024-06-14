@@ -15427,7 +15427,7 @@ GetWhoStrikesFirst:
 	.align	2, 0
 .L1539:
 	.word	gBattleTypeFlags
-	.word	0x823
+	.word	0x825
 	.word	gBattleMons
 	.word	gRandomTurnNumber
 	.word	gStatStageRatios
@@ -15505,7 +15505,7 @@ GetWhoStrikesFirst:
 	.align	2, 0
 .L1541:
 	.word	gBattleTypeFlags
-	.word	0x823
+	.word	0x825
 	.word	gBattleMons
 	.word	gRandomTurnNumber
 .L1509:

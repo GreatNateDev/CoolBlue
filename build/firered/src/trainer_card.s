@@ -3280,7 +3280,7 @@ SetPlayerCardData:
 .L218:
 	.word	gSaveBlock2Ptr
 	.word	0x3e7
-	.word	0x82a
+	.word	0x82c
 	.word	0x270f
 	.word	0xffff
 	.word	gSaveBlock1Ptr
@@ -3631,8 +3631,8 @@ SetDataFromTrainerCard:
 	.word	0x462
 	.word	0x464
 	.word	0x47c
-	.word	0x821
-	.word	0x828
+	.word	0x823
+	.word	0x82a
 .Lfe12:
 	.size	 SetDataFromTrainerCard,.Lfe12-SetDataFromTrainerCard
 	.align	2, 0
@@ -4449,7 +4449,7 @@ PrintPokedexOnCard:
 .L332:
 	.align	2, 0
 .L331:
-	.word	0x82a
+	.word	0x82c
 	.word	sTrainerCardDataPtr
 	.word	0x457
 	.word	sTrainerCardFontIds

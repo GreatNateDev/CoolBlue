@@ -23,7 +23,7 @@ EnterHallOfFame:
 .L15:
 	.align	2, 0
 .L14:
-	.word	0x82d
+	.word	0x82f
 	.word	gHasHallOfFameRecords
 .L3:
 	ldr	r1, .L16
@@ -106,7 +106,7 @@ EnterHallOfFame:
 	.word	gHasHallOfFameRecords
 	.word	gSaveBlock2Ptr
 	.word	gPlayerParty
-	.word	0x83c
+	.word	0x83e
 	.word	CB2_DoHallOfFameScreen
 .Lfe1:
 	.size	 EnterHallOfFame,.Lfe1-EnterHallOfFame

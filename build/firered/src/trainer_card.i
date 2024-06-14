@@ -2819,7 +2819,7 @@ struct QuestLogScene
                s16 x;
                s16 y;
                struct QuestLogObjectEvent objectEvents[16];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                struct QuestLogObjectEventTemplate objectEventTemplates[64];
                u16 script[128];
@@ -3087,7 +3087,7 @@ struct SaveBlock1
                u8 __attribute__((aligned(2))) trainerRematches[100];
                struct ObjectEvent objectEvents[16];
                struct ObjectEventTemplate objectEventTemplates[64];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                u32 gameStats[64];
                struct QuestLogScene questLog[4];
@@ -11031,7 +11031,7 @@ struct TrainerCardData
     bool8 var_E;
     bool8 var_F;
     bool8 hasTrades;
-    bool8 hasBadge[(1 + ((((0x500 + 1) + 768 - 1) + 1) + 0x27) - ((((0x500 + 1) + 768 - 1) + 1) + 0x20))];
+    bool8 hasBadge[(1 + ((((0x502 + 1) + 768 - 1) + 1) + 0x27) - ((((0x502 + 1) + 768 - 1) + 1) + 0x20))];
     u8 easyChatProfile[4][13];
     u8 strings[TRAINER_CARD_STRING_COUNT][70];
     u8 var_395;
@@ -11043,7 +11043,7 @@ struct TrainerCardData
     u16 frontTilemap[600];
     u16 backTilemap[600];
     u16 bgTilemap[600];
-    u8 badgeTiles[0x80 * (1 + ((((0x500 + 1) + 768 - 1) + 1) + 0x27) - ((((0x500 + 1) + 768 - 1) + 1) + 0x20))];
+    u8 badgeTiles[0x80 * (1 + ((((0x502 + 1) + 768 - 1) + 1) + 0x27) - ((((0x502 + 1) + 768 - 1) + 1) + 0x20))];
     u16 stickerTiles[0x100];
     u16 cardTiles[0x1180];
     u16 cardTilemapBuffer[0x1000];
@@ -11778,7 +11778,7 @@ static void SetPlayerCardData(struct TrainerCard *trainerCard, u8 cardType)
         trainerCard->rse.hofDebutSeconds = 59;
     }
 
-    trainerCard->rse.hasPokedex = FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x29));
+    trainerCard->rse.hasPokedex = FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x29));
     trainerCard->rse.caughtAllHoenn = HasAllHoennMons();
     trainerCard->rse.caughtMonsCount = GetCaughtMonsCount();
 
@@ -11899,7 +11899,7 @@ static void SetDataFromTrainerCard(void)
     if (sTrainerCardDataPtr->trainerCard.rse.pokemonTrades != 0)
         sTrainerCardDataPtr->hasTrades++;
 
-    for (i = 0, badgeFlag = ((((0x500 + 1) + 768 - 1) + 1) + 0x20); badgeFlag <= ((((0x500 + 1) + 768 - 1) + 1) + 0x27); badgeFlag++, i++)
+    for (i = 0, badgeFlag = ((((0x502 + 1) + 768 - 1) + 1) + 0x20); badgeFlag <= ((((0x502 + 1) + 768 - 1) + 1) + 0x27); badgeFlag++, i++)
     {
         if (FlagGet(badgeFlag))
             sTrainerCardDataPtr->hasBadge[i]++;
@@ -12142,7 +12142,7 @@ static void PrintPokedexOnCard(void)
     u8 buffer[10];
     u8 x;
 
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x29)))
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x29)))
     {
         ConvertIntToDecimalStringN(buffer, sTrainerCardDataPtr->trainerCard.rse.caughtMonsCount, 0, 3);
         if (sTrainerCardDataPtr->cardType != 1)
@@ -12526,7 +12526,7 @@ static void DrawStarsAndBadgesOnCard(void)
     if (!sTrainerCardDataPtr->isLink)
     {
         x = 4;
-        for (i = 0; i < (1 + ((((0x500 + 1) + 768 - 1) + 1) + 0x27) - ((((0x500 + 1) + 768 - 1) + 1) + 0x20)); i++, tileNum += 2, x += 3)
+        for (i = 0; i < (1 + ((((0x502 + 1) + 768 - 1) + 1) + 0x27) - ((((0x502 + 1) + 768 - 1) + 1) + 0x20)); i++, tileNum += 2, x += 3)
         {
             if (sTrainerCardDataPtr->hasBadge[i])
             {

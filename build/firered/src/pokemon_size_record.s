@@ -629,7 +629,7 @@ GiveGiftRibbonToParty:
 	.word	gSaveBlock1Ptr
 	.word	0x30b0
 	.word	gPlayerParty
-	.word	0x83c
+	.word	0x83e
 .Lfe13:
 	.size	 GiveGiftRibbonToParty,.Lfe13-GiveGiftRibbonToParty
 .text

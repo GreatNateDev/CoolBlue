@@ -200,11 +200,11 @@ ClearTempFieldEventData:
 .L6:
 	.word	gSaveBlock1Ptr
 	.word	0x1002
-	.word	0x804
-	.word	0x805
 	.word	0x806
+	.word	0x807
 	.word	0x808
-	.word	0x843
+	.word	0x80a
+	.word	0x845
 .Lfe2:
 	.size	 ClearTempFieldEventData,.Lfe2-ClearTempFieldEventData
 	.align	2, 0
@@ -228,7 +228,7 @@ DisableNationalPokedex_RSE:
 .L9:
 	.word	0x403c
 	.word	gSaveBlock2Ptr
-	.word	0x839
+	.word	0x83b
 .Lfe3:
 	.size	 DisableNationalPokedex_RSE,.Lfe3-DisableNationalPokedex_RSE
 	.align	2, 0
@@ -256,7 +256,7 @@ EnableNationalPokedex_RSE:
 	.word	0x403c
 	.word	gSaveBlock2Ptr
 	.word	0x302
-	.word	0x839
+	.word	0x83b
 .Lfe4:
 	.size	 EnableNationalPokedex_RSE,.Lfe4-EnableNationalPokedex_RSE
 	.align	2, 0
@@ -288,7 +288,7 @@ IsNationalPokedexEnabled_RSE:
 	.word	gSaveBlock2Ptr
 	.word	0x403c
 	.word	0x3020000
-	.word	0x839
+	.word	0x83b
 .L15:
 	mov	r0, #0x0
 .L16:
@@ -318,7 +318,7 @@ DisableNationalPokedex:
 .L20:
 	.word	0x404e
 	.word	gSaveBlock2Ptr
-	.word	0x841
+	.word	0x843
 .Lfe6:
 	.size	 DisableNationalPokedex,.Lfe6-DisableNationalPokedex
 	.align	2, 0
@@ -346,7 +346,7 @@ EnableNationalPokedex:
 	.word	0x404e
 	.word	gSaveBlock2Ptr
 	.word	0x6258
-	.word	0x841
+	.word	0x843
 .Lfe7:
 	.size	 EnableNationalPokedex,.Lfe7-EnableNationalPokedex
 	.align	2, 0
@@ -379,7 +379,7 @@ IsNationalPokedexEnabled:
 	.word	gSaveBlock2Ptr
 	.word	0x404e
 	.word	0x62580000
-	.word	0x841
+	.word	0x843
 .L26:
 	mov	r0, #0x0
 .L27:
@@ -400,7 +400,7 @@ DisableMysteryGift:
 .L32:
 	.align	2, 0
 .L31:
-	.word	0x83a
+	.word	0x83c
 .Lfe9:
 	.size	 DisableMysteryGift,.Lfe9-DisableMysteryGift
 	.align	2, 0
@@ -416,7 +416,7 @@ EnableMysteryGift:
 .L35:
 	.align	2, 0
 .L34:
-	.word	0x83a
+	.word	0x83c
 .Lfe10:
 	.size	 EnableMysteryGift,.Lfe10-EnableMysteryGift
 	.align	2, 0
@@ -434,7 +434,7 @@ IsMysteryGiftEnabled:
 .L38:
 	.align	2, 0
 .L37:
-	.word	0x83a
+	.word	0x83c
 .Lfe11:
 	.size	 IsMysteryGiftEnabled,.Lfe11-IsMysteryGiftEnabled
 	.align	2, 0
@@ -564,7 +564,7 @@ DisableResetRTC:
 	.align	2, 0
 .L46:
 	.word	0x4032
-	.word	0x838
+	.word	0x83a
 .Lfe14:
 	.size	 DisableResetRTC,.Lfe14-DisableResetRTC
 	.align	2, 0
@@ -585,7 +585,7 @@ EnableResetRTC:
 	.align	2, 0
 .L49:
 	.word	0x4032
-	.word	0x838
+	.word	0x83a
 .Lfe15:
 	.size	 EnableResetRTC,.Lfe15-EnableResetRTC
 	.align	2, 0
@@ -611,7 +611,7 @@ CanResetRTC:
 .L56:
 	.align	2, 0
 .L55:
-	.word	0x838
+	.word	0x83a
 	.word	0x4032
 .L53:
 	mov	r0, #0x0
@@ -766,7 +766,7 @@ IsFlagOrVarStoredInQuestLog:
 	.align	2, 0
 .L91:
 	.word	0x22f
-	.word	-0x801
+	.word	-0x803
 .L82:
 	cmp	r2, #0x2f
 	bls	.L90	@cond_branch

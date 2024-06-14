@@ -36434,7 +36434,7 @@ AddBagItem:
 .L123:
 	.word	gBagPockets
 	.word	0x16d
-	.word	0x848
+	.word	0x84a
 .L119:
 	lsl	r1, r1, #0x10
 	lsr	r1, r1, #0x10

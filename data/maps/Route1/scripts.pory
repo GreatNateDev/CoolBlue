@@ -36,19 +36,20 @@ Route1_EventScript_RouteSign::
 	end
 
 `
-script girl_trainer_btl {
-    if (flag(FLAG_0x502) == true) {
-        msgbox("You beat me fair and square")
-    }
-    else {
-    trainerbattle_single(ROUTE1_EMILY, intro_txt_girl_trainer_btl, lose_text_girl_trainer_btl)
-    }
-}
 text intro_txt_girl_trainer_btl {
     "You're toast if you didnt heal!"
 }
 text lose_text_girl_trainer_btl {
     "Oh i didnt expect that!"    
+}
+script girl_trainer_btl {
+    if (flag(FLAG_0x502) == false) {
+        trainerbattle_single(ROUTE1_EMILY, intro_txt_girl_trainer_btl, lose_text_girl_trainer_btl)
+        
+    }
+    elif (flag(FLAG_0x502) == true) {
+    msgbox("You beat me fair and square")
+    }
 }
 script girl_not_so_fast {
     if (flag(FLAG_0x501) == false) {
@@ -56,7 +57,7 @@ script girl_not_so_fast {
     lockall
     applymovement(3,girl_not_so_fast_mvnt)
     waitmovement(3)
-    msgbox("Hey lets do a rematch \n >:)",MSGBOX_AUTOCLOSE)
+    msgbox("Hey lets do a rematch \n >:)")
     trainerbattle_single(ROUTE1_EMILY_REMATCH, intro_txt_girl_trainer_btl, lose_text_girl_trainer_btl)
     releaseall
     }

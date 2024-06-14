@@ -155,8 +155,8 @@ SaveStatToString:
 .L35:
 	.align	2, 0
 .L34:
-	.word	0x821
-	.word	0x828
+	.word	0x823
+	.word	0x82a
 .Lfe1:
 	.size	 SaveStatToString,.Lfe1-SaveStatToString
 .text

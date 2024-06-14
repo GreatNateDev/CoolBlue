@@ -5535,7 +5535,7 @@ InitLocalLinkPlayer:
 	.word	gLinkType
 	.word	gGameLanguage
 	.word	gGameVersion
-	.word	0x845
+	.word	0x847
 .Lfe7:
 	.size	 InitLocalLinkPlayer,.Lfe7-InitLocalLinkPlayer
 	.align	2, 0

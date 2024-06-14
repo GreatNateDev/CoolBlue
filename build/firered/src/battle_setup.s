@@ -1768,7 +1768,7 @@ GetTrainerAFlag:
 	.align	2, 0
 .L250:
 	.word	gTrainerBattleOpponent_A
-	.word	0x501
+	.word	0x503
 .Lfe32:
 	.size	 GetTrainerAFlag,.Lfe32-GetTrainerAFlag
 	.align	2, 0
@@ -2155,7 +2155,7 @@ GetTrainerFlagFromScriptPointer:
 .L341:
 	.align	2, 0
 .L340:
-	.word	0x5010000
+	.word	0x5030000
 .Lfe39:
 	.size	 GetTrainerFlagFromScriptPointer,.Lfe39-GetTrainerFlagFromScriptPointer
 	.align	2, 0
@@ -2279,7 +2279,7 @@ HasTrainerBeenFought:
 .L356:
 	.align	2, 0
 .L355:
-	.word	0x5010000
+	.word	0x5030000
 .Lfe46:
 	.size	 HasTrainerBeenFought,.Lfe46-HasTrainerBeenFought
 	.align	2, 0
@@ -2298,7 +2298,7 @@ SetTrainerFlag:
 .L359:
 	.align	2, 0
 .L358:
-	.word	0x5010000
+	.word	0x5030000
 .Lfe47:
 	.size	 SetTrainerFlag,.Lfe47-SetTrainerFlag
 	.align	2, 0
@@ -2317,7 +2317,7 @@ ClearTrainerFlag:
 .L362:
 	.align	2, 0
 .L361:
-	.word	0x5010000
+	.word	0x5030000
 .Lfe48:
 	.size	 ClearTrainerFlag,.Lfe48-ClearTrainerFlag
 	.align	2, 0

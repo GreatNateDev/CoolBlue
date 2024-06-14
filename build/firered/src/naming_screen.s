@@ -2650,7 +2650,7 @@ DisplaySentToPCMessage:
 	.word	sNamingScreen
 	.word	0x1e30
 	.word	gStringVar3
-	.word	0x835
+	.word	0x837
 	.word	gStringVar4
 	.word	sTransferredToPCMessages
 	.word	gTextFlags

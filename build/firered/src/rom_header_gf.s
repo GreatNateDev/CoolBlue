@@ -26,8 +26,8 @@ sGFRomHeader:
 	.word	0x5f8
 	.word	0x3a2c
 	.word	0x3c
-	.word	0x839
-	.word	0x83a
+	.word	0x83b
+	.word	0x83c
 	.word	0x183
 	.byte	0x7
 	.byte	0xa
@@ -68,8 +68,8 @@ sGFRomHeader:
 	.word	gBallSpriteSheets
 	.word	gBallSpritePalettes
 	.word	0xa8
-	.word	0x82d
-	.word	0x83c
+	.word	0x82f
+	.word	0x83e
 	.byte	0x2a
 	.byte	0x1e
 	.byte	0xd

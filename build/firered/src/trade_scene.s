@@ -43240,7 +43240,7 @@ CheckPartnersMonForRibbons:
 .L926:
 	.word	gSelectedTradeMonPositions
 	.word	gEnemyParty
-	.word	0x83c
+	.word	0x83e
 .Lfe48:
 	.size	 CheckPartnersMonForRibbons,.Lfe48-CheckPartnersMonForRibbons
 	.align	2, 0

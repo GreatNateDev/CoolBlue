@@ -29,7 +29,7 @@ GetSafariZoneFlag:
 .L4:
 	.align	2, 0
 .L3:
-	.word	0x801
+	.word	0x803
 .Lfe1:
 	.size	 GetSafariZoneFlag,.Lfe1-GetSafariZoneFlag
 	.align	2, 0
@@ -45,7 +45,7 @@ SetSafariZoneFlag:
 .L7:
 	.align	2, 0
 .L6:
-	.word	0x801
+	.word	0x803
 .Lfe2:
 	.size	 SetSafariZoneFlag,.Lfe2-SetSafariZoneFlag
 	.align	2, 0
@@ -61,7 +61,7 @@ ResetSafariZoneFlag:
 .L10:
 	.align	2, 0
 .L9:
-	.word	0x801
+	.word	0x803
 .Lfe3:
 	.size	 ResetSafariZoneFlag,.Lfe3-ResetSafariZoneFlag
 	.align	2, 0

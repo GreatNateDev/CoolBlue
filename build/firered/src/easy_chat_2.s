@@ -247,7 +247,8 @@ Task_RunEasyChat:
 	ldrsh	r0, [r6, r1]
 	cmp	r0, #0
 	bne	.L34	@cond_branch
-	ldr	r0, .L43+0x4
+	mov	r0, #0x83
+	lsl	r0, r0, #0x4
 	bl	FlagSet
 	bl	CompareProfileResponseWithPassphrase
 .L34:
@@ -264,7 +265,6 @@ Task_RunEasyChat:
 	.align	2, 0
 .L43:
 	.word	gPaletteFade
-	.word	0x82e
 .Lfe6:
 	.size	 Task_RunEasyChat,.Lfe6-Task_RunEasyChat
 	.align	2, 0

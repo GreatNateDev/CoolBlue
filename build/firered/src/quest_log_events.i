@@ -2819,7 +2819,7 @@ struct QuestLogScene
                s16 x;
                s16 y;
                struct QuestLogObjectEvent objectEvents[16];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                struct QuestLogObjectEventTemplate objectEventTemplates[64];
                u16 script[128];
@@ -3087,7 +3087,7 @@ struct SaveBlock1
                u8 __attribute__((aligned(2))) trainerRematches[100];
                struct ObjectEvent objectEvents[16];
                struct ObjectEventTemplate objectEventTemplates[64];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                u32 gameStats[64];
                struct QuestLogScene questLog[4];
@@ -8741,7 +8741,7 @@ static const u8 sLocationToDepartedTextId[] =
     [50] = 7
 };
 
-static const u8 sGymCityMapSecs[(1 + ((((0x500 + 1) + 768 - 1) + 1) + 0x27) - ((((0x500 + 1) + 768 - 1) + 1) + 0x20))] = {
+static const u8 sGymCityMapSecs[(1 + ((((0x502 + 1) + 768 - 1) + 1) + 0x27) - ((((0x502 + 1) + 768 - 1) + 1) + 0x20))] = {
     0x5A,
     0x5B,
     0x5D,
@@ -8770,23 +8770,23 @@ static const u8 *const sUsedFieldMoveTexts[] =
 
 static const u16 sWorldMapFlags[] =
 {
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x91),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x92),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x93),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x94),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x95),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x96),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x97),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x98),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x99),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x9A),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x9B),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x9C),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x9D),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x9E),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x9F),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0xA0),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0xA1)
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x91),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x92),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x93),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x94),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x95),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x96),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x97),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x98),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x99),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x9A),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x9B),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x9C),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x9D),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x9E),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x9F),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0xA0),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0xA1)
 };
 
 void SetQuestLogEvent(u16 eventId, const u16 * data)
@@ -8934,7 +8934,7 @@ static bool8 ShouldRegisterEvent_HandlePartyActions(u16 eventId, const u16 * dat
     if (eventId == 36 || eventId == 11)
         return 1;
 
-    if (!FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x2C)))
+    if (!FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x2C)))
     {
         if (eventId == 3
          || eventId == 31
@@ -8942,7 +8942,7 @@ static bool8 ShouldRegisterEvent_HandlePartyActions(u16 eventId, const u16 * dat
             return 1;
     }
 
-    if (!FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x44)))
+    if (!FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x44)))
     {
         if (eventId == 4
          || eventId == 5
@@ -9046,7 +9046,7 @@ static bool8 TryDeferTrainerBattleEvent(u16 eventId, const u16 * data)
         return 0;
 
     ResetDeferredLinkEvent();
-    if (gQuestLogPlaybackState != 0 || FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x2C)) || ShouldRegisterEvent_HandleBeatStoryTrainer(eventId, data) != 1)
+    if (gQuestLogPlaybackState != 0 || FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x2C)) || ShouldRegisterEvent_HandleBeatStoryTrainer(eventId, data) != 1)
     {
         sDeferredEvent.id = eventId;
         memcpy(sDeferredEvent.data, data, sizeof(struct QuestLogEvent_TrainerBattle));
@@ -10260,17 +10260,17 @@ static const u16 *LoadEvent_DepartedLocation(const u16 *eventData)
     StringCopy(gStringVar2, sLocationNameTexts[locationId]);
     if (sLocationToDepartedTextId[locationId] == 5)
     {
-        for (i = 0; i < (1 + ((((0x500 + 1) + 768 - 1) + 1) + 0x27) - ((((0x500 + 1) + 768 - 1) + 1) + 0x20)); i++)
+        for (i = 0; i < (1 + ((((0x502 + 1) + 768 - 1) + 1) + 0x27) - ((((0x502 + 1) + 768 - 1) + 1) + 0x20)); i++)
         {
             if (record[0] != sGymCityMapSecs[i])
                 continue;
-            if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x20) + i) == 1)
+            if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x20) + i) == 1)
                 StringExpandPlaceholders(gStringVar4, gText_QuestLog_DepartedGym);
             else
                 StringExpandPlaceholders(gStringVar4, gText_QuestLog_GymWasFullOfToughTrainers);
             break;
         }
-        if (i == (1 + ((((0x500 + 1) + 768 - 1) + 1) + 0x27) - ((((0x500 + 1) + 768 - 1) + 1) + 0x20)))
+        if (i == (1 + ((((0x502 + 1) + 768 - 1) + 1) + 0x27) - ((((0x502 + 1) + 768 - 1) + 1) + 0x20)))
             StringExpandPlaceholders(gStringVar4, sDepartedLocationTexts[sLocationToDepartedTextId[locationId]]);
     }
     else

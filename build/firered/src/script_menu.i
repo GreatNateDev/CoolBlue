@@ -2819,7 +2819,7 @@ struct QuestLogScene
                s16 x;
                s16 y;
                struct QuestLogObjectEvent objectEvents[16];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                struct QuestLogObjectEventTemplate objectEventTemplates[64];
                u16 script[128];
@@ -3087,7 +3087,7 @@ struct SaveBlock1
                u8 __attribute__((aligned(2))) trainerRematches[100];
                struct ObjectEvent objectEvents[16];
                struct ObjectEventTemplate objectEventTemplates[64];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                u32 gameStats[64];
                struct QuestLogScene questLog[4];
@@ -8119,7 +8119,7 @@ static void CreatePCMenuWindow(void)
     switch (GetStringTilesWide(gText_SPc))
     {
     default:
-        if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x29)))
+        if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x29)))
             windowWidth = 14;
         else
             windowWidth = 13;
@@ -8129,7 +8129,7 @@ static void CreatePCMenuWindow(void)
         windowWidth = 14;
         break;
     }
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x2C)))
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x2C)))
     {
         numItems = 5;
         windowId = CreateWindowFromRect(0, 0, windowWidth, 10);
@@ -8140,17 +8140,17 @@ static void CreatePCMenuWindow(void)
     }
     else
     {
-        if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x29)))
+        if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x29)))
             numItems = 4;
         else
             numItems = 3;
         windowId = CreateWindowFromRect(0, 0, windowWidth, numItems * 2);
         SetStdWindowBorderStyle(windowId, 0);
-        if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x29)))
+        if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x29)))
             AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_ProfOakSPc, cursorWidth, 34, 0xFF, ((void *)0));
         AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_LogOff, cursorWidth, 2 + 16 * (numItems - 1), 0xFF, ((void *)0));
     }
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x34)))
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x34)))
         AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_BillSPc, cursorWidth, 2 , 0xFF, ((void *)0));
     else
         AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_SomeoneSPc, cursorWidth, 2 , 0xFF, ((void *)0));

@@ -2819,7 +2819,7 @@ struct QuestLogScene
                s16 x;
                s16 y;
                struct QuestLogObjectEvent objectEvents[16];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                struct QuestLogObjectEventTemplate objectEventTemplates[64];
                u16 script[128];
@@ -3087,7 +3087,7 @@ struct SaveBlock1
                u8 __attribute__((aligned(2))) trainerRematches[100];
                struct ObjectEvent objectEvents[16];
                struct ObjectEventTemplate objectEventTemplates[64];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                u32 gameStats[64];
                struct QuestLogScene questLog[4];
@@ -9835,8 +9835,8 @@ static __attribute__((aligned(2))) const u8 sTextColor_LocationHeader[] = { 1, 6
 
 static void SetHasPokedexAndPokemon(void)
 {
-    FlagSet(((((0x500 + 1) + 768 - 1) + 1) + 0x29));
-    FlagSet(((((0x500 + 1) + 768 - 1) + 1) + 0x28));
+    FlagSet(((((0x502 + 1) + 768 - 1) + 1) + 0x29));
+    FlagSet(((((0x502 + 1) + 768 - 1) + 1) + 0x28));
 }
 
 static void SetUpStartMenu(void)
@@ -9859,9 +9859,9 @@ static void AppendToStartMenuItems(u8 newEntry)
 
 static void SetUpStartMenu_NormalField(void)
 {
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x29)) == 1)
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x29)) == 1)
         AppendToStartMenuItems(STARTMENU_POKEDEX);
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x28)) == 1)
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x28)) == 1)
         AppendToStartMenuItems(STARTMENU_POKEMON);
     AppendToStartMenuItems(STARTMENU_BAG);
     AppendToStartMenuItems(STARTMENU_PLAYER);
@@ -10625,7 +10625,7 @@ static void PrintSaveStats(void)
     SaveStatToString(SAVE_STAT_BADGES, gStringVar4, 2);
     AddTextPrinterParameterized3(sSaveStatsWindowId, FONT_SMALL, 60, 28, sTextColor_StatValue, -1, gStringVar4);
     y = 42;
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x29)) == 1)
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x29)) == 1)
     {
         AddTextPrinterParameterized3(sSaveStatsWindowId, FONT_SMALL, 2, 42, sTextColor_StatName, -1, gSaveStatName_Pokedex);
         SaveStatToString(SAVE_STAT_POKEDEX, gStringVar4, 2);

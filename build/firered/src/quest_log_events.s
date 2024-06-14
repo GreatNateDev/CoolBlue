@@ -346,8 +346,6 @@ sUsedFieldMoveTexts:
 	.align	1, 0
 	.type	 sWorldMapFlags,object
 sWorldMapFlags:
-	.short	0x892
-	.short	0x893
 	.short	0x894
 	.short	0x895
 	.short	0x896
@@ -363,6 +361,8 @@ sWorldMapFlags:
 	.short	0x8a0
 	.short	0x8a1
 	.short	0x8a2
+	.short	0x8a3
+	.short	0x8a4
 	.size	 sWorldMapFlags,34
 .text
 	.align	2, 0
@@ -709,8 +709,8 @@ ShouldRegisterEvent_HandlePartyActions:
 .L67:
 	.align	2, 0
 .L66:
-	.word	0x82d
-	.word	0x845
+	.word	0x82f
+	.word	0x847
 .L62:
 	mov	r0, #0x0
 .L65:
@@ -1000,7 +1000,7 @@ TryDeferTrainerBattleEvent:
 	.align	2, 0
 .L110:
 	.word	gQuestLogPlaybackState
-	.word	0x82d
+	.word	0x82f
 	.word	sDeferredEvent
 .Lfe11:
 	.size	 TryDeferTrainerBattleEvent,.Lfe11-TryDeferTrainerBattleEvent
@@ -4667,7 +4667,7 @@ LoadEvent_DepartedLocation:
 	.word	sLocationNameTexts
 	.word	sLocationToDepartedTextId
 	.word	sGymCityMapSecs
-	.word	0x821
+	.word	0x823
 	.word	gStringVar4
 	.word	gText_QuestLog_GymWasFullOfToughTrainers
 .L583:

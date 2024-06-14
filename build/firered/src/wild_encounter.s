@@ -10924,7 +10924,7 @@ UnlockedTanobyOrAreNotInTanoby:
 .L81:
 	.align	2, 0
 .L80:
-	.word	0x84a
+	.word	0x84c
 	.word	gSaveBlock1Ptr
 .L78:
 	mov	r0, #0x1
@@ -12030,7 +12030,7 @@ GetFluteEncounterRateModType:
 .L271:
 	.align	2, 0
 .L270:
-	.word	0x804
+	.word	0x806
 .L265:
 	ldr	r0, .L272
 	bl	FlagGet
@@ -12043,7 +12043,7 @@ GetFluteEncounterRateModType:
 .L273:
 	.align	2, 0
 .L272:
-	.word	0x805
+	.word	0x807
 .L267:
 	mov	r0, #0x2
 .L269:

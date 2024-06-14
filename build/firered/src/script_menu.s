@@ -4282,8 +4282,8 @@ CreatePCMenuWindow:
 	.align	2, 0
 .L175:
 	.word	gText_SPc
-	.word	0x82a
-	.word	0x82d
+	.word	0x82c
+	.word	0x82f
 	.word	gText_ProfOakSPc
 	.word	gText_HallOfFame_2
 	.word	gText_LogOff
@@ -4364,10 +4364,10 @@ CreatePCMenuWindow:
 .L178:
 	.align	2, 0
 .L177:
-	.word	0x82a
+	.word	0x82c
 	.word	gText_ProfOakSPc
 	.word	gText_LogOff
-	.word	0x835
+	.word	0x837
 	.word	gText_BillSPc
 .L173:
 	ldr	r2, .L179

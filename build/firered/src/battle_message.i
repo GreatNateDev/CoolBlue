@@ -2819,7 +2819,7 @@ struct QuestLogScene
                s16 x;
                s16 y;
                struct QuestLogObjectEvent objectEvents[16];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                struct QuestLogObjectEventTemplate objectEventTemplates[64];
                u16 script[128];
@@ -3087,7 +3087,7 @@ struct SaveBlock1
                u8 __attribute__((aligned(2))) trainerRematches[100];
                struct ObjectEvent objectEvents[16];
                struct ObjectEventTemplate objectEventTemplates[64];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                u32 gameStats[64];
                struct QuestLogScene questLog[4];
@@ -15377,7 +15377,7 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst)
                 if (GetBattlerSide(gBattleScripting.battler) != 0) { if (gBattleTypeFlags & (1 << 3)) toCpy = sText_FoePkmnPrefix; else toCpy = sText_WildPkmnPrefix; while (*toCpy != 0xFF) { dst[dstId] = *toCpy; dstId++; toCpy++; } GetMonData(&gEnemyParty[*(&gBattleStruct->scriptPartyIdx)], 2, text); } else { GetMonData(&gPlayerParty[*(&gBattleStruct->scriptPartyIdx)], 2, text); } StringGet_Nickname(text); toCpy = text;
                 break;
             case 0x27:
-                if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x34)))
+                if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x34)))
                     toCpy = sText_Bills;
                 else
                     toCpy = sText_Someones;

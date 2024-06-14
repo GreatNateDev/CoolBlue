@@ -28846,9 +28846,9 @@ CalculateBaseDamage:
 .L356:
 	.word	gBattleTypeFlags
 	.word	0x802
-	.word	0x821
-	.word	0x825
+	.word	0x823
 	.word	0x827
+	.word	0x829
 	.word	sHoldEffectToType
 .L270:
 	add	r3, r3, #0x2
@@ -32722,7 +32722,7 @@ SendMonToPC:
 	.word	0x4037
 	.word	gSpecialVar_MonBoxId
 	.word	gSpecialVar_MonBoxPos
-	.word	0x844
+	.word	0x846
 .L1057:
 	add	r6, r6, #0x1
 	cmp	r6, #0x1d

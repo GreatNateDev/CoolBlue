@@ -2819,7 +2819,7 @@ struct QuestLogScene
                s16 x;
                s16 y;
                struct QuestLogObjectEvent objectEvents[16];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                struct QuestLogObjectEventTemplate objectEventTemplates[64];
                u16 script[128];
@@ -3087,7 +3087,7 @@ struct SaveBlock1
                u8 __attribute__((aligned(2))) trainerRematches[100];
                struct ObjectEvent objectEvents[16];
                struct ObjectEventTemplate objectEventTemplates[64];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                u32 gameStats[64];
                struct QuestLogScene questLog[4];
@@ -8250,7 +8250,7 @@ void FieldUseFunc_Bike(u8 taskId)
     PlayerGetDestCoords(&x, &y);
     behavior = MapGridGetMetatileBehaviorAt(x, y);
 
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x30)) == 1
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x30)) == 1
      || MetatileBehavior_IsVerticalRail(behavior) == 1
      || MetatileBehavior_IsHorizontalRail(behavior) == 1
      || MetatileBehavior_IsIsolatedVerticalRail(behavior) == 1
@@ -8576,8 +8576,8 @@ void FieldUseFunc_BlackWhiteFlute(u8 taskId)
     ItemUse_SetQuestLogEvent(4, ((void *)0), gSpecialVar_ItemId, 0xFFFF);
     if (gSpecialVar_ItemId == 43)
     {
-        FlagSet(((((0x500 + 1) + 768 - 1) + 1) + 0x3));
-        FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x4));
+        FlagSet(((((0x502 + 1) + 768 - 1) + 1) + 0x3));
+        FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x4));
         CopyItemName(gSpecialVar_ItemId, gStringVar2);
         StringExpandPlaceholders(gStringVar4, gText_UsedVar2WildLured);
         gTasks[taskId].func = Task_UsedBlackWhiteFlute;
@@ -8585,8 +8585,8 @@ void FieldUseFunc_BlackWhiteFlute(u8 taskId)
     }
     else if (gSpecialVar_ItemId == 42)
     {
-        FlagSet(((((0x500 + 1) + 768 - 1) + 1) + 0x4));
-        FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x3));
+        FlagSet(((((0x502 + 1) + 768 - 1) + 1) + 0x4));
+        FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x3));
         CopyItemName(gSpecialVar_ItemId, gStringVar2);
         StringExpandPlaceholders(gStringVar4, gText_UsedVar2WildRepelled);
         gTasks[taskId].func = Task_UsedBlackWhiteFlute;

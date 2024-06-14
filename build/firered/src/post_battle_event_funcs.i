@@ -2819,7 +2819,7 @@ struct QuestLogScene
                s16 x;
                s16 y;
                struct QuestLogObjectEvent objectEvents[16];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                struct QuestLogObjectEventTemplate objectEventTemplates[64];
                u16 script[128];
@@ -3087,7 +3087,7 @@ struct SaveBlock1
                u8 __attribute__((aligned(2))) trainerRematches[100];
                struct ObjectEvent objectEvents[16];
                struct ObjectEventTemplate objectEventTemplates[64];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                u32 gameStats[64];
                struct QuestLogScene questLog[4];
@@ -3427,14 +3427,14 @@ bool8 EnterHallOfFame(void)
     int i;
     bool8 gaveAtLeastOneRibbon;
     HealPlayerParty();
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x2C)) == 1)
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x2C)) == 1)
     {
         gHasHallOfFameRecords = 1;
     }
     else
     {
         gHasHallOfFameRecords = 0;
-        FlagSet(((((0x500 + 1) + 768 - 1) + 1) + 0x2C));
+        FlagSet(((((0x502 + 1) + 768 - 1) + 1) + 0x2C));
     }
     if (GetGameStat(1) == 0)
     {
@@ -3458,7 +3458,7 @@ bool8 EnterHallOfFame(void)
     if (gaveAtLeastOneRibbon == 1)
     {
         IncrementGameStat(42);
-        FlagSet(((((0x500 + 1) + 768 - 1) + 1) + 0x3B));
+        FlagSet(((((0x502 + 1) + 768 - 1) + 1) + 0x3B));
     }
     SetMainCallback2(CB2_DoHallOfFameScreen);
     return 0;

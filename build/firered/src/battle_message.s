@@ -17392,7 +17392,7 @@ BattleStringExpandPlaceholders:
 .L583:
 	.align	2, 0
 .L582:
-	.word	0x835
+	.word	0x837
 	.word	sText_Someones
 	.word	sText_Bills
 .L395:

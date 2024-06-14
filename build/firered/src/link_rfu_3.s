@@ -1920,8 +1920,8 @@ InitHostRfuGameData:
 	.align	2, 0
 .L246:
 	.word	gSaveBlock2Ptr
-	.word	0x845
-	.word	0x82d
+	.word	0x847
+	.word	0x82f
 .Lfe16:
 	.size	 InitHostRfuGameData,.Lfe16-InitHostRfuGameData
 	.align	2, 0

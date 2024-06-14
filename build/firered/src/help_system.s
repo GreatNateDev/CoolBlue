@@ -3312,7 +3312,7 @@ IsInDungeonMap:
 	.align	2, 0
 .L61:
 	.word	gSaveBlock1Ptr
-	.word	0x84a
+	.word	0x84c
 .L51:
 	add	r0, r6, #0x1
 	lsl	r0, r0, #0x18
@@ -3462,7 +3462,7 @@ HelpSystem_UpdateHasntSeenIntro:
 .L90:
 	.word	sSeenHelpSystemIntro
 	.word	gSaveFileStatus
-	.word	0x83d
+	.word	0x83f
 .L87:
 	ldr	r0, .L92
 	bl	FlagSet
@@ -3476,7 +3476,7 @@ HelpSystem_UpdateHasntSeenIntro:
 .L93:
 	.align	2, 0
 .L92:
-	.word	0x83d
+	.word	0x83f
 	.word	sSeenHelpSystemIntro
 .Lfe11:
 	.size	 HelpSystem_UpdateHasntSeenIntro,.Lfe11-HelpSystem_UpdateHasntSeenIntro
@@ -4044,42 +4044,42 @@ IsHelpSystemSubmenuEnabled:
 .L334:
 	.align	2, 0
 .L333:
-	.word	0x892
+	.word	0x894
 .L186:
 	ldr	r0, .L335
 	b	.L326
 .L336:
 	.align	2, 0
 .L335:
-	.word	0x896
+	.word	0x898
 .L188:
 	ldr	r0, .L337
 	b	.L326
 .L338:
 	.align	2, 0
 .L337:
-	.word	0x8a5
+	.word	0x8a7
 .L199:
 	ldr	r0, .L339
 	b	.L326
 .L340:
 	.align	2, 0
 .L339:
-	.word	0x829
+	.word	0x82b
 .L201:
 	ldr	r0, .L341
 	b	.L326
 .L342:
 	.align	2, 0
 .L341:
-	.word	0x82a
+	.word	0x82c
 .L207:
 	ldr	r0, .L343
 	b	.L326
 .L344:
 	.align	2, 0
 .L343:
-	.word	0x821
+	.word	0x823
 .L209:
 	bl	HasGottenAtLeastOneHM
 	b	.L327
@@ -4096,7 +4096,7 @@ IsHelpSystemSubmenuEnabled:
 .L348:
 	.align	2, 0
 .L347:
-	.word	0x893
+	.word	0x895
 .L166:
 	cmp	r0, #0x1
 	beq	.LCB1241
@@ -4173,7 +4173,7 @@ IsHelpSystemSubmenuEnabled:
 .L352:
 	.align	2, 0
 .L351:
-	.word	0x82a
+	.word	0x82c
 .L244:
 	ldr	r0, .L353
 	mov	r1, #0x1
@@ -4189,7 +4189,7 @@ IsHelpSystemSubmenuEnabled:
 .L356:
 	.align	2, 0
 .L355:
-	.word	0x829
+	.word	0x82b
 .L258:
 	mov	r0, #0x1
 	bl	GetKantoPokedexCount
@@ -4206,7 +4206,7 @@ IsHelpSystemSubmenuEnabled:
 .L358:
 	.align	2, 0
 .L357:
-	.word	0x821
+	.word	0x823
 .L262:
 	bl	HasGottenAtLeastOneHM
 	b	.L327
@@ -4223,7 +4223,7 @@ IsHelpSystemSubmenuEnabled:
 .L362:
 	.align	2, 0
 .L361:
-	.word	0x82d
+	.word	0x82f
 .L214:
 	cmp	r0, #0x2
 	beq	.LCB1354
@@ -4318,7 +4318,7 @@ IsHelpSystemSubmenuEnabled:
 .L366:
 	.align	2, 0
 .L365:
-	.word	0x829
+	.word	0x82b
 .L310:
 	bl	HasGottenAtLeastOneHM
 	b	.L327
@@ -4328,7 +4328,7 @@ IsHelpSystemSubmenuEnabled:
 .L368:
 	.align	2, 0
 .L367:
-	.word	0x8a5
+	.word	0x8a7
 .L267:
 	cmp	r0, #0x3
 	bne	.L317	@cond_branch
@@ -4343,7 +4343,7 @@ IsHelpSystemSubmenuEnabled:
 .L370:
 	.align	2, 0
 .L369:
-	.word	0x821
+	.word	0x823
 .L320:
 	ldr	r0, .L371
 .L326:
@@ -4355,7 +4355,7 @@ IsHelpSystemSubmenuEnabled:
 .L372:
 	.align	2, 0
 .L371:
-	.word	0x822
+	.word	0x824
 .L317:
 	cmp	r0, #0x4
 	beq	.L323	@cond_branch

@@ -2830,7 +2830,7 @@ struct QuestLogScene
                s16 x;
                s16 y;
                struct QuestLogObjectEvent objectEvents[16];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                struct QuestLogObjectEventTemplate objectEventTemplates[64];
                u16 script[128];
@@ -3098,7 +3098,7 @@ struct SaveBlock1
                u8 __attribute__((aligned(2))) trainerRematches[100];
                struct ObjectEvent objectEvents[16];
                struct ObjectEventTemplate objectEventTemplates[64];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                u32 gameStats[64];
                struct QuestLogScene questLog[4];
@@ -36251,13 +36251,13 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
     if (attacker->ability == 37 || attacker->ability == 74)
         attack *= 2;
 
-    if ((!(gBattleTypeFlags & ((1 << 1) | (1 << 11))) && FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x20)) && GetBattlerSide(battlerIdAtk) == 0))
+    if ((!(gBattleTypeFlags & ((1 << 1) | (1 << 11))) && FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x20)) && GetBattlerSide(battlerIdAtk) == 0))
         attack = (110 * attack) / 100;
-    if ((!(gBattleTypeFlags & ((1 << 1) | (1 << 11))) && FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x24)) && GetBattlerSide(battlerIdDef) == 0))
+    if ((!(gBattleTypeFlags & ((1 << 1) | (1 << 11))) && FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x24)) && GetBattlerSide(battlerIdDef) == 0))
         defense = (110 * defense) / 100;
-    if ((!(gBattleTypeFlags & ((1 << 1) | (1 << 11))) && FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x26)) && GetBattlerSide(battlerIdAtk) == 0))
+    if ((!(gBattleTypeFlags & ((1 << 1) | (1 << 11))) && FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x26)) && GetBattlerSide(battlerIdAtk) == 0))
         spAttack = (110 * spAttack) / 100;
-    if ((!(gBattleTypeFlags & ((1 << 1) | (1 << 11))) && FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x26)) && GetBattlerSide(battlerIdDef) == 0))
+    if ((!(gBattleTypeFlags & ((1 << 1) | (1 << 11))) && FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x26)) && GetBattlerSide(battlerIdDef) == 0))
         spDefense = (110 * spDefense) / 100;
 
 
@@ -37481,7 +37481,7 @@ static u8 SendMonToPC(struct Pokemon* mon)
                 gSpecialVar_MonBoxId = boxNo;
                 gSpecialVar_MonBoxPos = boxPos;
                 if (GetPCBoxToSendMon() != boxNo)
-                    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x43));
+                    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x43));
                 VarSet(0x4037, boxNo);
                 return 1;
             }

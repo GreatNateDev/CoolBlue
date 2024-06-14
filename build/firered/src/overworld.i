@@ -2819,7 +2819,7 @@ struct QuestLogScene
                s16 x;
                s16 y;
                struct QuestLogObjectEvent objectEvents[16];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                struct QuestLogObjectEventTemplate objectEventTemplates[64];
                u16 script[128];
@@ -3087,7 +3087,7 @@ struct SaveBlock1
                u8 __attribute__((aligned(2))) trainerRematches[100];
                struct ObjectEvent objectEvents[16];
                struct ObjectEventTemplate objectEventTemplates[64];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                u32 gameStats[64];
                struct QuestLogScene questLog[4];
@@ -8829,14 +8829,14 @@ static const u8 sWhiteOutMoneyLossMultipliers[] = {
 };
 
 static const u16 sWhiteOutMoneyLossBadgeFlagIDs[] = {
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x20),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x21),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x22),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x23),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x24),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x25),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x26),
-    ((((0x500 + 1) + 768 - 1) + 1) + 0x27)
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x20),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x21),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x22),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x23),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x24),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x25),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x26),
+    ((((0x502 + 1) + 768 - 1) + 1) + 0x27)
 };
 
 static void DoWhiteOut(void)
@@ -8881,62 +8881,62 @@ static u8 CountBadgesForOverworldWhiteOutLossCalculation(void)
 void Overworld_ResetStateAfterFly(void)
 {
     ResetInitialPlayerAvatarState();
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x30));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x30));
     VarSet(0x405E, 0);
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x2));
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x0));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x2));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x0));
     VarSet(0x406E, 0);
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x5));
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x6));
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x8));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x5));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x6));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x8));
     VarSet(0x404D, 0);
 }
 
 void Overworld_ResetStateAfterTeleport(void)
 {
     ResetInitialPlayerAvatarState();
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x30));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x30));
     VarSet(0x405E, 0);
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x2));
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x0));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x2));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x0));
     VarSet(0x406E, 0);
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x5));
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x6));
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x8));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x5));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x6));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x8));
     VarSet(0x404D, 0);
 }
 
 void Overworld_ResetStateAfterDigEscRope(void)
 {
     ResetInitialPlayerAvatarState();
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x30));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x30));
     VarSet(0x405E, 0);
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x2));
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x0));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x2));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x0));
     VarSet(0x406E, 0);
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x5));
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x6));
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x8));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x5));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x6));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x8));
     VarSet(0x404D, 0);
 }
 
 static void Overworld_ResetStateAfterWhitingOut(void)
 {
     ResetInitialPlayerAvatarState();
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x30));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x30));
     VarSet(0x405E, 0);
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x2));
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x0));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x2));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x0));
     VarSet(0x406E, 0);
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x5));
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x6));
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x8));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x5));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x6));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x8));
     VarSet(0x404D, 0);
 }
 
 static void Overworld_ResetStateOnContinue(void)
 {
-    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x0));
+    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x0));
     VarSet(0x406E, 0);
     ChooseAmbientCrySpecies();
     UpdateLocationHistoryForRoamer();
@@ -9393,7 +9393,7 @@ static void LoadMapFromWarp(bool32 unused)
     SetSavedWeatherFromCurrMapHeader();
     ChooseAmbientCrySpecies();
     if (isOutdoors)
-        FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x6));
+        FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x6));
     SetDefaultFlashLevel();
     Overworld_ClearSavedMusic();
     RunOnTransitionMapScript();
@@ -9469,7 +9469,7 @@ struct InitialPlayerAvatarState *GetInitialPlayerAvatarState(void)
 
 static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *playerStruct, u16 metatileBehavior, u8 mapType)
 {
-    if (mapType != 8 && FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x2)))
+    if (mapType != 8 && FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x2)))
         return (1 << PLAYER_AVATAR_STATE_NORMAL);
     else if (mapType == 5)
         return (1 << PLAYER_AVATAR_STATE_UNDERWATER);
@@ -9501,7 +9501,7 @@ bool8 MetatileBehavior_IsSurfableInSeafoamIslands(u16 metatileBehavior)
 
 static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *playerStruct, u8 transitionFlags, u16 metatileBehavior, u8 mapType)
 {
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x2)) && mapType == 6)
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x2)) && mapType == 6)
         return 4;
     else if (MetatileBehavior_IsDeepSouthWarp(metatileBehavior) == 1)
         return 2;
@@ -9549,7 +9549,7 @@ static void SetDefaultFlashLevel(void)
 {
     if (!gMapHeader.cave)
         gSaveBlock1Ptr->flashLevel = 0;
-    else if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x6)))
+    else if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x6)))
         gSaveBlock1Ptr->flashLevel = 0;
     else
         gSaveBlock1Ptr->flashLevel = gMaxFlashLevel;

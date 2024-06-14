@@ -85,14 +85,14 @@ sWhiteOutMoneyLossMultipliers:
 	.align	1, 0
 	.type	 sWhiteOutMoneyLossBadgeFlagIDs,object
 sWhiteOutMoneyLossBadgeFlagIDs:
-	.short	0x821
-	.short	0x822
 	.short	0x823
 	.short	0x824
 	.short	0x825
 	.short	0x826
 	.short	0x827
 	.short	0x828
+	.short	0x829
+	.short	0x82a
 	.size	 sWhiteOutMoneyLossBadgeFlagIDs,16
 .text
 	.align	2, 0
@@ -256,14 +256,14 @@ Overworld_ResetStateAfterFly:
 .L25:
 	.align	2, 0
 .L24:
-	.word	0x831
+	.word	0x833
 	.word	0x405e
+	.word	0x805
 	.word	0x803
-	.word	0x801
 	.word	0x406e
-	.word	0x806
-	.word	0x807
+	.word	0x808
 	.word	0x809
+	.word	0x80b
 	.word	0x404d
 .Lfe5:
 	.size	 Overworld_ResetStateAfterFly,.Lfe5-Overworld_ResetStateAfterFly
@@ -300,14 +300,14 @@ Overworld_ResetStateAfterTeleport:
 .L28:
 	.align	2, 0
 .L27:
-	.word	0x831
+	.word	0x833
 	.word	0x405e
+	.word	0x805
 	.word	0x803
-	.word	0x801
 	.word	0x406e
-	.word	0x806
-	.word	0x807
+	.word	0x808
 	.word	0x809
+	.word	0x80b
 	.word	0x404d
 .Lfe6:
 	.size	 Overworld_ResetStateAfterTeleport,.Lfe6-Overworld_ResetStateAfterTeleport
@@ -344,14 +344,14 @@ Overworld_ResetStateAfterDigEscRope:
 .L31:
 	.align	2, 0
 .L30:
-	.word	0x831
+	.word	0x833
 	.word	0x405e
+	.word	0x805
 	.word	0x803
-	.word	0x801
 	.word	0x406e
-	.word	0x806
-	.word	0x807
+	.word	0x808
 	.word	0x809
+	.word	0x80b
 	.word	0x404d
 .Lfe7:
 	.size	 Overworld_ResetStateAfterDigEscRope,.Lfe7-Overworld_ResetStateAfterDigEscRope
@@ -387,14 +387,14 @@ Overworld_ResetStateAfterWhitingOut:
 .L34:
 	.align	2, 0
 .L33:
-	.word	0x831
+	.word	0x833
 	.word	0x405e
+	.word	0x805
 	.word	0x803
-	.word	0x801
 	.word	0x406e
-	.word	0x806
-	.word	0x807
+	.word	0x808
 	.word	0x809
+	.word	0x80b
 	.word	0x404d
 .Lfe8:
 	.size	 Overworld_ResetStateAfterWhitingOut,.Lfe8-Overworld_ResetStateAfterWhitingOut
@@ -416,7 +416,7 @@ Overworld_ResetStateOnContinue:
 .L37:
 	.align	2, 0
 .L36:
-	.word	0x801
+	.word	0x803
 	.word	0x406e
 .Lfe9:
 	.size	 Overworld_ResetStateOnContinue,.Lfe9-Overworld_ResetStateOnContinue
@@ -2156,7 +2156,7 @@ LoadMapFromWarp:
 .L254:
 	.word	gMapHeader
 	.word	gSaveBlock1Ptr
-	.word	0x807
+	.word	0x809
 .Lfe55:
 	.size	 LoadMapFromWarp,.Lfe55-LoadMapFromWarp
 	.align	2, 0
@@ -2354,7 +2354,7 @@ GetAdjustedInitialTransitionFlags:
 .L299:
 	.align	2, 0
 .L298:
-	.word	0x803
+	.word	0x805
 .L285:
 	add	r0, r5, #0
 	bl	MetatileBehavior_IsSurfableInSeafoamIslands
@@ -2483,7 +2483,7 @@ GetAdjustedInitialDirection:
 .L343:
 	.align	2, 0
 .L342:
-	.word	0x803
+	.word	0x805
 .L315:
 	add	r0, r5, #0
 	bl	MetatileBehavior_IsNorthArrowWarp
@@ -2646,7 +2646,7 @@ SetDefaultFlashLevel:
 .L363:
 	.align	2, 0
 .L362:
-	.word	0x807
+	.word	0x809
 	.word	gSaveBlock1Ptr
 .L356:
 	ldr	r0, .L364

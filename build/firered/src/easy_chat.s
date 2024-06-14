@@ -16278,7 +16278,7 @@ IsECGroupUnlocked:
 .L17:
 	.align	2, 0
 .L16:
-	.word	0x82d
+	.word	0x82f
 .L13:
 	cmp	r1, #0x15
 	beq	.L10	@cond_branch
@@ -17515,7 +17515,7 @@ PopulateECGroups:
 	.align	2, 0
 .L282:
 	.word	sEasyChatSelectionData
-	.word	0x82d
+	.word	0x82f
 .Lfe24:
 	.size	 PopulateECGroups,.Lfe24-PopulateECGroups
 	.align	2, 0

@@ -1641,7 +1641,7 @@ UpdateVsSeekerStepCounter:
 	.align	2, 0
 .L38:
 	.word	gSaveBlock1Ptr
-	.word	0x802
+	.word	0x804
 .L34:
 	mov	r0, #0x0
 .L37:
@@ -1666,7 +1666,7 @@ MapResetTrainerRematches:
 .L42:
 	.align	2, 0
 .L41:
-	.word	0x802
+	.word	0x804
 .Lfe5:
 	.size	 MapResetTrainerRematches,.Lfe5-MapResetTrainerRematches
 	.align	2, 0
@@ -2474,7 +2474,7 @@ GetVsSeekerResponseInArea:
 	.word	sMovementScript_TrainerRematch
 	.word	0x431
 	.word	sVsSeeker
-	.word	0x802
+	.word	0x804
 .L133:
 	mov	r0, #0x1
 	and	r0, r0, r1
@@ -2674,21 +2674,21 @@ TryGetRematchTrainerIdGivenGameState:
 .L182:
 	.align	2, 0
 .L181:
-	.word	0x897
+	.word	0x899
 .L168:
 	ldr	r0, .L183
 	b	.L176
 .L184:
 	.align	2, 0
 .L183:
-	.word	0x898
+	.word	0x89a
 .L170:
 	ldr	r0, .L185
 	b	.L176
 .L186:
 	.align	2, 0
 .L185:
-	.word	0x82d
+	.word	0x82f
 .L172:
 	ldr	r0, .L187
 .L176:
@@ -2707,7 +2707,7 @@ TryGetRematchTrainerIdGivenGameState:
 .L188:
 	.align	2, 0
 .L187:
-	.word	0x845
+	.word	0x847
 .Lfe19:
 	.size	 TryGetRematchTrainerIdGivenGameState,.Lfe19-TryGetRematchTrainerIdGivenGameState
 	.align	2, 0

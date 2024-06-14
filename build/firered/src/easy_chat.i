@@ -2819,7 +2819,7 @@ struct QuestLogScene
                s16 x;
                s16 y;
                struct QuestLogObjectEvent objectEvents[16];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                struct QuestLogObjectEventTemplate objectEventTemplates[64];
                u16 script[128];
@@ -3087,7 +3087,7 @@ struct SaveBlock1
                u8 __attribute__((aligned(2))) trainerRematches[100];
                struct ObjectEvent objectEvents[16];
                struct ObjectEventTemplate objectEventTemplates[64];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                u32 gameStats[64];
                struct QuestLogScene questLog[4];
@@ -15053,7 +15053,7 @@ static bool8 IsECGroupUnlocked(u8 groupId)
     case 0x11:
     case 0x12:
     case 0x13:
-        return FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x2C));
+        return FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x2C));
     case 0x15:
         return EC_IsNationalPokedexEnabled();
     default:
@@ -15469,7 +15469,7 @@ static void PopulateECGroups(void)
     for (i = 0x1; i <= 0x10; i++)
         sEasyChatSelectionData->groups[sEasyChatSelectionData->numGroups++] = i;
 
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x2C)))
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x2C)))
     {
         sEasyChatSelectionData->groups[sEasyChatSelectionData->numGroups++] = 0x11;
         sEasyChatSelectionData->groups[sEasyChatSelectionData->numGroups++] = 0x12;

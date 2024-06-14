@@ -2819,7 +2819,7 @@ struct QuestLogScene
                s16 x;
                s16 y;
                struct QuestLogObjectEvent objectEvents[16];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                struct QuestLogObjectEventTemplate objectEventTemplates[64];
                u16 script[128];
@@ -3087,7 +3087,7 @@ struct SaveBlock1
                u8 __attribute__((aligned(2))) trainerRematches[100];
                struct ObjectEvent objectEvents[16];
                struct ObjectEventTemplate objectEventTemplates[64];
-               u8 flags[((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x500 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
+               u8 flags[((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) / (8)) + ((((((((0x502 + 1) + 768 - 1) + 1) + 0xFF) + 1)) % (8)) ? 1 : 0))];
                u16 vars[(0x40FF - 0x4000 + 1)];
                u32 gameStats[64];
                struct QuestLogScene questLog[4];
@@ -8512,7 +8512,7 @@ void GiveLeadMonEffortRibbon(void)
     u8 leadMonIdx;
     bool8 param;
     IncrementGameStat(42);
-    FlagSet(((((0x500 + 1) + 768 - 1) + 1) + 0x3B));
+    FlagSet(((((0x502 + 1) + 768 - 1) + 1) + 0x3B));
     param = 1;
     leadMonIdx = GetLeadMonIndex();
     SetMonData(&gPlayerParty[leadMonIdx], 71, &param);
@@ -9801,19 +9801,19 @@ u32 GetPlayerTrainerId(void)
 u8 GetUnlockedSeviiAreas(void)
 {
     u8 result = 0;
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x9B)) == 1)
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x9B)) == 1)
         result |= 1 << 0;
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x9C)) == 1)
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x9C)) == 1)
         result |= 1 << 1;
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x9D)) == 1)
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x9D)) == 1)
         result |= 1 << 2;
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x9E)) == 1)
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x9E)) == 1)
         result |= 1 << 3;
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x9F)) == 1)
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x9F)) == 1)
         result |= 1 << 4;
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xA1)) == 1)
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xA1)) == 1)
         result |= 1 << 5;
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0xA0)) == 1)
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0xA0)) == 1)
         result |= 1 << 6;
     return result;
 }
@@ -9987,7 +9987,7 @@ void QuestLog_CheckDepartingIndoorsMap(void)
             if (VarGet(0x404D) != 35 || i != 32)
             {
                 VarSet(0x404D, i);
-                FlagSet(((((0x500 + 1) + 768 - 1) + 1) + 0x8));
+                FlagSet(((((0x502 + 1) + 768 - 1) + 1) + 0x8));
             }
             break;
         }
@@ -10001,7 +10001,7 @@ void QuestLog_TryRecordDepartedLocation(void)
     u16 locationId = VarGet(0x404D);
     data.mapSec = 0;
     data.locationId = 0;
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x8)))
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x8)))
     {
         if (locationId == 5)
         {
@@ -10015,7 +10015,7 @@ void QuestLog_TryRecordDepartedLocation(void)
                 else
                     data.locationId = locationId + 1;
                 SetQuestLogEvent(35, (const u16 *)&data);
-                FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x8));
+                FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x8));
                 return;
             }
         }
@@ -10031,7 +10031,7 @@ void QuestLog_TryRecordDepartedLocation(void)
                 else
                     data.locationId = locationId + 1;
                 SetQuestLogEvent(35, (const u16 *)&data);
-                FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x8));
+                FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x8));
                 return;
             }
         }
@@ -10053,11 +10053,11 @@ void QuestLog_TryRecordDepartedLocation(void)
                     data.locationId++;
             }
             SetQuestLogEvent(35, (const u16 *)&data);
-            FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x8));
+            FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x8));
             if (locationId == 35)
             {
                 VarSet(0x404D, 32);
-                FlagSet(((((0x500 + 1) + 768 - 1) + 1) + 0x8));
+                FlagSet(((((0x502 + 1) + 768 - 1) + 1) + 0x8));
             }
         }
     }
@@ -10095,11 +10095,11 @@ u16 GetPCBoxToSendMon(void)
 
 bool8 ShouldShowBoxWasFullMessage(void)
 {
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x43)))
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x43)))
         return 0;
     if (StorageGetCurrentBox() == VarGet(0x4037))
         return 0;
-    FlagSet(((((0x500 + 1) + 768 - 1) + 1) + 0x43));
+    FlagSet(((((0x502 + 1) + 768 - 1) + 1) + 0x43));
     return 1;
 }
 
@@ -10116,7 +10116,7 @@ bool8 IsDestinationBoxFull(void)
             if (GetBoxMonData(GetBoxedMonPtr(i, j), 11, ((void *)0)) == 0)
             {
                 if (GetPCBoxToSendMon() != i)
-                    FlagClear(((((0x500 + 1) + 768 - 1) + 1) + 0x43));
+                    FlagClear(((((0x502 + 1) + 768 - 1) + 1) + 0x43));
                 VarSet(0x4037, i);
                 return ShouldShowBoxWasFullMessage();
             }
@@ -10477,7 +10477,7 @@ static void Task_DoDeoxysTriangleInteraction(u8 taskId)
 {
     u16 r5;
     u16 r6;
-    if (FlagGet(((((0x500 + 1) + 768 - 1) + 1) + 0x48)) == 1)
+    if (FlagGet(((((0x502 + 1) + 768 - 1) + 1) + 0x48)) == 1)
     {
         gSpecialVar_Result = 3;
         ScriptContext_Enable();
@@ -10497,7 +10497,7 @@ static void Task_DoDeoxysTriangleInteraction(u8 taskId)
         }
         else if (r5 == 10)
         {
-            FlagSet(((((0x500 + 1) + 768 - 1) + 1) + 0x48));
+            FlagSet(((((0x502 + 1) + 768 - 1) + 1) + 0x48));
             gSpecialVar_Result = 2;
             ScriptContext_Enable();
             DestroyTask(taskId);

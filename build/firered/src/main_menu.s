@@ -1756,7 +1756,7 @@ PrintDexCount:
 .L221:
 	.align	2, 0
 .L220:
-	.word	0x82a
+	.word	0x82c
 .L217:
 	mov	r0, #0x1
 	bl	GetKantoPokedexCount
@@ -1862,8 +1862,8 @@ PrintBadgeCount:
 .L232:
 	.align	2, 0
 .L231:
-	.word	0x821
-	.word	0x828
+	.word	0x823
+	.word	0x82a
 	.word	sTextColor2
 	.word	gText_Badges
 	.word	gTextJPDummy_Ko

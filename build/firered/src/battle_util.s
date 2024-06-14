@@ -13253,10 +13253,10 @@ IsMonDisobedient:
 	.word	0x10002
 	.word	gBattlerAttacker
 	.word	gBattleMons
-	.word	0x828
-	.word	0x822
+	.word	0x82a
 	.word	0x824
 	.word	0x826
+	.word	0x828
 .L1731:
 	ldr	r3, .L1761
 	ldrh	r0, [r3]

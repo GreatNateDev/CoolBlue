@@ -600,7 +600,7 @@ ProcessPlayerFieldInput:
 	.align	2, 0
 .L89:
 	.word	gFieldInputRecord
-	.word	0x83f
+	.word	0x841
 .L67:
 	mov	r0, #0x8
 	and	r0, r0, r1
@@ -1799,7 +1799,7 @@ GetInteractedWaterScript:
 .L315:
 	.align	2, 0
 .L314:
-	.word	0x825
+	.word	0x827
 	.word	EventScript_UseSurf
 .L307:
 	add	r0, r4, #0
@@ -1824,7 +1824,7 @@ GetInteractedWaterScript:
 .L317:
 	.align	2, 0
 .L316:
-	.word	0x827
+	.word	0x829
 	.word	EventScript_Waterfall
 .L309:
 	ldr	r0, .L318
