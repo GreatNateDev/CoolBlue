@@ -24428,6 +24428,15 @@ sParty_CueBallPaxton:
 	.short	0x59
 	.space	2
 	.size	 sParty_CueBallPaxton,16
+	.align	2, 0
+	.type	 sParty_Emily_rt_one,object
+sParty_Emily_rt_one:
+	.short	0x0
+	.byte	0x5
+	.space	1
+	.short	0x3a
+	.space	2
+	.size	 sParty_Emily_rt_one,8
 	.globl	gTrainerClassNames
 	.type	 gTrainerClassNames,object
 gTrainerClassNames:
@@ -38812,7 +38821,26 @@ gTrainers:
 	.byte	0x2
 	.space	3
 	.word	sParty_CueBallPaxton
-	.size	 gTrainers,29720
+	.byte	0x0
+	.byte	0x31
+	.byte	0x1
+	.byte	0x41
+	.byte	0xbf
+	.byte	0xc7
+	.byte	0xc3
+	.byte	0xc6
+	.byte	0xd3
+	.byte	0xff
+	.space	6
+	.short	0x13
+	.space	6
+	.byte	0x0
+	.space	3
+	.word	0x1
+	.byte	0x1
+	.space	3
+	.word	sParty_Emily_rt_one
+	.size	 gTrainers,29760
 	.globl	gSpeciesNames
 	.type	 gSpeciesNames,object
 gSpeciesNames:

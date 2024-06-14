@@ -28106,6 +28106,13 @@ static const struct TrainerMonNoItemDefaultMoves sParty_CueBallPaxton[] = {
         .species = 89,
     },
 };
+static const struct TrainerMonNoItemDefaultMoves sParty_Emily_rt_one[] = {
+    {
+        .iv = 0,
+        .lvl = 5,
+        .species = 58,
+    },
+};
 # 302 "src/data.c" 2
 # 1 "src/data/text/trainer_class_names.h" 1
 const u8 gTrainerClassNames[][13] = {
@@ -35643,6 +35650,16 @@ const struct Trainer gTrainers[] = {
         .aiFlags = (1 << 0),
         .party = { .NoItemDefaultMoves = sParty_CueBallPaxton }, .partySize = (sizeof(sParty_CueBallPaxton) / sizeof((sParty_CueBallPaxton)[0])), .partyFlags = 0,
     },
+    [743] = {
+        .trainerClass = 49,
+        .encounterMusic_gender = 1,
+        .trainerPic = 65,
+        .trainerName = _("EMILY"),
+        .items = {19},
+        .doubleBattle = 0,
+        .aiFlags = (1 << 0),
+        .party = { .NoItemDefaultMoves = sParty_Emily_rt_one }, .partySize = (sizeof(sParty_Emily_rt_one) / sizeof((sParty_Emily_rt_one)[0])), .partyFlags = 0,
+    }
 };
 # 304 "src/data.c" 2
 # 1 "src/data/text/species_names.h" 1
