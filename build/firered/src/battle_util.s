@@ -7029,8 +7029,17 @@ AbilityBattleEffects:
 	mul	r1, r1, r0
 	add	r1, r1, r2
 	ldrb	r0, [r1, #0x1b]
-	add	r0, r0, #0x1
+	sub	r0, r0, #0x1
+	mov	r2, #0x0
 	strb	r0, [r1, #0x1b]
+	ldr	r4, .L1198+0x4
+	mov	r0, #0x11
+	strb	r0, [r4, #0x10]
+	strb	r2, [r4, #0x11]
+	ldr	r0, .L1198+0x8
+	bl	BattleScriptPushCursorAndCallback
+	mov	r0, sl
+	strb	r0, [r4, #0x17]
 .L879:
 	mov	r0, sl
 	bl	CastformDataTypeChange
@@ -7038,12 +7047,12 @@ AbilityBattleEffects:
 	lsr	r0, r0, #0x18
 	mov	r9, r0
 	cmp	r0, #0
-	bne	.LCB8396
+	bne	.LCB8409
 	bl	.L844	@far jump
-.LCB8396:
-	ldr	r0, .L1198+0x4
+.LCB8409:
+	ldr	r0, .L1198+0xc
 	bl	BattleScriptPushCursorAndCallback
-	ldr	r0, .L1198+0x8
+	ldr	r0, .L1198+0x4
 	mov	r1, sl
 	strb	r1, [r0, #0x17]
 	bl	.L1158	@ far jump
@@ -7051,8 +7060,9 @@ AbilityBattleEffects:
 	.align	2, 0
 .L1198:
 	.word	gBattleMons
-	.word	BattleScript_CastformChange
 	.word	gBattleScripting
+	.word	BattleScript_OldBoomerActivates
+	.word	BattleScript_CastformChange
 .L881:
 	ldr	r0, .L1200
 	mov	r3, sl
@@ -7063,9 +7073,9 @@ AbilityBattleEffects:
 	ldrb	r0, [r3]
 	lsl	r0, r0, #0x1b
 	cmp	r0, #0
-	bge	.LCB8427
+	bge	.LCB8441
 	bl	.L853	@far jump
-.LCB8427:
+.LCB8441:
 	ldr	r1, .L1200+0x4
 	add	r1, r2, r1
 	ldr	r0, [r1]
@@ -7088,9 +7098,9 @@ AbilityBattleEffects:
 	mov	r4, #0x0
 	ldrb	r3, [r3]
 	cmp	r4, r3
-	bcc	.LCB8459
+	bcc	.LCB8473
 	bl	.L853	@far jump
-.LCB8459:
+.LCB8473:
 .L888:
 	add	r0, r4, #0
 	bl	CastformDataTypeChange
@@ -7098,9 +7108,9 @@ AbilityBattleEffects:
 	lsr	r0, r0, #0x18
 	mov	r9, r0
 	cmp	r0, #0
-	beq	.LCB8470
+	beq	.LCB8484
 	bl	.L1147	@far jump
-.LCB8470:
+.LCB8484:
 	add	r0, r4, #0x1
 	lsl	r0, r0, #0x18
 	lsr	r4, r0, #0x18
@@ -7121,9 +7131,9 @@ AbilityBattleEffects:
 	add	r4, r6, r7
 	ldrh	r0, [r4, #0x28]
 	cmp	r0, #0
-	bne	.LCB8501
+	bne	.LCB8515
 	bl	.L853	@far jump
-.LCB8501:
+.LCB8515:
 	ldr	r0, .L1204+0x4
 	mov	r1, sl
 	strb	r1, [r0]
@@ -7134,9 +7144,9 @@ AbilityBattleEffects:
 	cmp	r5, #0x2c
 	bgt	.L914	@cond_branch
 	cmp	r5, #0x3
-	bne	.LCB8515
+	bne	.LCB8529
 	b	.L909	@long jump
-.LCB8515:
+.LCB8529:
 	bl	.L853	@ far jump
 .L1205:
 	.align	2, 0
@@ -7145,9 +7155,9 @@ AbilityBattleEffects:
 	.word	gBattlerAttacker
 .L914:
 	cmp	r5, #0x36
-	bne	.LCB8527
+	bne	.LCB8541
 	b	.L911	@long jump
-.LCB8527:
+.LCB8541:
 	cmp	r5, #0x3d
 	beq	.L902	@cond_branch
 	bl	.L853	@ far jump
@@ -7162,9 +7172,9 @@ AbilityBattleEffects:
 	lsl	r0, r0, #0x18
 	lsr	r0, r0, #0x18
 	cmp	r0, #0
-	beq	.LCB8546
+	beq	.LCB8560
 	bl	.L853	@far jump
-.LCB8546:
+.LCB8560:
 	str	r0, [sp]
 	mov	r0, #0x13
 	mov	r1, #0x0
@@ -7173,23 +7183,23 @@ AbilityBattleEffects:
 	bl	AbilityBattleEffects
 	lsl	r0, r0, #0x18
 	cmp	r0, #0
-	beq	.LCB8557
+	beq	.LCB8571
 	bl	.L853	@far jump
-.LCB8557:
+.LCB8571:
 	ldr	r0, .L1206
 	ldrh	r1, [r0]
 	mov	r0, #0x7
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB8565
+	bne	.LCB8579
 	bl	.L853	@far jump
-.LCB8565:
+.LCB8579:
 	ldrh	r0, [r4, #0x2c]
 	ldrh	r3, [r4, #0x28]
 	cmp	r0, r3
-	bhi	.LCB8574
+	bhi	.LCB8588
 	bl	.L853	@far jump
-.LCB8574:
+.LCB8588:
 	mov	r0, r8
 	strb	r5, [r0]
 	ldr	r0, .L1206+0x4
@@ -7219,9 +7229,9 @@ AbilityBattleEffects:
 	add	r5, r6, r0
 	ldrb	r0, [r5]
 	cmp	r0, #0
-	bne	.LCB8613
+	bne	.LCB8627
 	bl	.L853	@far jump
-.LCB8613:
+.LCB8627:
 	bl	Random
 	lsl	r0, r0, #0x10
 	lsr	r0, r0, #0x10
@@ -7230,9 +7240,9 @@ AbilityBattleEffects:
 	lsl	r0, r0, #0x10
 	lsr	r4, r0, #0x10
 	cmp	r4, #0
-	beq	.LCB8625
+	beq	.LCB8639
 	bl	.L853	@far jump
-.LCB8625:
+.LCB8639:
 	ldr	r0, [r5]
 	mov	r1, #0x88
 	and	r0, r0, r1
@@ -7320,9 +7330,9 @@ AbilityBattleEffects:
 	mov	r0, #0x1b
 	ldrsb	r0, [r4, r0]
 	cmp	r0, #0xb
-	ble	.LCB8734
+	ble	.LCB8748
 	bl	.L853	@far jump
-.LCB8734:
+.LCB8748:
 	ldr	r0, .L1210
 	mov	r3, sl
 	lsl	r1, r3, #0x3
@@ -7331,9 +7341,9 @@ AbilityBattleEffects:
 	add	r1, r1, r0
 	ldrb	r0, [r1, #0x16]
 	cmp	r0, #0x2
-	bne	.LCB8745
+	bne	.LCB8759
 	bl	.L853	@far jump
-.LCB8745:
+.LCB8759:
 	add	r0, r2, #0x1
 	mov	r1, #0x0
 	strb	r0, [r4, #0x1b]
@@ -7378,18 +7388,18 @@ AbilityBattleEffects:
 	mov	r1, r8
 	ldrb	r0, [r1]
 	cmp	r0, #0x2b
-	beq	.LCB8803
+	beq	.LCB8817
 	bl	.L853	@far jump
-.LCB8803:
+.LCB8817:
 	mov	r5, #0x0
 	ldr	r0, .L1214
 	ldrh	r2, [r0]
 	ldr	r3, .L1214+0x4
 	add	r1, r0, #0
 	cmp	r2, r3
-	bne	.LCB8815
+	bne	.LCB8829
 	bl	.L853	@far jump
-.LCB8815:
+.LCB8829:
 	cmp	r2, r4
 	beq	.L918	@cond_branch
 	add	r2, r1, #0
@@ -7398,9 +7408,9 @@ AbilityBattleEffects:
 	add	r5, r5, #0x1
 	ldrh	r0, [r2]
 	cmp	r0, r3
-	bne	.LCB8831
+	bne	.LCB8845
 	bl	.L853	@far jump
-.LCB8831:
+.LCB8845:
 	cmp	r0, r4
 	bne	.L919	@cond_branch
 .L918:
@@ -7409,9 +7419,9 @@ AbilityBattleEffects:
 	ldrh	r1, [r0]
 	ldr	r0, .L1214+0x4
 	cmp	r1, r0
-	bne	.LCB8847
+	bne	.LCB8861
 	bl	.L853	@far jump
-.LCB8847:
+.LCB8861:
 	ldr	r1, .L1214+0x8
 	ldr	r0, .L1214+0xc
 	ldrb	r2, [r0]
@@ -7450,9 +7460,9 @@ AbilityBattleEffects:
 	.word	BattleScript_SoundproofProtected
 .L925:
 	cmp	r4, #0
-	bne	.LCB8890
+	bne	.LCB8904
 	bl	.L853	@far jump
-.LCB8890:
+.LCB8904:
 	mov	r3, r8
 	ldrb	r0, [r3]
 	cmp	r0, #0xb
@@ -7468,9 +7478,9 @@ AbilityBattleEffects:
 	b	.L927
 .L928:
 	cmp	r5, #0xd
-	beq	.LCB8912
+	beq	.LCB8926
 	b	.L927	@long jump
-.LCB8912:
+.LCB8926:
 	ldr	r0, .L1216
 	lsl	r1, r4, #0x1
 	add	r1, r1, r4
@@ -7478,9 +7488,9 @@ AbilityBattleEffects:
 	add	r1, r1, r0
 	ldrb	r0, [r1, #0x1]
 	cmp	r0, #0
-	bne	.LCB8922
+	bne	.LCB8936
 	b	.L927	@long jump
-.LCB8922:
+.LCB8936:
 	ldr	r1, .L1216+0x4
 	ldr	r0, .L1216+0x8
 	ldrb	r0, [r0]
@@ -7516,9 +7526,9 @@ AbilityBattleEffects:
 	.word	BattleScript_MoveHPDrain_PPLoss
 .L932:
 	cmp	r5, #0xb
-	beq	.LCB8966
+	beq	.LCB8980
 	b	.L927	@long jump
-.LCB8966:
+.LCB8980:
 	ldr	r0, .L1220
 	lsl	r1, r4, #0x1
 	add	r1, r1, r4
@@ -7526,9 +7536,9 @@ AbilityBattleEffects:
 	add	r1, r1, r0
 	ldrb	r0, [r1, #0x1]
 	cmp	r0, #0
-	bne	.LCB8976
+	bne	.LCB8990
 	b	.L927	@long jump
-.LCB8976:
+.LCB8990:
 	ldr	r1, .L1220+0x4
 	ldr	r0, .L1220+0x8
 	ldrb	r0, [r0]
@@ -7666,9 +7676,9 @@ AbilityBattleEffects:
 .L927:
 	mov	r1, r9
 	cmp	r1, #0x1
-	beq	.LCB9138
+	beq	.LCB9152
 	bl	.L853	@far jump
-.LCB9138:
+.LCB9152:
 	ldr	r1, .L1230+0x8
 	mov	r0, #0x58
 	mov	r2, sl
@@ -7734,9 +7744,9 @@ AbilityBattleEffects:
 	ldrb	r0, [r1]
 	sub	r0, r0, #0x9
 	cmp	r0, #0x2f
-	bls	.LCB9225
+	bls	.LCB9239
 	bl	.L853	@far jump
-.LCB9225:
+.LCB9239:
 	lsl	r0, r0, #0x2
 	ldr	r1, .L1236
 	add	r0, r0, r1
@@ -7803,13 +7813,13 @@ AbilityBattleEffects:
 	mov	r0, #0x29
 	and	r0, r0, r1
 	cmp	r0, #0
-	beq	.LCB9251
+	beq	.LCB9265
 	bl	.L853	@far jump
-.LCB9251:
+.LCB9265:
 	cmp	r4, #0xa5
-	bne	.LCB9253
+	bne	.LCB9267
 	bl	.L853	@far jump
-.LCB9253:
+.LCB9267:
 	ldr	r0, .L1238+0x4
 	lsl	r1, r4, #0x1
 	add	r1, r1, r4
@@ -7817,9 +7827,9 @@ AbilityBattleEffects:
 	add	r1, r1, r0
 	ldrb	r0, [r1, #0x1]
 	cmp	r0, #0
-	bne	.LCB9263
+	bne	.LCB9277
 	bl	.L853	@far jump
-.LCB9263:
+.LCB9277:
 	ldr	r2, .L1238+0x8
 	ldr	r0, .L1238+0xc
 	ldrb	r1, [r0]
@@ -7837,9 +7847,9 @@ AbilityBattleEffects:
 	add	r0, r1, r0
 	ldr	r0, [r0]
 	cmp	r0, #0
-	bne	.LCB9281
+	bne	.LCB9295
 	bl	.L853	@far jump
-.LCB9281:
+.LCB9295:
 .L957:
 	ldr	r1, .L1238+0x10
 	mov	r0, #0x58
@@ -7851,21 +7861,21 @@ AbilityBattleEffects:
 	add	r3, r3, #0x21
 	ldrb	r0, [r3]
 	cmp	r0, r5
-	bne	.LCB9294
+	bne	.LCB9308
 	bl	.L853	@far jump
-.LCB9294:
+.LCB9308:
 	add	r2, r1, #0
 	add	r2, r2, #0x22
 	ldrb	r0, [r2]
 	cmp	r0, r5
-	bne	.LCB9301
+	bne	.LCB9315
 	bl	.L853	@far jump
-.LCB9301:
+.LCB9315:
 	ldrh	r0, [r1, #0x28]
 	cmp	r0, #0
-	bne	.LCB9306
+	bne	.LCB9320
 	bl	.L853	@far jump
-.LCB9306:
+.LCB9320:
 	strb	r5, [r3]
 	strb	r5, [r2]
 	ldr	r1, .L1238+0x14
@@ -7898,9 +7908,9 @@ AbilityBattleEffects:
 	mov	r0, #0x29
 	and	r0, r0, r1
 	cmp	r0, #0
-	beq	.LCB9350
+	beq	.LCB9364
 	bl	.L853	@far jump
-.LCB9350:
+.LCB9364:
 	ldr	r1, .L1240+0x4
 	ldr	r0, .L1240+0x8
 	ldrb	r2, [r0]
@@ -7909,18 +7919,18 @@ AbilityBattleEffects:
 	add	r3, r0, r1
 	ldrh	r0, [r3, #0x28]
 	cmp	r0, #0
-	bne	.LCB9361
+	bne	.LCB9375
 	bl	.L853	@far jump
-.LCB9361:
+.LCB9375:
 	ldr	r0, .L1240+0xc
 	lsl	r1, r2, #0x4
 	add	r1, r1, r0
 	ldrb	r0, [r1, #0x1]
 	lsl	r0, r0, #0x1f
 	cmp	r0, #0
-	beq	.LCB9369
+	beq	.LCB9383
 	bl	.L853	@far jump
-.LCB9369:
+.LCB9383:
 	ldr	r2, .L1240+0x10
 	ldr	r0, .L1240+0x14
 	ldrb	r1, [r0]
@@ -7938,9 +7948,9 @@ AbilityBattleEffects:
 	add	r0, r1, r0
 	ldr	r0, [r0]
 	cmp	r0, #0
-	bne	.LCB9387
+	bne	.LCB9401
 	bl	.L853	@far jump
-.LCB9387:
+.LCB9401:
 .L960:
 	ldr	r1, .L1240+0x18
 	lsl	r0, r4, #0x1
@@ -7952,9 +7962,9 @@ AbilityBattleEffects:
 	add	r0, r2, #0
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB9401
+	bne	.LCB9415
 	bl	.L853	@far jump
-.LCB9401:
+.LCB9415:
 	ldr	r1, .L1240+0x1c
 	ldrh	r0, [r3, #0x2c]
 	lsr	r0, r0, #0x4
@@ -7987,9 +7997,9 @@ AbilityBattleEffects:
 	mov	r0, #0x29
 	and	r0, r0, r1
 	cmp	r0, #0
-	beq	.LCB9442
+	beq	.LCB9456
 	bl	.L853	@far jump
-.LCB9442:
+.LCB9456:
 	ldr	r1, .L1242+0x4
 	ldr	r0, .L1242+0x8
 	ldrb	r2, [r0]
@@ -7998,18 +8008,18 @@ AbilityBattleEffects:
 	add	r0, r0, r1
 	ldrh	r0, [r0, #0x28]
 	cmp	r0, #0
-	bne	.LCB9453
+	bne	.LCB9467
 	bl	.L853	@far jump
-.LCB9453:
+.LCB9467:
 	ldr	r0, .L1242+0xc
 	lsl	r1, r2, #0x4
 	add	r1, r1, r0
 	ldrb	r0, [r1, #0x1]
 	lsl	r0, r0, #0x1f
 	cmp	r0, #0
-	beq	.LCB9461
+	beq	.LCB9475
 	bl	.L853	@far jump
-.LCB9461:
+.LCB9475:
 	ldr	r2, .L1242+0x10
 	ldr	r0, .L1242+0x14
 	ldrb	r1, [r0]
@@ -8027,9 +8037,9 @@ AbilityBattleEffects:
 	add	r0, r1, r0
 	ldr	r0, [r0]
 	cmp	r0, #0
-	bne	.LCB9479
+	bne	.LCB9493
 	bl	.L853	@far jump
-.LCB9479:
+.LCB9493:
 .L964:
 	ldr	r1, .L1242+0x18
 	lsl	r0, r4, #0x1
@@ -8040,9 +8050,9 @@ AbilityBattleEffects:
 	mov	r0, #0x1
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB9492
+	bne	.LCB9506
 	bl	.L853	@far jump
-.LCB9492:
+.LCB9506:
 	bl	Random
 	lsl	r0, r0, #0x10
 	lsr	r0, r0, #0x10
@@ -8050,9 +8060,9 @@ AbilityBattleEffects:
 	bl	__umodsi3
 	lsl	r0, r0, #0x10
 	cmp	r0, #0
-	beq	.LCB9504
+	beq	.LCB9518
 	bl	.L853	@far jump
-.LCB9504:
+.LCB9518:
 	ldr	r5, .L1242+0x1c
 	mov	r4, #0x3
 .L965:
@@ -8102,9 +8112,9 @@ AbilityBattleEffects:
 	mov	r0, #0x29
 	and	r0, r0, r1
 	cmp	r0, #0
-	beq	.LCB9572
+	beq	.LCB9586
 	bl	.L853	@far jump
-.LCB9572:
+.LCB9586:
 	ldr	r1, .L1244+0x4
 	ldr	r0, .L1244+0x8
 	ldrb	r2, [r0]
@@ -8113,18 +8123,18 @@ AbilityBattleEffects:
 	add	r0, r0, r1
 	ldrh	r0, [r0, #0x28]
 	cmp	r0, #0
-	bne	.LCB9583
+	bne	.LCB9597
 	bl	.L853	@far jump
-.LCB9583:
+.LCB9597:
 	ldr	r0, .L1244+0xc
 	lsl	r1, r2, #0x4
 	add	r1, r1, r0
 	ldrb	r0, [r1, #0x1]
 	lsl	r0, r0, #0x1f
 	cmp	r0, #0
-	beq	.LCB9591
+	beq	.LCB9605
 	bl	.L853	@far jump
-.LCB9591:
+.LCB9605:
 	ldr	r2, .L1244+0x10
 	ldr	r0, .L1244+0x14
 	ldrb	r1, [r0]
@@ -8142,9 +8152,9 @@ AbilityBattleEffects:
 	add	r0, r1, r0
 	ldr	r0, [r0]
 	cmp	r0, #0
-	bne	.LCB9609
+	bne	.LCB9623
 	bl	.L853	@far jump
-.LCB9609:
+.LCB9623:
 .L973:
 	ldr	r1, .L1244+0x18
 	lsl	r0, r4, #0x1
@@ -8155,9 +8165,9 @@ AbilityBattleEffects:
 	mov	r0, #0x1
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB9622
+	bne	.LCB9636
 	bl	.L853	@far jump
-.LCB9622:
+.LCB9636:
 	bl	Random
 	lsl	r0, r0, #0x10
 	lsr	r0, r0, #0x10
@@ -8165,9 +8175,9 @@ AbilityBattleEffects:
 	bl	__umodsi3
 	lsl	r0, r0, #0x10
 	cmp	r0, #0
-	beq	.LCB9634
+	beq	.LCB9648
 	bl	.L853	@far jump
-.LCB9634:
+.LCB9648:
 	ldr	r1, .L1244+0x1c
 	mov	r0, #0x42
 	strb	r0, [r1, #0x3]
@@ -8202,9 +8212,9 @@ AbilityBattleEffects:
 	mov	r0, #0x29
 	and	r0, r0, r1
 	cmp	r0, #0
-	beq	.LCB9675
+	beq	.LCB9689
 	bl	.L853	@far jump
-.LCB9675:
+.LCB9689:
 	ldr	r1, .L1246+0x4
 	ldr	r0, .L1246+0x8
 	ldrb	r2, [r0]
@@ -8213,18 +8223,18 @@ AbilityBattleEffects:
 	add	r0, r0, r1
 	ldrh	r0, [r0, #0x28]
 	cmp	r0, #0
-	bne	.LCB9686
+	bne	.LCB9700
 	bl	.L853	@far jump
-.LCB9686:
+.LCB9700:
 	ldr	r0, .L1246+0xc
 	lsl	r1, r2, #0x4
 	add	r1, r1, r0
 	ldrb	r0, [r1, #0x1]
 	lsl	r0, r0, #0x1f
 	cmp	r0, #0
-	beq	.LCB9694
+	beq	.LCB9708
 	bl	.L853	@far jump
-.LCB9694:
+.LCB9708:
 	ldr	r2, .L1246+0x10
 	ldr	r0, .L1246+0x14
 	ldrb	r1, [r0]
@@ -8242,9 +8252,9 @@ AbilityBattleEffects:
 	add	r0, r1, r0
 	ldr	r0, [r0]
 	cmp	r0, #0
-	bne	.LCB9712
+	bne	.LCB9726
 	bl	.L853	@far jump
-.LCB9712:
+.LCB9726:
 .L976:
 	ldr	r1, .L1246+0x18
 	lsl	r0, r4, #0x1
@@ -8255,9 +8265,9 @@ AbilityBattleEffects:
 	mov	r0, #0x1
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB9725
+	bne	.LCB9739
 	bl	.L853	@far jump
-.LCB9725:
+.LCB9739:
 	bl	Random
 	lsl	r0, r0, #0x10
 	lsr	r0, r0, #0x10
@@ -8265,9 +8275,9 @@ AbilityBattleEffects:
 	bl	__umodsi3
 	lsl	r0, r0, #0x10
 	cmp	r0, #0
-	beq	.LCB9737
+	beq	.LCB9751
 	bl	.L853	@far jump
-.LCB9737:
+.LCB9751:
 	ldr	r1, .L1246+0x1c
 	mov	r0, #0x45
 	strb	r0, [r1, #0x3]
@@ -8302,9 +8312,9 @@ AbilityBattleEffects:
 	mov	r0, #0x29
 	and	r0, r0, r1
 	cmp	r0, #0
-	beq	.LCB9778
+	beq	.LCB9792
 	bl	.L853	@far jump
-.LCB9778:
+.LCB9792:
 	ldr	r1, .L1248+0x4
 	ldr	r0, .L1248+0x8
 	ldrb	r2, [r0]
@@ -8313,18 +8323,18 @@ AbilityBattleEffects:
 	add	r0, r0, r1
 	ldrh	r0, [r0, #0x28]
 	cmp	r0, #0
-	bne	.LCB9789
+	bne	.LCB9803
 	bl	.L853	@far jump
-.LCB9789:
+.LCB9803:
 	ldr	r0, .L1248+0xc
 	lsl	r1, r2, #0x4
 	add	r1, r1, r0
 	ldrb	r0, [r1, #0x1]
 	lsl	r0, r0, #0x1f
 	cmp	r0, #0
-	beq	.LCB9797
+	beq	.LCB9811
 	bl	.L853	@far jump
-.LCB9797:
+.LCB9811:
 	ldr	r1, .L1248+0x10
 	lsl	r0, r4, #0x1
 	add	r0, r0, r4
@@ -8334,9 +8344,9 @@ AbilityBattleEffects:
 	mov	r0, #0x1
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB9809
+	bne	.LCB9823
 	bl	.L853	@far jump
-.LCB9809:
+.LCB9823:
 	ldr	r2, .L1248+0x14
 	ldr	r0, .L1248+0x18
 	ldrb	r1, [r0]
@@ -8354,9 +8364,9 @@ AbilityBattleEffects:
 	add	r0, r1, r0
 	ldr	r0, [r0]
 	cmp	r0, #0
-	bne	.LCB9827
+	bne	.LCB9841
 	bl	.L853	@far jump
-.LCB9827:
+.LCB9841:
 .L979:
 	bl	Random
 	lsl	r0, r0, #0x10
@@ -8365,9 +8375,9 @@ AbilityBattleEffects:
 	bl	__umodsi3
 	lsl	r0, r0, #0x10
 	cmp	r0, #0
-	beq	.LCB9840
+	beq	.LCB9854
 	bl	.L853	@far jump
-.LCB9840:
+.LCB9854:
 	ldr	r1, .L1248+0x1c
 	mov	r0, #0x43
 	strb	r0, [r1, #0x3]
@@ -8402,9 +8412,9 @@ AbilityBattleEffects:
 	mov	r0, #0x29
 	and	r0, r0, r1
 	cmp	r0, #0
-	beq	.LCB9881
+	beq	.LCB9895
 	bl	.L853	@far jump
-.LCB9881:
+.LCB9895:
 	ldr	r5, .L1250+0x4
 	ldr	r7, .L1250+0x8
 	ldrb	r1, [r7]
@@ -8414,18 +8424,18 @@ AbilityBattleEffects:
 	add	r0, r0, r5
 	ldrh	r0, [r0, #0x28]
 	cmp	r0, #0
-	bne	.LCB9892
+	bne	.LCB9906
 	bl	.L853	@far jump
-.LCB9892:
+.LCB9906:
 	ldr	r0, .L1250+0xc
 	lsl	r1, r1, #0x4
 	add	r1, r1, r0
 	ldrb	r0, [r1, #0x1]
 	lsl	r0, r0, #0x1f
 	cmp	r0, #0
-	beq	.LCB9900
+	beq	.LCB9914
 	bl	.L853	@far jump
-.LCB9900:
+.LCB9914:
 	ldr	r1, .L1250+0x10
 	lsl	r0, r4, #0x1
 	add	r0, r0, r4
@@ -8435,9 +8445,9 @@ AbilityBattleEffects:
 	mov	r0, #0x1
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB9912
+	bne	.LCB9926
 	bl	.L853	@far jump
-.LCB9912:
+.LCB9926:
 	ldr	r3, .L1250+0x14
 	ldr	r4, .L1250+0x18
 	mov	r8, r4
@@ -8456,18 +8466,18 @@ AbilityBattleEffects:
 	add	r0, r2, r0
 	ldr	r0, [r0]
 	cmp	r0, #0
-	bne	.LCB9931
+	bne	.LCB9945
 	bl	.L853	@far jump
-.LCB9931:
+.LCB9945:
 .L982:
 	mov	r0, r1
 	mul	r0, r0, r6
 	add	r0, r0, r5
 	ldrh	r0, [r0, #0x28]
 	cmp	r0, #0
-	bne	.LCB9939
+	bne	.LCB9953
 	bl	.L853	@far jump
-.LCB9939:
+.LCB9953:
 	bl	Random
 	lsl	r0, r0, #0x10
 	lsr	r0, r0, #0x10
@@ -8475,18 +8485,18 @@ AbilityBattleEffects:
 	bl	__umodsi3
 	lsl	r0, r0, #0x10
 	cmp	r0, #0
-	beq	.LCB9951
+	beq	.LCB9965
 	bl	.L853	@far jump
-.LCB9951:
+.LCB9965:
 	ldrb	r0, [r7]
 	mul	r0, r0, r6
 	add	r0, r0, r5
 	add	r0, r0, #0x20
 	ldrb	r0, [r0]
 	cmp	r0, #0xc
-	bne	.LCB9960
+	bne	.LCB9974
 	bl	.L853	@far jump
-.LCB9960:
+.LCB9974:
 	ldr	r0, [sp, #0x8]
 	ldr	r1, [sp, #0x10]
 	bl	GetGenderFromSpeciesAndPersonality
@@ -8497,9 +8507,9 @@ AbilityBattleEffects:
 	lsl	r4, r4, #0x18
 	lsl	r0, r0, #0x18
 	cmp	r4, r0
-	bne	.LCB9974
+	bne	.LCB9988
 	bl	.L853	@far jump
-.LCB9974:
+.LCB9988:
 	ldrb	r0, [r7]
 	mul	r0, r0, r6
 	add	r4, r5, #0
@@ -8510,27 +8520,27 @@ AbilityBattleEffects:
 	lsl	r1, r1, #0xc
 	and	r0, r0, r1
 	cmp	r0, #0
-	beq	.LCB9985
+	beq	.LCB9999
 	bl	.L853	@far jump
-.LCB9985:
+.LCB9999:
 	ldr	r0, [sp, #0x8]
 	ldr	r1, [sp, #0x10]
 	bl	GetGenderFromSpeciesAndPersonality
 	lsl	r0, r0, #0x18
 	lsr	r0, r0, #0x18
 	cmp	r0, #0xff
-	bne	.LCB9993
+	bne	.LCB10007
 	bl	.L853	@far jump
-.LCB9993:
+.LCB10007:
 	ldr	r0, [sp, #0xc]
 	ldr	r1, [sp, #0x14]
 	bl	GetGenderFromSpeciesAndPersonality
 	lsl	r0, r0, #0x18
 	lsr	r0, r0, #0x18
 	cmp	r0, #0xff
-	bne	.LCB10001
+	bne	.LCB10015
 	bl	.L853	@far jump
-.LCB10001:
+.LCB10015:
 	ldrb	r0, [r7]
 	mov	r2, r0
 	mul	r2, r2, r6
@@ -8569,9 +8579,9 @@ AbilityBattleEffects:
 	ldr	r0, .L1252
 	ldrb	r0, [r0]
 	cmp	sl, r0
-	bcc	.LCB10046
+	bcc	.LCB10060
 	bl	.L853	@far jump
-.LCB10046:
+.LCB10060:
 .L989:
 	ldr	r1, .L1252+0x4
 	mov	r0, #0x58
@@ -8584,9 +8594,9 @@ AbilityBattleEffects:
 	sub	r0, r0, #0x7
 	add	r2, r1, #0
 	cmp	r0, #0x41
-	bls	.LCB10060
+	bls	.LCB10074
 	b	.L990	@long jump
-.LCB10060:
+.LCB10074:
 	lsl	r0, r0, #0x2
 	ldr	r1, .L1252+0x8
 	add	r0, r0, r1
@@ -8679,9 +8689,9 @@ AbilityBattleEffects:
 	ldr	r1, .L1254
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB10092
+	bne	.LCB10106
 	b	.L990	@long jump
-.LCB10092:
+.LCB10106:
 	ldr	r0, .L1254+0x4
 	ldr	r1, .L1254+0x8
 	b	.L1164
@@ -8703,9 +8713,9 @@ AbilityBattleEffects:
 	mov	r1, #0x7
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB10120
+	bne	.LCB10134
 	b	.L990	@long jump
-.LCB10120:
+.LCB10134:
 	ldr	r0, .L1256
 	ldr	r1, .L1256+0x4
 	bl	StringCopy
@@ -8943,9 +8953,9 @@ AbilityBattleEffects:
 	ldr	r0, .L1274
 	ldrb	r0, [r0]
 	cmp	sl, r0
-	bcs	.LCB10410
+	bcs	.LCB10424
 	b	.L989	@long jump
-.LCB10410:
+.LCB10424:
 	bl	.L853	@ far jump
 .L1275:
 	.align	2, 0
@@ -8957,9 +8967,9 @@ AbilityBattleEffects:
 	ldr	r0, .L1276
 	ldrb	r0, [r0]
 	cmp	sl, r0
-	bcc	.LCB10429
+	bcc	.LCB10443
 	bl	.L853	@far jump
-.LCB10429:
+.LCB10443:
 	ldr	r4, .L1276+0x4
 .L1021:
 	mov	r0, #0x58
@@ -8977,9 +8987,9 @@ AbilityBattleEffects:
 	lsr	r0, r0, #0x18
 	mov	r9, r0
 	cmp	r0, #0
-	beq	.LCB10452
+	beq	.LCB10466
 	b	.L1148	@long jump
-.LCB10452:
+.LCB10466:
 .L1020:
 	mov	r0, sl
 	add	r0, r0, #0x1
@@ -9000,18 +9010,18 @@ AbilityBattleEffects:
 	mov	r4, r8
 	ldrb	r0, [r4]
 	cmp	r0, #0x1c
-	beq	.LCB10485
+	beq	.LCB10499
 	bl	.L853	@far jump
-.LCB10485:
+.LCB10499:
 	ldr	r4, .L1278
 	ldr	r1, [r4]
 	mov	r0, #0x80
 	lsl	r0, r0, #0x7
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB10492
+	bne	.LCB10506
 	bl	.L853	@far jump
-.LCB10492:
+.LCB10506:
 	ldr	r0, .L1278+0x4
 	and	r1, r1, r0
 	str	r1, [r4]
@@ -9064,18 +9074,18 @@ AbilityBattleEffects:
 	mov	r1, r8
 	ldrb	r0, [r1]
 	cmp	r0, #0x1c
-	beq	.LCB10555
+	beq	.LCB10569
 	b	.L853	@long jump
-.LCB10555:
+.LCB10569:
 	ldr	r4, .L1280
 	ldr	r1, [r4]
 	mov	r0, #0x80
 	lsl	r0, r0, #0x7
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB10562
+	bne	.LCB10576
 	b	.L853	@long jump
-.LCB10562:
+.LCB10576:
 	ldr	r0, .L1280+0x4
 	and	r1, r1, r0
 	str	r1, [r4]
@@ -9129,9 +9139,9 @@ AbilityBattleEffects:
 	ldr	r0, .L1282
 	ldrb	r1, [r0]
 	cmp	r5, r1
-	blt	.LCB10623
+	blt	.LCB10637
 	b	.L853	@long jump
-.LCB10623:
+.LCB10637:
 	ldr	r0, .L1282+0x4
 	add	r4, r1, #0
 	ldr	r2, .L1282+0x8
@@ -9146,9 +9156,9 @@ AbilityBattleEffects:
 	ldr	r0, [r2]
 	and	r0, r0, r6
 	cmp	r0, #0
-	beq	.LCB10647
+	beq	.LCB10661
 	b	.L1149	@long jump
-.LCB10647:
+.LCB10661:
 .L1034:
 	add	r2, r2, #0x4
 	add	r3, r3, #0x58
@@ -9167,9 +9177,9 @@ AbilityBattleEffects:
 	ldr	r0, .L1284
 	ldrb	r0, [r0]
 	cmp	r5, r0
-	blt	.LCB10673
+	blt	.LCB10687
 	b	.L853	@long jump
-.LCB10673:
+.LCB10687:
 	ldr	r2, .L1284+0x4
 	mov	r8, r2
 	ldr	r3, .L1284+0x8
@@ -9181,9 +9191,9 @@ AbilityBattleEffects:
 	ldr	r1, [sp, #0x1c]
 	ldrb	r0, [r1]
 	cmp	r0, #0x24
-	beq	.LCB10692
+	beq	.LCB10706
 	b	.L1041	@long jump
-.LCB10692:
+.LCB10706:
 	ldr	r0, .L1284+0xc
 	ldr	r2, [sp, #0x20]
 	add	r0, r2, r0
@@ -9193,9 +9203,9 @@ AbilityBattleEffects:
 	and	r1, r1, r0
 	str	r2, [sp, #0x18]
 	cmp	r1, #0
-	bne	.LCB10703
+	bne	.LCB10717
 	b	.L1041	@long jump
-.LCB10703:
+.LCB10717:
 	lsl	r0, r5, #0x18
 	lsr	r0, r0, #0x18
 	bl	GetBattlerPosition
@@ -9216,9 +9226,9 @@ AbilityBattleEffects:
 	mov	r2, #0x1
 	and	r0, r0, r2
 	cmp	r0, #0
-	bne	.LCB10734
+	bne	.LCB10748
 	b	.L1044	@long jump
-.LCB10734:
+.LCB10748:
 	mov	r3, #0x58
 	mov	r0, r4
 	mul	r0, r0, r3
@@ -9388,9 +9398,9 @@ AbilityBattleEffects:
 .L1050:
 	mov	r2, r9
 	cmp	r2, #0
-	beq	.LCB10938
+	beq	.LCB10952
 	b	.L1150	@long jump
-.LCB10938:
+.LCB10952:
 .L1041:
 	ldr	r3, [sp, #0x1c]
 	add	r3, r3, #0x58
@@ -9402,9 +9412,9 @@ AbilityBattleEffects:
 	ldr	r0, .L1290+0x8
 	ldrb	r0, [r0]
 	cmp	r5, r0
-	bge	.LCB10954
+	bge	.LCB10968
 	b	.L1042	@long jump
-.LCB10954:
+.LCB10968:
 	b	.L853
 .L1291:
 	.align	2, 0
@@ -9417,9 +9427,9 @@ AbilityBattleEffects:
 	ldr	r0, .L1292
 	ldrb	r1, [r0]
 	cmp	r5, r1
-	blt	.LCB10972
+	blt	.LCB10986
 	b	.L853	@long jump
-.LCB10972:
+.LCB10986:
 	ldr	r0, .L1292+0x4
 	add	r4, r1, #0
 	ldr	r2, .L1292+0x8
@@ -9434,9 +9444,9 @@ AbilityBattleEffects:
 	ldr	r0, [r2]
 	and	r0, r0, r6
 	cmp	r0, #0
-	beq	.LCB10996
+	beq	.LCB11010
 	b	.L1151	@long jump
-.LCB10996:
+.LCB11010:
 .L1057:
 	add	r2, r2, #0x4
 	add	r3, r3, #0x58
@@ -9459,9 +9469,9 @@ AbilityBattleEffects:
 	ldr	r0, .L1294
 	ldrb	r0, [r0]
 	cmp	r5, r0
-	blt	.LCB11027
+	blt	.LCB11041
 	b	.L853	@long jump
-.LCB11027:
+.LCB11041:
 	ldr	r0, .L1294+0x4
 	mov	r8, r0
 .L1065:
@@ -9507,9 +9517,9 @@ AbilityBattleEffects:
 	ldr	r0, .L1296
 	ldrb	r0, [r0]
 	cmp	r5, r0
-	blt	.LCB11092
+	blt	.LCB11106
 	b	.L853	@long jump
-.LCB11092:
+.LCB11106:
 	ldr	r1, .L1296+0x4
 	mov	r8, r1
 .L1072:
@@ -9558,9 +9568,9 @@ AbilityBattleEffects:
 	add	r3, r0, #0
 	ldrb	r4, [r3]
 	cmp	r5, r4
-	blt	.LCB11161
+	blt	.LCB11175
 	b	.L853	@long jump
-.LCB11161:
+.LCB11175:
 	ldr	r2, .L1298+0x4
 	b	.L1095
 .L1299:
@@ -9573,9 +9583,9 @@ AbilityBattleEffects:
 	ldr	r0, .L1300
 	ldrb	r0, [r0]
 	cmp	r5, r0
-	blt	.LCB11180
+	blt	.LCB11194
 	b	.L853	@long jump
-.LCB11180:
+.LCB11194:
 	ldr	r3, .L1300+0x4
 	mov	r2, #0x80
 	lsl	r2, r2, #0x9
@@ -9606,9 +9616,9 @@ AbilityBattleEffects:
 	ldr	r0, .L1302
 	ldrb	r0, [r0]
 	cmp	r5, r0
-	blt	.LCB11223
+	blt	.LCB11237
 	b	.L853	@long jump
-.LCB11223:
+.LCB11237:
 	ldr	r3, .L1302+0x4
 	mov	r2, #0x80
 	lsl	r2, r2, #0xa
@@ -9659,9 +9669,9 @@ AbilityBattleEffects:
 	ldr	r0, .L1304
 	ldrb	r0, [r0]
 	cmp	r5, r0
-	blt	.LCB11301
+	blt	.LCB11315
 	b	.L853	@long jump
-.LCB11301:
+.LCB11315:
 	ldr	r6, .L1304+0x4
 	add	r2, r0, #0
 	mov	r3, #0x58
@@ -9740,16 +9750,16 @@ AbilityBattleEffects:
 .L1108:
 	mov	r1, r9
 	cmp	r1, #0
-	beq	.LCB11413
+	beq	.LCB11427
 	b	.L1145	@long jump
-.LCB11413:
+.LCB11427:
 	mov	r5, #0x0
 	ldr	r0, .L1308
 	ldrb	r0, [r0]
 	cmp	r9, r0
-	blt	.LCB11420
+	blt	.LCB11434
 	b	.L853	@long jump
-.LCB11420:
+.LCB11434:
 	ldr	r2, .L1308+0x4
 	mov	r8, r2
 .L1117:
@@ -9797,9 +9807,9 @@ AbilityBattleEffects:
 	ldr	r0, .L1310
 	ldrb	r0, [r0]
 	cmp	r5, r0
-	blt	.LCB11488
+	blt	.LCB11502
 	b	.L853	@long jump
-.LCB11488:
+.LCB11502:
 	ldr	r4, .L1310+0x4
 .L1124:
 	lsl	r0, r5, #0x18
@@ -9845,9 +9855,9 @@ AbilityBattleEffects:
 	ldr	r0, .L1312
 	ldrb	r0, [r0]
 	cmp	r5, r0
-	blt	.LCB11550
+	blt	.LCB11564
 	b	.L853	@long jump
-.LCB11550:
+.LCB11564:
 	ldr	r4, .L1312+0x4
 .L1131:
 	lsl	r0, r5, #0x18
@@ -10267,9 +10277,9 @@ ItemBattleEffects:
 .L1338:
 	ldr	r0, [sp, #0x8]
 	cmp	r0, #0x4
-	bls	.LCB12059
+	bls	.LCB12073
 	bl	.L1339	@far jump
-.LCB12059:
+.LCB12073:
 	lsl	r0, r0, #0x2
 	ldr	r1, .L1551+0x8
 	add	r0, r0, r1
@@ -10293,9 +10303,9 @@ ItemBattleEffects:
 	cmp	r5, #0x17
 	beq	.L1343	@cond_branch
 	cmp	r5, #0x20
-	beq	.LCB12084
+	beq	.LCB12098
 	bl	.L1339	@far jump
-.LCB12084:
+.LCB12098:
 	ldr	r0, .L1553
 	ldr	r0, [r0]
 	add	r0, r0, #0x4a
@@ -10336,9 +10346,9 @@ ItemBattleEffects:
 	bge	.L1347	@cond_branch
 	ldr	r5, [sp, #0xc]
 	cmp	r5, #0
-	bne	.LCB12141
+	bne	.LCB12155
 	bl	.L1339	@far jump
-.LCB12141:
+.LCB12155:
 	ldr	r0, .L1555+0x4
 	strb	r7, [r0, #0x17]
 	ldr	r0, .L1555+0x8
@@ -10367,14 +10377,14 @@ ItemBattleEffects:
 	ldrh	r0, [r0, #0x28]
 	mov	r8, r1
 	cmp	r0, #0
-	bne	.LCB12177
+	bne	.LCB12191
 	bl	.L1339	@far jump
-.LCB12177:
+.LCB12191:
 	sub	r0, r5, #0x1
 	cmp	r0, #0x2a
-	bls	.LCB12181
+	bls	.LCB12195
 	bl	.L1355	@far jump
-.LCB12181:
+.LCB12195:
 	lsl	r0, r0, #0x2
 	ldr	r1, .L1557+0x4
 	add	r0, r0, r1
@@ -10440,13 +10450,13 @@ ItemBattleEffects:
 	ldrh	r1, [r2, #0x28]
 	lsr	r0, r0, #0x1
 	cmp	r1, r0
-	bls	.LCB12214
+	bls	.LCB12228
 	bl	.L1355	@far jump
-.LCB12214:
+.LCB12228:
 	cmp	r6, #0
-	beq	.LCB12216
+	beq	.LCB12230
 	bl	.L1355	@far jump
-.LCB12216:
+.LCB12230:
 	ldr	r4, .L1559
 	mov	r3, r9
 	str	r3, [r4]
@@ -10472,9 +10482,9 @@ ItemBattleEffects:
 	.word	BattleScript_ItemHealHP_RemoveItem
 .L1359:
 	cmp	r6, #0
-	beq	.LCB12247
+	beq	.LCB12261
 	bl	.L1355	@far jump
-.LCB12247:
+.LCB12261:
 	add	r0, r7, #0
 	bl	GetBattlerSide
 	lsl	r0, r0, #0x18
@@ -10537,9 +10547,9 @@ ItemBattleEffects:
 .L1364:
 	mov	r5, sl
 	cmp	r5, #0x4
-	bne	.LCB12332
+	bne	.LCB12346
 	bl	.L1355	@far jump
-.LCB12332:
+.LCB12346:
 	lsl	r2, r5, #0x18
 	lsr	r2, r2, #0x18
 	add	r0, r6, #0
@@ -10627,9 +10637,9 @@ ItemBattleEffects:
 	mov	sl, r5
 	ldr	r0, [sp, #0xc]
 	cmp	r0, #0
-	bne	.LCB12457
+	bne	.LCB12471
 	bl	.L1339	@far jump
-.LCB12457:
+.LCB12471:
 	ldr	r0, .L1567+0x4
 	strb	r7, [r0, #0x17]
 	ldr	r0, .L1567+0x8
@@ -10658,13 +10668,13 @@ ItemBattleEffects:
 	ldrh	r0, [r1, #0x28]
 	ldrh	r3, [r1, #0x2c]
 	cmp	r0, r3
-	bcc	.LCB12497
+	bcc	.LCB12511
 	bl	.L1355	@far jump
-.LCB12497:
+.LCB12511:
 	cmp	r6, #0
-	beq	.LCB12499
+	beq	.LCB12513
 	bl	.L1355	@far jump
-.LCB12499:
+.LCB12513:
 	ldr	r3, .L1569
 	ldrh	r0, [r1, #0x2c]
 	lsr	r0, r0, #0x4
@@ -10710,13 +10720,13 @@ ItemBattleEffects:
 	ldrh	r1, [r4, #0x28]
 	lsr	r0, r0, #0x1
 	cmp	r1, r0
-	bls	.LCB12556
+	bls	.LCB12570
 	bl	.L1355	@far jump
-.LCB12556:
+.LCB12570:
 	cmp	r6, #0
-	beq	.LCB12558
+	beq	.LCB12572
 	bl	.L1355	@far jump
-.LCB12558:
+.LCB12572:
 	ldr	r1, .L1571
 	mov	r0, #0xfd
 	strb	r0, [r1]
@@ -10756,9 +10766,9 @@ ItemBattleEffects:
 	bl	GetFlavorRelationByPersonality
 	lsl	r0, r0, #0x18
 	cmp	r0, #0
-	bge	.LCB12608
+	bge	.LCB12622
 	b	.L1543	@long jump
-.LCB12608:
+.LCB12622:
 	b	.L1406
 .L1572:
 	.align	2, 0
@@ -10775,13 +10785,13 @@ ItemBattleEffects:
 	ldrh	r1, [r5, #0x28]
 	lsr	r0, r0, #0x1
 	cmp	r1, r0
-	bls	.LCB12634
+	bls	.LCB12648
 	bl	.L1355	@far jump
-.LCB12634:
+.LCB12648:
 	cmp	r6, #0
-	beq	.LCB12636
+	beq	.LCB12650
 	bl	.L1355	@far jump
-.LCB12636:
+.LCB12650:
 	ldr	r1, .L1573
 	mov	r0, #0xfd
 	strb	r0, [r1]
@@ -10821,9 +10831,9 @@ ItemBattleEffects:
 	bl	GetFlavorRelationByPersonality
 	lsl	r0, r0, #0x18
 	cmp	r0, #0
-	bge	.LCB12686
+	bge	.LCB12700
 	b	.L1545	@long jump
-.LCB12686:
+.LCB12700:
 	b	.L1412
 .L1574:
 	.align	2, 0
@@ -10841,13 +10851,13 @@ ItemBattleEffects:
 	ldrh	r1, [r5, #0x28]
 	lsr	r0, r0, #0x1
 	cmp	r1, r0
-	bls	.LCB12713
+	bls	.LCB12727
 	b	.L1355	@long jump
-.LCB12713:
+.LCB12727:
 	cmp	r6, #0
-	beq	.LCB12715
+	beq	.LCB12729
 	b	.L1355	@long jump
-.LCB12715:
+.LCB12729:
 	ldr	r1, .L1575
 	mov	r0, #0xfd
 	strb	r0, [r1]
@@ -10920,13 +10930,13 @@ ItemBattleEffects:
 	ldrh	r1, [r5, #0x28]
 	lsr	r0, r0, #0x1
 	cmp	r1, r0
-	bls	.LCB12811
+	bls	.LCB12825
 	b	.L1355	@long jump
-.LCB12811:
+.LCB12825:
 	cmp	r6, #0
-	beq	.LCB12813
+	beq	.LCB12827
 	b	.L1355	@long jump
-.LCB12813:
+.LCB12827:
 	ldr	r1, .L1579
 	mov	r0, #0xfd
 	strb	r0, [r1]
@@ -10999,13 +11009,13 @@ ItemBattleEffects:
 	ldrh	r1, [r5, #0x28]
 	lsr	r0, r0, #0x1
 	cmp	r1, r0
-	bls	.LCB12909
+	bls	.LCB12923
 	b	.L1355	@long jump
-.LCB12909:
+.LCB12923:
 	cmp	r6, #0
-	beq	.LCB12911
+	beq	.LCB12925
 	b	.L1355	@long jump
-.LCB12911:
+.LCB12925:
 	ldr	r1, .L1583
 	mov	r0, #0xfd
 	strb	r0, [r1]
@@ -11078,19 +11088,19 @@ ItemBattleEffects:
 	mov	r1, r9
 	bl	__divsi3
 	cmp	r4, r0
-	ble	.LCB13006
+	ble	.LCB13020
 	b	.L1355	@long jump
-.LCB13006:
+.LCB13020:
 	cmp	r6, #0
-	beq	.LCB13008
+	beq	.LCB13022
 	b	.L1355	@long jump
-.LCB13008:
+.LCB13022:
 	mov	r0, #0x19
 	ldrsb	r0, [r5, r0]
 	cmp	r0, #0xb
-	ble	.LCB13013
+	ble	.LCB13027
 	b	.L1355	@long jump
-.LCB13013:
+.LCB13027:
 	ldr	r1, .L1587
 	mov	r2, #0xfd
 	strb	r2, [r1]
@@ -11132,19 +11142,19 @@ ItemBattleEffects:
 	mov	r1, r9
 	bl	__divsi3
 	cmp	r4, r0
-	ble	.LCB13069
+	ble	.LCB13083
 	b	.L1355	@long jump
-.LCB13069:
+.LCB13083:
 	cmp	r6, #0
-	beq	.LCB13071
+	beq	.LCB13085
 	b	.L1355	@long jump
-.LCB13071:
+.LCB13085:
 	mov	r0, #0x1a
 	ldrsb	r0, [r5, r0]
 	cmp	r0, #0xb
-	ble	.LCB13076
+	ble	.LCB13090
 	b	.L1355	@long jump
-.LCB13076:
+.LCB13090:
 	ldr	r1, .L1589
 	mov	r0, #0xfd
 	strb	r0, [r1]
@@ -11177,19 +11187,19 @@ ItemBattleEffects:
 	mov	r1, r9
 	bl	__divsi3
 	cmp	r4, r0
-	ble	.LCB13121
+	ble	.LCB13135
 	b	.L1355	@long jump
-.LCB13121:
+.LCB13135:
 	cmp	r6, #0
-	beq	.LCB13123
+	beq	.LCB13137
 	b	.L1355	@long jump
-.LCB13123:
+.LCB13137:
 	mov	r0, #0x1b
 	ldrsb	r0, [r5, r0]
 	cmp	r0, #0xb
-	ble	.LCB13128
+	ble	.LCB13142
 	b	.L1355	@long jump
-.LCB13128:
+.LCB13142:
 	ldr	r1, .L1591
 	mov	r0, #0xfd
 	strb	r0, [r1]
@@ -11222,19 +11232,19 @@ ItemBattleEffects:
 	mov	r1, r9
 	bl	__divsi3
 	cmp	r4, r0
-	ble	.LCB13173
+	ble	.LCB13187
 	b	.L1355	@long jump
-.LCB13173:
+.LCB13187:
 	cmp	r6, #0
-	beq	.LCB13175
+	beq	.LCB13189
 	b	.L1355	@long jump
-.LCB13175:
+.LCB13189:
 	mov	r0, #0x1c
 	ldrsb	r0, [r5, r0]
 	cmp	r0, #0xb
-	ble	.LCB13180
+	ble	.LCB13194
 	b	.L1355	@long jump
-.LCB13180:
+.LCB13194:
 	ldr	r1, .L1593
 	mov	r0, #0xfd
 	strb	r0, [r1]
@@ -11275,19 +11285,19 @@ ItemBattleEffects:
 	mov	r1, r9
 	bl	__divsi3
 	cmp	r4, r0
-	ble	.LCB13233
+	ble	.LCB13247
 	b	.L1355	@long jump
-.LCB13233:
+.LCB13247:
 	cmp	r6, #0
-	beq	.LCB13235
+	beq	.LCB13249
 	b	.L1355	@long jump
-.LCB13235:
+.LCB13249:
 	mov	r0, #0x1d
 	ldrsb	r0, [r5, r0]
 	cmp	r0, #0xb
-	ble	.LCB13240
+	ble	.LCB13254
 	b	.L1355	@long jump
-.LCB13240:
+.LCB13254:
 	ldr	r1, .L1595
 	mov	r0, #0xfd
 	strb	r0, [r1]
@@ -11328,13 +11338,13 @@ ItemBattleEffects:
 	mov	r1, r9
 	bl	__divsi3
 	cmp	r4, r0
-	ble	.LCB13292
+	ble	.LCB13306
 	b	.L1355	@long jump
-.LCB13292:
+.LCB13306:
 	cmp	r6, #0
-	beq	.LCB13294
+	beq	.LCB13308
 	b	.L1355	@long jump
-.LCB13294:
+.LCB13308:
 	mov	r0, r8
 	add	r0, r0, #0x50
 	add	r1, r5, r0
@@ -11344,9 +11354,9 @@ ItemBattleEffects:
 	add	r0, r2, #0
 	and	r0, r0, r3
 	cmp	r0, #0
-	beq	.LCB13304
+	beq	.LCB13318
 	b	.L1355	@long jump
-.LCB13304:
+.LCB13318:
 	orr	r2, r2, r3
 	str	r2, [r1]
 	ldr	r0, .L1597
@@ -11360,9 +11370,9 @@ ItemBattleEffects:
 	.word	BattleScript_BerryFocusEnergyEnd2
 .L1426:
 	cmp	r6, #0
-	beq	.LCB13323
+	beq	.LCB13337
 	b	.L1355	@long jump
-.LCB13323:
+.LCB13337:
 	mov	r0, #0x58
 	mov	r5, r7
 	mul	r5, r5, r0
@@ -11373,9 +11383,9 @@ ItemBattleEffects:
 	mov	r1, r9
 	bl	__divsi3
 	cmp	r4, r0
-	ble	.LCB13336
+	ble	.LCB13350
 	b	.L1355	@long jump
-.LCB13336:
+.LCB13350:
 	mov	r0, #0x0
 	mov	sl, r0
 	add	r0, r5, #0x1
@@ -11404,9 +11414,9 @@ ItemBattleEffects:
 .L1429:
 	mov	r5, sl
 	cmp	r5, #0x5
-	bne	.LCB13377
+	bne	.LCB13391
 	b	.L1355	@long jump
-.LCB13377:
+.LCB13391:
 	mov	r0, #0x58
 	mul	r0, r0, r7
 	add	r4, r0, #0x1
@@ -11484,9 +11494,9 @@ ItemBattleEffects:
 	mov	r0, #0x40
 	and	r0, r0, r2
 	cmp	r0, #0
-	bne	.LCB13473
+	bne	.LCB13487
 	b	.L1355	@long jump
-.LCB13473:
+.LCB13487:
 	mov	r0, #0x41
 	neg	r0, r0
 	and	r2, r2, r0
@@ -11511,9 +11521,9 @@ ItemBattleEffects:
 	mov	r0, #0x88
 	and	r0, r0, r2
 	cmp	r0, #0
-	bne	.LCB13503
+	bne	.LCB13517
 	b	.L1355	@long jump
-.LCB13503:
+.LCB13517:
 	ldr	r0, .L1603
 	and	r2, r2, r0
 	str	r2, [r1]
@@ -11538,9 +11548,9 @@ ItemBattleEffects:
 	mov	r0, #0x10
 	and	r0, r0, r2
 	cmp	r0, #0
-	bne	.LCB13533
+	bne	.LCB13547
 	b	.L1355	@long jump
-.LCB13533:
+.LCB13547:
 	mov	r0, #0x11
 	neg	r0, r0
 	and	r2, r2, r0
@@ -11565,9 +11575,9 @@ ItemBattleEffects:
 	mov	r0, #0x20
 	and	r0, r0, r2
 	cmp	r0, #0
-	bne	.LCB13563
+	bne	.LCB13577
 	b	.L1355	@long jump
-.LCB13563:
+.LCB13577:
 	mov	r0, #0x21
 	neg	r0, r0
 	and	r2, r2, r0
@@ -11592,9 +11602,9 @@ ItemBattleEffects:
 	mov	r0, #0x7
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB13593
+	bne	.LCB13607
 	b	.L1355	@long jump
-.LCB13593:
+.LCB13607:
 	mov	r0, #0x8
 	neg	r0, r0
 	and	r1, r1, r0
@@ -11624,9 +11634,9 @@ ItemBattleEffects:
 	mov	r0, #0x7
 	and	r0, r0, r2
 	cmp	r0, #0
-	bne	.LCB13628
+	bne	.LCB13642
 	b	.L1355	@long jump
-.LCB13628:
+.LCB13642:
 	mov	r0, #0x8
 	neg	r0, r0
 	and	r2, r2, r0
@@ -11658,9 +11668,9 @@ ItemBattleEffects:
 	mov	r1, #0x7
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB13667
+	bne	.LCB13681
 	b	.L1355	@long jump
-.LCB13667:
+.LCB13681:
 .L1454:
 	mov	r3, #0x0
 	mov	sl, r3
@@ -11817,9 +11827,9 @@ ItemBattleEffects:
 .L1355:
 	ldr	r2, [sp, #0xc]
 	cmp	r2, #0
-	bne	.LCB13856
+	bne	.LCB13870
 	b	.L1339	@long jump
-.LCB13856:
+.LCB13870:
 .L1531:
 	ldr	r0, .L1617+0x14
 	strb	r7, [r0, #0x17]
@@ -11864,9 +11874,9 @@ ItemBattleEffects:
 	lsl	r1, r1, #0xe
 	and	r0, r0, r1
 	cmp	r0, #0
-	beq	.LCB13909
+	beq	.LCB13923
 	b	.L1339	@long jump
-.LCB13909:
+.LCB13923:
 	ldr	r1, .L1619+0x4
 	lsl	r0, r7, #0x3
 	sub	r0, r0, r7
@@ -11881,9 +11891,9 @@ ItemBattleEffects:
 	ldr	r0, [r0]
 	and	r1, r1, r0
 	cmp	r1, #0
-	beq	.LCB13927
+	beq	.LCB13941
 	b	.L1339	@long jump
-.LCB13927:
+.LCB13941:
 	add	r1, r5, r3
 	add	r0, r4, #0
 	add	r0, r0, #0x24
@@ -11903,9 +11913,9 @@ ItemBattleEffects:
 	ldr	r0, .L1621
 	ldrb	r0, [r0]
 	cmp	r7, r0
-	bcc	.LCB13953
+	bcc	.LCB13967
 	b	.L1339	@long jump
-.LCB13953:
+.LCB13967:
 .L1479:
 	ldr	r4, .L1621+0x4
 	ldr	r1, .L1621+0x8
@@ -11942,9 +11952,9 @@ ItemBattleEffects:
 .L1481:
 	sub	r0, r5, #0x2
 	cmp	r0, #0x1a
-	bls	.LCB14007
+	bls	.LCB14021
 	b	.L1482	@long jump
-.LCB14007:
+.LCB14021:
 	lsl	r0, r0, #0x2
 	ldr	r1, .L1623
 	add	r0, r0, r1
@@ -11994,9 +12004,9 @@ ItemBattleEffects:
 	mov	r0, #0x40
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB14035
+	bne	.LCB14049
 	b	.L1482	@long jump
-.LCB14035:
+.LCB14049:
 	mov	r0, #0x41
 	neg	r0, r0
 	and	r1, r1, r0
@@ -12024,9 +12034,9 @@ ItemBattleEffects:
 	mov	r0, #0x88
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB14067
+	bne	.LCB14081
 	b	.L1482	@long jump
-.LCB14067:
+.LCB14081:
 	ldr	r0, .L1627+0x4
 	and	r1, r1, r0
 	str	r1, [r2]
@@ -12054,9 +12064,9 @@ ItemBattleEffects:
 	mov	r0, #0x10
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB14099
+	bne	.LCB14113
 	b	.L1482	@long jump
-.LCB14099:
+.LCB14113:
 	mov	r0, #0x11
 	neg	r0, r0
 	and	r1, r1, r0
@@ -12084,9 +12094,9 @@ ItemBattleEffects:
 	mov	r0, #0x20
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB14131
+	bne	.LCB14145
 	b	.L1482	@long jump
-.LCB14131:
+.LCB14145:
 	mov	r0, #0x21
 	neg	r0, r0
 	and	r1, r1, r0
@@ -12116,9 +12126,9 @@ ItemBattleEffects:
 	mov	r0, #0x7
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB14164
+	bne	.LCB14178
 	b	.L1482	@long jump
-.LCB14164:
+.LCB14178:
 	mov	r0, #0x8
 	neg	r0, r0
 	and	r1, r1, r0
@@ -12150,9 +12160,9 @@ ItemBattleEffects:
 	mov	r0, #0x7
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB14200
+	bne	.LCB14214
 	b	.L1482	@long jump
-.LCB14200:
+.LCB14214:
 	mov	r0, #0x8
 	neg	r0, r0
 	and	r1, r1, r0
@@ -12181,9 +12191,9 @@ ItemBattleEffects:
 	lsl	r0, r0, #0xc
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB14233
+	bne	.LCB14247
 	b	.L1482	@long jump
-.LCB14233:
+.LCB14247:
 	ldr	r0, .L1637+0x4
 	and	r1, r1, r0
 	str	r1, [r2]
@@ -12229,9 +12239,9 @@ ItemBattleEffects:
 	mov	r1, #0x7
 	and	r0, r0, r1
 	cmp	r0, #0
-	bne	.LCB14286
+	bne	.LCB14300
 	b	.L1482	@long jump
-.LCB14286:
+.LCB14300:
 .L1499:
 	mov	r0, #0x88
 	and	r2, r2, r0
@@ -12414,9 +12424,9 @@ ItemBattleEffects:
 	ldr	r0, .L1645
 	ldrb	r0, [r0]
 	cmp	r7, r0
-	bcs	.LCB14520
+	bcs	.LCB14534
 	b	.L1479	@long jump
-.LCB14520:
+.LCB14534:
 	b	.L1339
 .L1646:
 	.align	2, 0
@@ -12426,9 +12436,9 @@ ItemBattleEffects:
 	ldr	r7, .L1647
 	ldr	r0, [r7]
 	cmp	r0, #0
-	bne	.LCB14534
+	bne	.LCB14548
 	b	.L1339	@long jump
-.LCB14534:
+.LCB14548:
 	mov	r1, r8
 	cmp	r1, #0x1e
 	beq	.L1521	@cond_branch
@@ -12445,9 +12455,9 @@ ItemBattleEffects:
 	mov	r0, #0x29
 	and	r0, r0, r1
 	cmp	r0, #0
-	beq	.LCB14559
+	beq	.LCB14573
 	b	.L1339	@long jump
-.LCB14559:
+.LCB14573:
 	ldr	r2, .L1649+0x4
 	ldr	r4, .L1649+0x8
 	ldrb	r1, [r4]
@@ -12465,9 +12475,9 @@ ItemBattleEffects:
 	add	r0, r1, r0
 	ldr	r0, [r0]
 	cmp	r0, #0
-	bne	.LCB14577
+	bne	.LCB14591
 	b	.L1339	@long jump
-.LCB14577:
+.LCB14591:
 .L1523:
 	bl	Random
 	lsl	r0, r0, #0x10
@@ -12718,9 +12728,9 @@ GetMoveTarget:
 	ldrb	r6, [r0, #0x6]
 .L1662:
 	cmp	r6, #0x40
-	bls	.LCB14866
+	bls	.LCB14880
 	b	.L1663	@long jump
-.LCB14866:
+.LCB14880:
 	lsl	r0, r6, #0x2
 	ldr	r1, .L1696+0x4
 	add	r0, r0, r1
@@ -12822,9 +12832,9 @@ GetMoveTarget:
 	add	r0, r0, r1
 	ldrh	r0, [r0, #0x28]
 	cmp	r0, #0
-	beq	.LCB14914
+	beq	.LCB14928
 	b	.L1694	@long jump
-.LCB14914:
+.LCB14928:
 .L1665:
 	ldr	r0, .L1698
 	ldrb	r0, [r0]
@@ -12868,9 +12878,9 @@ GetMoveTarget:
 	add	r1, r1, r0
 	ldrb	r0, [r1, #0x2]
 	cmp	r0, #0xd
-	beq	.LCB14976
+	beq	.LCB14990
 	b	.L1663	@long jump
-.LCB14976:
+.LCB14990:
 	ldrb	r1, [r6]
 	str	r2, [sp]
 	mov	r0, #0x10
@@ -12879,9 +12889,9 @@ GetMoveTarget:
 	bl	AbilityBattleEffects
 	lsl	r0, r0, #0x18
 	cmp	r0, #0
-	bne	.LCB14990
+	bne	.LCB15004
 	b	.L1663	@long jump
-.LCB14990:
+.LCB15004:
 	ldr	r2, .L1698+0x8
 	mov	r1, #0x58
 	mov	r0, r5
@@ -12890,9 +12900,9 @@ GetMoveTarget:
 	add	r0, r0, #0x20
 	ldrb	r0, [r0]
 	cmp	r0, #0x1f
-	bne	.LCB15000
+	bne	.LCB15014
 	b	.L1663	@long jump
-.LCB15000:
+.LCB15014:
 	mov	r4, #0x2
 	eor	r5, r5, r4
 	mov	r0, r5
@@ -13322,9 +13332,9 @@ IsMonDisobedient:
 	lsl	r0, r0, #0x18
 	lsr	r4, r0, #0x18
 	cmp	r4, #0xf
-	bne	.LCB15557
+	bne	.LCB15571
 	b	.L1757	@long jump
-.LCB15557:
+.LCB15571:
 	ldr	r2, .L1763+0x14
 	mov	r8, r2
 	mov	r7, #0x3

@@ -4089,8 +4089,8 @@ extern const u8 gStatusConditionString_LoveJpn[8];
 extern const u8 *const gStatusConditionStringsTable[7][2];
 extern const u8 gTypeEffectiveness[336];
 extern const struct TrainerMoney gTrainerMoneyTable[];
-extern const u8 *const gAbilityDescriptionPointers[78];
-extern const u8 gAbilityNames[78][12 + 1];
+extern const u8 *const gAbilityDescriptionPointers[80];
+extern const u8 gAbilityNames[80][12 + 1];
 
 void CB2_InitBattle(void);
 void BattleMainCB2(void);
@@ -5596,7 +5596,7 @@ extern const u8 BattleScript_GhostBallDodge[];
 extern const u8 BattleScript_OldMan_Pokedude_CaughtMessage[];
 extern const u8 BattleScript_SilphScopeUnveiled[];
 extern const u8 BattleScript_BattleTowerTrainerBattleWon[];
-
+extern const u8 BattleScript_OldBoomerActivates[];
 extern const u8 *const gBattleScriptsForMoveEffects[];
 extern const u8 *const gBattlescriptsForBallThrow[];
 extern const u8 *const gBattlescriptsForRunningByItem[];
@@ -7750,7 +7750,12 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                 }
                 break;
             case 78:
-                gBattleMons[battler].statStages[3]++;
+                gBattleMons[battler].statStages[3]--;
+                        gBattleScripting.animArg1 = 14 + 3;
+                        gBattleScripting.animArg2 = 0;
+                        BattleScriptPushCursorAndCallback(BattleScript_OldBoomerActivates);
+                        gBattleScripting.battler = battler;
+                        effect--;
             case 59:
                 effect = CastformDataTypeChange(battler);
                 if (effect != 0)
@@ -8422,7 +8427,7 @@ enum
     ITEM_HP_CHANGE,
     ITEM_STATS_CHANGE,
 };
-# 2486 "src/battle_util.c"
+# 2491 "src/battle_util.c"
 u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
 {
     int i = 0;

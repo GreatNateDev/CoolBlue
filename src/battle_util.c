@@ -1779,8 +1779,13 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                     gSpecialStatuses[battler].intimidatedMon = 1;
                 }
                 break;
-            case ABILTY_OLD_BOOMER:
-                gBattleMons[battler].statStages[STAT_SPEED]++;
+            case ABILITY_OLD_BOOMER:
+                gBattleMons[battler].statStages[STAT_SPEED]--;
+                        gBattleScripting.animArg1 = 14 + STAT_SPEED;
+                        gBattleScripting.animArg2 = 0;
+                        BattleScriptPushCursorAndCallback(BattleScript_OldBoomerActivates);
+                        gBattleScripting.battler = battler;
+                        effect--;
             case ABILITY_FORECAST:
                 effect = CastformDataTypeChange(battler);
                 if (effect != 0)

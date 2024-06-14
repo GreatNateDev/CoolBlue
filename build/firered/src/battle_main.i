@@ -3862,8 +3862,8 @@ extern const u8 gStatusConditionString_LoveJpn[8];
 extern const u8 *const gStatusConditionStringsTable[7][2];
 extern const u8 gTypeEffectiveness[336];
 extern const struct TrainerMoney gTrainerMoneyTable[];
-extern const u8 *const gAbilityDescriptionPointers[78];
-extern const u8 gAbilityNames[78][12 + 1];
+extern const u8 *const gAbilityDescriptionPointers[80];
+extern const u8 gAbilityNames[80][12 + 1];
 
 void CB2_InitBattle(void);
 void BattleMainCB2(void);
@@ -5681,7 +5681,7 @@ extern const u8 BattleScript_GhostBallDodge[];
 extern const u8 BattleScript_OldMan_Pokedude_CaughtMessage[];
 extern const u8 BattleScript_SilphScopeUnveiled[];
 extern const u8 BattleScript_BattleTowerTrainerBattleWon[];
-
+extern const u8 BattleScript_OldBoomerActivates[];
 extern const u8 *const gBattleScriptsForMoveEffects[];
 extern const u8 *const gBattlescriptsForBallThrow[];
 extern const u8 *const gBattlescriptsForRunningByItem[];
@@ -13562,9 +13562,9 @@ static const u8 sPurePowerDescription[] = _("Raises ATTACK.");
 static const u8 sShellArmorDescription[] = _("Blocks critical hits.");
 static const u8 sCacophonyDescription[] = _("Avoids sound-based moves.");
 static const u8 sAirLockDescription[] = _("Negates weather effects.");
-static const u8 sOldBoomerDescription[] = ("Pokemon are slower of old age.")
+static const u8 sOldBoomerDescription[] = _("Pokemon are slower of old age.");
 
-const u8 *const gAbilityDescriptionPointers[78] =
+const u8 *const gAbilityDescriptionPointers[80] =
 {
     [0] = sNoneDescription,
     [1] = sStenchDescription,
@@ -13644,10 +13644,10 @@ const u8 *const gAbilityDescriptionPointers[78] =
     [75] = sShellArmorDescription,
     [76] = sCacophonyDescription,
     [77] = sAirLockDescription,
-    [ABILITY_OLD_BOOMER] = sOldBoomerDescription,
+    [78] = sOldBoomerDescription
 };
 
-const u8 gAbilityNames[78][12 + 1] =
+const u8 gAbilityNames[80][12 + 1] =
 {
     [0] = _("-------"),
     [1] = _("STENCH"),
@@ -13727,7 +13727,7 @@ const u8 gAbilityNames[78][12 + 1] =
     [75] = _("SHELL ARMOR"),
     [76] = _("CACOPHONY"),
     [77] = _("AIR LOCK"),
-    [ABILITY_OLD_BOOMER] = _("OLD BOOMER")
+    [78] = _("OLD BOOMER"),
 };
 # 561 "src/battle_main.c" 2
 

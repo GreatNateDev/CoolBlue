@@ -4222,8 +4222,8 @@ extern const u8 gStatusConditionString_LoveJpn[8];
 extern const u8 *const gStatusConditionStringsTable[7][2];
 extern const u8 gTypeEffectiveness[336];
 extern const struct TrainerMoney gTrainerMoneyTable[];
-extern const u8 *const gAbilityDescriptionPointers[78];
-extern const u8 gAbilityNames[78][12 + 1];
+extern const u8 *const gAbilityDescriptionPointers[80];
+extern const u8 gAbilityNames[80][12 + 1];
 
 void CB2_InitBattle(void);
 void BattleMainCB2(void);

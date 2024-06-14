@@ -10244,6 +10244,52 @@ sText_ExclamationMark5:
 	.byte	0xab
 	.byte	0xff
 	.size	 sText_ExclamationMark5,2
+	.type	 sText_pkmnlowerspeed,object
+sText_pkmnlowerspeed:
+	.byte	0xce
+	.byte	0xdc
+	.byte	0xd9
+	.byte	0x0
+	.byte	0xe4
+	.byte	0xe3
+	.byte	0xdf
+	.byte	0xd9
+	.byte	0xe1
+	.byte	0xe3
+	.byte	0xe2
+	.byte	0xe7
+	.byte	0x0
+	.byte	0xe7
+	.byte	0xe4
+	.byte	0xd9
+	.byte	0xd9
+	.byte	0xd8
+	.byte	0x0
+	.byte	0xe0
+	.byte	0xe3
+	.byte	0xeb
+	.byte	0xd9
+	.byte	0xe6
+	.byte	0xd9
+	.byte	0xd8
+	.byte	0x0
+	.byte	0xda
+	.byte	0xe6
+	.byte	0xe3
+	.byte	0xe1
+	.byte	0x0
+	.byte	0xd6
+	.byte	0xd9
+	.byte	0xdd
+	.byte	0xe2
+	.byte	0xdb
+	.byte	0x0
+	.byte	0xe3
+	.byte	0xe0
+	.byte	0xd8
+	.byte	0xab
+	.byte	0xff
+	.size	 sText_pkmnlowerspeed,43
 	.type	 sText_HP2,object
 sText_HP2:
 	.byte	0xc2
@@ -12897,7 +12943,7 @@ gText_HowDissapointing:
 	.globl	gBattleStringsTable
 	.align	2, 0
 	.type	 gBattleStringsTable,object
-	.size	 gBattleStringsTable,1496
+	.size	 gBattleStringsTable,1500
 gBattleStringsTable:
 	.word	sText_Trainer1LoseText
 	.word	sText_PkmnGainedEXP
@@ -13273,6 +13319,7 @@ gBattleStringsTable:
 	.word	sText_Trainer1WinText
 	.word	sText_Trainer1RecallPkmn2
 	.word	sText_Trainer1RecallBoth
+	.word	sText_pkmnlowerspeed
 	.globl	gMissStringIds
 	.align	1, 0
 	.type	 gMissStringIds,object
@@ -15821,17 +15868,17 @@ BufferStringBattle:
 .L204:
 	.word	sText_PlayerBattledToDrawLinkTrainer
 .L121:
-	ldr	r0, .L206
+	mov	r0, #0xc1
+	lsl	r0, r0, #0x1
 	cmp	r6, r0
 	bls	.L122	@cond_branch
-	ldr	r1, .L206+0x4
+	ldr	r1, .L206
 	mov	r0, #0xff
 	strb	r0, [r1]
 	b	.L4
 .L207:
 	.align	2, 0
 .L206:
-	.word	0x181
 	.word	gDisplayedStringBattle
 .L122:
 	ldr	r1, .L208

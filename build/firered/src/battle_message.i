@@ -3862,8 +3862,8 @@ extern const u8 gStatusConditionString_LoveJpn[8];
 extern const u8 *const gStatusConditionStringsTable[7][2];
 extern const u8 gTypeEffectiveness[336];
 extern const struct TrainerMoney gTrainerMoneyTable[];
-extern const u8 *const gAbilityDescriptionPointers[78];
-extern const u8 gAbilityNames[78][12 + 1];
+extern const u8 *const gAbilityDescriptionPointers[80];
+extern const u8 gAbilityNames[80][12 + 1];
 
 void CB2_InitBattle(void);
 void BattleMainCB2(void);
@@ -13680,7 +13680,7 @@ static const u8 sText_ExclamationMark2[] = _("!");
 static const u8 sText_ExclamationMark3[] = _("!");
 static const u8 sText_ExclamationMark4[] = _("!");
 static const u8 sText_ExclamationMark5[] = _("!");
-
+static const u8 sText_pkmnlowerspeed[] = _("The pokemons speed lowered from being old!");
 static const u8 sText_HP2[] = _("HP");
 static const u8 sText_Attack2[] = _("ATTACK");
 static const u8 sText_Defense2[] = _("DEFENSE");
@@ -13770,7 +13770,7 @@ const u8 gText_OakNoRunningFromATrainer[] = _("OAK: No! There's no running away\
 const u8 gText_WinEarnsPrizeMoney[] = _("OAK: Hm! Excellent!\pIf you win, you earn prize money,\nand your POKéMON will grow!\pBattle other TRAINERS and make\nyour POKéMON strong!\p");
 const u8 gText_HowDissapointing[] = _("OAK: Hm…\nHow disappointing…\pIf you win, you earn prize money,\nand your POKéMON grow.\pBut if you lose, {B_PLAYER_NAME}, you end\nup paying prize money…\pHowever, since you had no warning\nthis time, I'll pay for you.\pBut things won't be this way once\nyou step outside these doors.\pThat's why you must strengthen your\nPOKéMON by battling wild POKéMON.\p");
 
-const u8 *const gBattleStringsTable[386 - 12] = {
+const u8 *const gBattleStringsTable[387 - 12] = {
     [12 - 12] = sText_Trainer1LoseText,
     [13 - 12] = sText_PkmnGainedEXP,
     [14 - 12] = sText_PkmnGrewToLv,
@@ -14144,7 +14144,8 @@ const u8 *const gBattleStringsTable[386 - 12] = {
     [382 - 12] = sText_Trainer1RecallPkmn1,
     [383 - 12] = sText_Trainer1WinText,
     [384 - 12] = sText_Trainer1RecallPkmn2,
-    [385 - 12] = sText_Trainer1RecallBoth
+    [385 - 12] = sText_Trainer1RecallBoth,
+    [386 - 12] = sText_pkmnlowerspeed,
 };
 
 const u16 gMissStringIds[] =
@@ -15017,7 +15018,7 @@ void BufferStringBattle(u16 stringId)
         }
         break;
     default:
-        if (stringId >= 386)
+        if (stringId >= 387)
         {
             gDisplayedStringBattle[0] = 0xFF;
             return;
@@ -15065,7 +15066,7 @@ static const u8 *TryGetStatusString(u8 *src)
     }
     return ((void *)0);
 }
-# 1835 "src/battle_message.c"
+# 1836 "src/battle_message.c"
 u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst)
 {
     u32 dstId = 0;
@@ -15583,7 +15584,7 @@ static void ChooseMoveUsedParticle(u8 *textBuff)
             StringCopy(textBuff, sText_ApostropheS);
     }
 }
-# 2371 "src/battle_message.c"
+# 2372 "src/battle_message.c"
 static void ChooseTypeOfMoveUsedString(u8 *dst)
 {
     s32 counter = 0;
