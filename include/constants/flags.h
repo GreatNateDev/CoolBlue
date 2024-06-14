@@ -1317,6 +1317,7 @@
 #define FLAG_0x4FF               0x4FF
 #define FLAG_0x500               0x500
 #define FLAG_0x501               0x501
+#define FLAG_0x502               0x502
 #define TRAINER_FLAGS_START      (FLAG_0x500 + 1)
 #define TRAINER_FLAGS_END        (TRAINER_FLAGS_START + MAX_TRAINERS_COUNT - 1) // 0x7FF
 

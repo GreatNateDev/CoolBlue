@@ -37,8 +37,12 @@ Route1_EventScript_RouteSign::
 
 `
 script girl_trainer_btl {
+    if (flag(FLAG_0x502) == true) {
+        msgbox("You beat me fair and square")
+    }
+    else {
     trainerbattle_single(ROUTE1_EMILY, intro_txt_girl_trainer_btl, lose_text_girl_trainer_btl)
-
+    }
 }
 text intro_txt_girl_trainer_btl {
     "You're toast if you didnt heal!"
@@ -47,23 +51,37 @@ text lose_text_girl_trainer_btl {
     "Oh i didnt expect that!"    
 }
 script girl_not_so_fast {
+    if (flag(FLAG_0x501) == false) {
+    setflag(FLAG_0x501)
     lockall
     applymovement(3,girl_not_so_fast_mvnt)
     waitmovement(3)
-    msgbox("Hey not so fast lets do a rematch >:)")
-    trainerbattle_single(ROUTE1_EMILY, intro_txt_girl_trainer_btl, lose_text_girl_trainer_btl)
-    msgbox("fr again come on i thought i had you!")
-    applymovement(3, girl_leave_alone)
-    waitmovement(3)
+    msgbox("Hey lets do a rematch \n >:)",MSGBOX_AUTOCLOSE)
+    trainerbattle_single(ROUTE1_EMILY_REMATCH, intro_txt_girl_trainer_btl, lose_text_girl_trainer_btl)
     releaseall
+    }
+    elif (flag(FLAG_0x501) == true) {
+        releaseall
+    }
 }
 movement girl_not_so_fast_mvnt {
-    walk_left * 5
+    walk_left * 4
     face_up
     walk_up * 3
 }
-movement girl_leave_alone {
+
+movement girl_leave_alone_mvnt {
     face_left
     walk_left
     face_down
+}
+script girl_leave_alone {
+    if (flag(FLAG_0x502) == false && flag(FLAG_0x501) == true) {
+    setflag(FLAG_0x502)
+    applymovement(3, girl_leave_alone_mvnt)
+    waitmovement(3)
+    }
+    else {
+        releaseall
+    }
 }

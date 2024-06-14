@@ -26,7 +26,7 @@
         .friendship = 0,                                               \
         .growthRate = GROWTH_MEDIUM_FAST,                              \
         .eggGroups = {EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED}, \
-        .abilities = {ABILITY_OLD_BOOMER, ABILITY_NONE},                     \
+        .abilities = {ABILITY_OLD_BOOMER, ABILITY_NONE},               \
         .safariZoneFleeRate = 0,                                       \
         .bodyColor = BODY_COLOR_BLACK,                                 \
         .noFlip = FALSE,                                               \

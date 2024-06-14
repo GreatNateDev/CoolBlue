@@ -38840,7 +38840,27 @@ gTrainers:
 	.byte	0x1
 	.space	3
 	.word	sParty_Emily_rt_one
-	.size	 gTrainers,29760
+	.space	40
+	.byte	0x0
+	.byte	0x31
+	.byte	0x1
+	.byte	0x41
+	.byte	0xbf
+	.byte	0xc7
+	.byte	0xc3
+	.byte	0xc6
+	.byte	0xd3
+	.byte	0xff
+	.space	6
+	.short	0x13
+	.space	6
+	.byte	0x0
+	.space	3
+	.word	0x1
+	.byte	0x1
+	.space	3
+	.word	sParty_Emily_rt_one
+	.size	 gTrainers,29840
 	.globl	gSpeciesNames
 	.type	 gSpeciesNames,object
 gSpeciesNames:

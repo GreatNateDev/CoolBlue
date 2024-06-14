@@ -35659,6 +35659,16 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = 0,
         .aiFlags = (1 << 0),
         .party = { .NoItemDefaultMoves = sParty_Emily_rt_one }, .partySize = (sizeof(sParty_Emily_rt_one) / sizeof((sParty_Emily_rt_one)[0])), .partyFlags = 0,
+    },
+    [745] = {
+        .trainerClass = 49,
+        .encounterMusic_gender = 1,
+        .trainerPic = 65,
+        .trainerName = _("EMILY"),
+        .items = {19},
+        .doubleBattle = 0,
+        .aiFlags = (1 << 0),
+        .party = { .NoItemDefaultMoves = sParty_Emily_rt_one }, .partySize = (sizeof(sParty_Emily_rt_one) / sizeof((sParty_Emily_rt_one)[0])), .partyFlags = 0,
     }
 };
 # 304 "src/data.c" 2
