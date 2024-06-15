@@ -15,12 +15,11 @@ Route1_Text_PutPotionAway::
     .string "{PLAYER} put the POTION away in\n"
     .string "the BAG's ITEMS POCKET.$"
 
-Route1_Text_CanJumpFromLedges::
-    .string "See those ledges along the road?\p"
-    .string "It's a bit scary, but you can jump\n"
-    .string "from them.\p"
-    .string "You can get back to PALLET TOWN\n"
-    .string "quicker that way.$"
+kid_candy_txt::
+    .string "Hey hey kid you want some\p"
+    .string "candy??? i have some\n"
+    .string "if you want it\p"
+    .string "So what do ya say lil chap\n$"
 
 Route1_Text_RouteSign::
     .string "ROUTE 1\n"

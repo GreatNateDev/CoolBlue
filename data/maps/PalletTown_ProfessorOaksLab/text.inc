@@ -101,16 +101,15 @@ PalletTown_ProfessorOaksLab_Text_OakHeyDontGoAwayYet::
     .string "Listen to my WW2 storys!$"
 
 PalletTown_ProfessorOaksLab_Text_OakChoosingCharmander::
-    .string "Ah! SPRIGATITTO is your choice.\n"
-    .string "It looks more like a dog than cat.\p"
-    .string "So, {PLAYER}, you're claiming the\n"
-    .string "GRASS POKéMON SPRIGATITTO?$"
-
-PalletTown_ProfessorOaksLab_Text_OakChoosingSquirtle::
     .string "Hm! SOBBLE is your choice.\n"
     .string "It's kinda ugly\p"
     .string "So, {PLAYER}, you've decided on the\n"
     .string "WATER POKéMON SOBBLE?$"
+PalletTown_ProfessorOaksLab_Text_OakChoosingSquirtle::
+    .string "Ah! SPRIGATITTO is your choice.\n"
+    .string "It looks more like a dog than cat.\p"
+    .string "So, {PLAYER}, you're claiming the\n"
+    .string "GRASS POKéMON SPRIGATITTO?$"
 
 PalletTown_ProfessorOaksLab_Text_OakChoosingBulbasaur::
     .string "I see! LITTEN is your choice.\n"

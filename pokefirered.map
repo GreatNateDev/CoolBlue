@@ -15167,7 +15167,7 @@ script_data     0x0815fb58    0x7c48c
                 0x0818e3ef                PalletTown_ProfessorOaksLab_Text_OakWhichOneWillYouChoose
                 0x0818e455                PalletTown_ProfessorOaksLab_Text_OakHeyDontGoAwayYet
                 0x0818e47d                PalletTown_ProfessorOaksLab_Text_OakChoosingCharmander
-                0x0818e4f7                PalletTown_ProfessorOaksLab_Text_OakChoosingSquirtle
+                0x0818e4dc                PalletTown_ProfessorOaksLab_Text_OakChoosingSquirtle
                 0x0818e556                PalletTown_ProfessorOaksLab_Text_OakChoosingBulbasaur
                 0x0818e5bb                PalletTown_ProfessorOaksLab_Text_OakThisMonIsEnergetic
                 0x0818e5dd                PalletTown_ProfessorOaksLab_Text_ReceivedMonFromOak

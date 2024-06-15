@@ -27,9 +27,6 @@ Route1_EventScript_AlreadyGotPotion::
 	release
 	end
 
-Route1_EventScript_Boy::
-	msgbox Route1_Text_CanJumpFromLedges, MSGBOX_NPC
-	end
 
 Route1_EventScript_RouteSign::
 	msgbox Route1_Text_RouteSign, MSGBOX_SIGN
