@@ -748,6 +748,9 @@
 #define TRAINER_CUE_BALL_PAXTON                  742
 #define ROUTE1_EMILY                             743
 #define ROUTE1_EMILY_REMATCH                     744
+#define rt_1_rvl_0                               745
+#define rt_1_rvl_1                               746
+#define rt_1_rvl_2                               747
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is 
 //       only space for 25 additional trainers before trainer flag space overflows.
