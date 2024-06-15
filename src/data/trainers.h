@@ -7472,6 +7472,17 @@ const struct Trainer gTrainers[] = {
          .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
          .party = NO_ITEM_DEFAULT_MOVES(sParty_RivalOaksLabSquirtle),
      },
+      [fat_man_vir] = {
+         .trainerClass = TRAINER_CLASS_HIKER,
+         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+         .trainerPic = TRAINER_PIC_HIKER,
+         .trainerName = _("Fat Man"),
+         .items = {ITEM_FULL_RESTORE},
+         .doubleBattle = FALSE,
+         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+         .party = NO_ITEM_DEFAULT_MOVES(sParty_fat_man_vir),
 
 
+
+},
 };

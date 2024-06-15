@@ -10867,3 +10867,20 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Emily_rt_one[] = {
         .species = SPECIES_GROWLITHE,
     },
 };
+static const struct TrainerMonNoItemDefaultMoves sParty_fat_man_vir[] = {
+    {
+        .iv = 10,
+        .lvl = 10,
+        .species = SPECIES_BULBASAUR,
+    },
+    {
+        .iv = 10,
+        .lvl = 10,
+        .species = SPECIES_CHARMANDER,
+    },
+    {
+        .iv = 10,
+        .lvl = 10,
+        .species = SPECIES_SQUIRTLE,
+    },
+};

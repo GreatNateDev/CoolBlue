@@ -104,6 +104,7 @@ text rvl_end_btl {
     "HOW did YOU beat ME!"
 }
 script Rival_battle_rt_1 {
+    setvar(fought_rvl_rt_one,1)
     call_if_eq(VAR_STARTER_MON, 0 , rival_btl_sobble)
     call_if_eq(VAR_STARTER_MON, 1 , rival_btl_litten)
     call_if_eq(VAR_STARTER_MON, 2 , rival_btl_sprigatito)
@@ -120,4 +121,24 @@ script rival_btl_litten {
 script rival_btl_sprigatito {
     trainerbattle_single(rt_1_rvl_2,rvl_start_btl,rvl_end_btl)
     msgbox("Good Game")    
+}
+script rvl_one {
+    applymovement(4,girl_not_so_fast_exc)
+    call(Rival_battle_rt_1)
+}
+script rvl_two {
+    applymovement(4,girl_not_so_fast_exc)
+    applymovement(4,left_one)
+    call(Rival_battle_rt_1)
+}
+script rvl_three {
+    applymovement(4,girl_not_so_fast_exc)
+    applymovement(4,left_two)
+    call(Rival_battle_rt_1)
+}
+movement left_one {
+    walk_left
+}
+movement left_two {
+    walk_left * 2
 }
