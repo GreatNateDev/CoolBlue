@@ -632,6 +632,7 @@ enum {
     HOENN_DEX_RAYQUAZA,
     HOENN_DEX_JIRACHI,
     HOENN_DEX_DEOXYS,
+    HOENN_DEX_LITTEN,
     HOENN_DEX_SOBBLE,
     // End of Hoenn Dex (see HOENN_DEX_COUNT)
     // Here below have values but are excluded from the Pokedex

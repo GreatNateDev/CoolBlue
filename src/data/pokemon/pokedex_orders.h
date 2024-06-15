@@ -195,6 +195,7 @@ const u16 gPokedexOrder_Alphabetical[] =
     NATIONAL_DEX_LILEEP,
     NATIONAL_DEX_LINOONE,
     NATIONAL_DEX_LITTEN,
+    NATIONAL_DEX_SOBBLE,
     NATIONAL_DEX_LOMBRE,
     NATIONAL_DEX_LOTAD,
     NATIONAL_DEX_LOUDRED,
@@ -804,6 +805,7 @@ const u16 gPokedexOrder_Weight[] =
     NATIONAL_DEX_METAGROSS,
     NATIONAL_DEX_GROUDON,
     NATIONAL_DEX_LITTEN,
+    NATIONAL_DEX_SOBBLE,
 };
 
 const u16 gPokedexOrder_Height[] =
@@ -1195,6 +1197,7 @@ const u16 gPokedexOrder_Height[] =
     NATIONAL_DEX_STEELIX,
     NATIONAL_DEX_WAILORD,
     NATIONAL_DEX_LITTEN,
+    NATIONAL_DEX_SOBBLE,
 };
 
 const u16 gPokedexOrder_Type[] =

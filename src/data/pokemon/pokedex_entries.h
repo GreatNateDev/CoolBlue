@@ -5041,5 +5041,16 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerScale = 337,
         .trainerOffset = 2,
         
+    },
+    [NATIONAL_DEX_SOBBLE] = 
+    {
+        .categoryName = _("DNA"),
+        .height = 15,
+        .weight = 15,
+        .description = gSobblePokedexText
+        .pokemonScale = 293,
+        .pokemonOffset = 0,
+        .trainerScale = 337,
+        .trainerOffset = 2,
     }
 };
