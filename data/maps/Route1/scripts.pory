@@ -35,13 +35,19 @@ Route1_EventScript_RouteSign::
 `
 
 script Route1_EventScript_Boy {
+    if (flag(!has_taken_kid_candy)) {
     msgbox(kid_candy_txt,MSGBOX_YESNO)
     if (var(VAR_RESULT) == YES) {
         giveitem(ITEM_RARE_CANDY, 20)
-        msgbox("Use them wisely.")
+        setflag(has_taken_kid_candy)
+        msgbox("Use them wisely.",MSGBOX_AUTOCLOSE)
     }
     elif (var(VAR_RESULT) == NO) {
-        msgbox("Ok then.")
+        msgbox("Ok then.", MSGBOX_AUTOCLOSE)
+    }
+    }
+    else {
+        msgbox("Make sure to use those well.",MSGBOX_AUTOCLOSE)
     }
 }
 
