@@ -67,140 +67,153 @@ Route1_EventScript_RouteSign::
 
 Route1_EventScript_Boy::
 # 38 "data/maps/Route1/scripts.pory"
-	msgbox kid_candy_txt, MSGBOX_YESNO
-# 39 "data/maps/Route1/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq Route1_EventScript_Boy_1
-# 43 "data/maps/Route1/scripts.pory"
-	compare VAR_RESULT, NO
-	goto_if_eq Route1_EventScript_Boy_2
+	goto_if_set has_taken_kid_candy, Route1_EventScript_Boy_1
+# 50 "data/maps/Route1/scripts.pory"
+	msgbox Route1_EventScript_Boy_Text_2, MSGBOX_AUTOCLOSE
 	return
 
 Route1_EventScript_Boy_1:
+# 39 "data/maps/Route1/scripts.pory"
+	msgbox kid_candy_txt, MSGBOX_YESNO
 # 40 "data/maps/Route1/scripts.pory"
-	giveitem ITEM_RARE_CANDY, 20
-# 41 "data/maps/Route1/scripts.pory"
-	msgbox Route1_EventScript_Boy_Text_0
+	compare VAR_RESULT, YES
+	goto_if_eq Route1_EventScript_Boy_4
+# 45 "data/maps/Route1/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq Route1_EventScript_Boy_5
 	return
 
-Route1_EventScript_Boy_2:
-# 44 "data/maps/Route1/scripts.pory"
-	msgbox Route1_EventScript_Boy_Text_1
+Route1_EventScript_Boy_4:
+# 41 "data/maps/Route1/scripts.pory"
+	giveitem ITEM_RARE_CANDY, 20
+# 42 "data/maps/Route1/scripts.pory"
+	setflag has_taken_kid_candy
+# 43 "data/maps/Route1/scripts.pory"
+	msgbox Route1_EventScript_Boy_Text_0, MSGBOX_AUTOCLOSE
+	return
+
+Route1_EventScript_Boy_5:
+# 46 "data/maps/Route1/scripts.pory"
+	msgbox Route1_EventScript_Boy_Text_1, MSGBOX_AUTOCLOSE
 	return
 
 
 girl_trainer_btl::
-# 55 "data/maps/Route1/scripts.pory"
+# 61 "data/maps/Route1/scripts.pory"
 	trainerbattle_single ROUTE1_EMILY, intro_txt_girl_trainer_btl, lose_text_girl_trainer_btl
-# 56 "data/maps/Route1/scripts.pory"
+# 62 "data/maps/Route1/scripts.pory"
 	msgbox girl_trainer_btl_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 girl_not_so_fast::
-# 59 "data/maps/Route1/scripts.pory"
+# 65 "data/maps/Route1/scripts.pory"
 	goto_if_unset FLAG_0x501, girl_not_so_fast_1
-# 71 "data/maps/Route1/scripts.pory"
+# 77 "data/maps/Route1/scripts.pory"
 	goto_if_set FLAG_0x501, girl_not_so_fast_2
 	return
 
 girl_not_so_fast_1:
-# 60 "data/maps/Route1/scripts.pory"
-	setflag FLAG_0x501
-# 61 "data/maps/Route1/scripts.pory"
-	lockall
-# 62 "data/maps/Route1/scripts.pory"
-	applymovement 3, girl_not_so_fast_exc
-# 63 "data/maps/Route1/scripts.pory"
-	playse SE_PIN
-# 64 "data/maps/Route1/scripts.pory"
-	waitmovement 3
-# 65 "data/maps/Route1/scripts.pory"
-	delay 48
 # 66 "data/maps/Route1/scripts.pory"
-	applymovement 3, girl_not_so_fast_mvnt
+	setflag FLAG_0x501
 # 67 "data/maps/Route1/scripts.pory"
-	waitmovement 3
+	lockall
 # 68 "data/maps/Route1/scripts.pory"
-	msgbox girl_not_so_fast_Text_0
+	applymovement 3, girl_not_so_fast_exc
 # 69 "data/maps/Route1/scripts.pory"
+	playse SE_PIN
+# 70 "data/maps/Route1/scripts.pory"
+	waitmovement 3
+# 71 "data/maps/Route1/scripts.pory"
+	delay 48
+# 72 "data/maps/Route1/scripts.pory"
+	applymovement 3, girl_not_so_fast_mvnt
+# 73 "data/maps/Route1/scripts.pory"
+	waitmovement 3
+# 74 "data/maps/Route1/scripts.pory"
+	msgbox girl_not_so_fast_Text_0
+# 75 "data/maps/Route1/scripts.pory"
 	trainerbattle_single ROUTE1_EMILY_REMATCH, intro_txt_girl_trainer_btl, lose_text_girl_trainer_btl, run_mvnt_on_girl
 	return
 
 girl_not_so_fast_2:
-# 72 "data/maps/Route1/scripts.pory"
+# 78 "data/maps/Route1/scripts.pory"
 	releaseall
 	return
 
 
-# 75 "data/maps/Route1/scripts.pory"
+# 81 "data/maps/Route1/scripts.pory"
 girl_not_so_fast_mvnt:
-# 76 "data/maps/Route1/scripts.pory"
+# 82 "data/maps/Route1/scripts.pory"
 	walk_left
-# 76 "data/maps/Route1/scripts.pory"
+# 82 "data/maps/Route1/scripts.pory"
 	walk_left
-# 76 "data/maps/Route1/scripts.pory"
+# 82 "data/maps/Route1/scripts.pory"
 	walk_left
-# 76 "data/maps/Route1/scripts.pory"
+# 82 "data/maps/Route1/scripts.pory"
 	walk_left
-# 76 "data/maps/Route1/scripts.pory"
+# 82 "data/maps/Route1/scripts.pory"
 	walk_left
-# 77 "data/maps/Route1/scripts.pory"
+# 83 "data/maps/Route1/scripts.pory"
 	face_up
-# 78 "data/maps/Route1/scripts.pory"
+# 84 "data/maps/Route1/scripts.pory"
 	walk_up
-# 78 "data/maps/Route1/scripts.pory"
+# 84 "data/maps/Route1/scripts.pory"
 	walk_up
-# 78 "data/maps/Route1/scripts.pory"
+# 84 "data/maps/Route1/scripts.pory"
 	walk_up
 	step_end
 
-# 80 "data/maps/Route1/scripts.pory"
+# 86 "data/maps/Route1/scripts.pory"
 girl_not_so_fast_exc:
-# 81 "data/maps/Route1/scripts.pory"
+# 87 "data/maps/Route1/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 84 "data/maps/Route1/scripts.pory"
+# 90 "data/maps/Route1/scripts.pory"
 girl_leave_alone_mvnt:
-# 85 "data/maps/Route1/scripts.pory"
+# 91 "data/maps/Route1/scripts.pory"
 	face_left
-# 86 "data/maps/Route1/scripts.pory"
+# 92 "data/maps/Route1/scripts.pory"
 	walk_left
-# 87 "data/maps/Route1/scripts.pory"
+# 93 "data/maps/Route1/scripts.pory"
 	face_down
 	step_end
 
 run_mvnt_on_girl::
-# 90 "data/maps/Route1/scripts.pory"
+# 96 "data/maps/Route1/scripts.pory"
 	applymovement 3, girl_leave_alone_mvnt
-# 91 "data/maps/Route1/scripts.pory"
+# 97 "data/maps/Route1/scripts.pory"
 	waitmovement 3
-# 92 "data/maps/Route1/scripts.pory"
+# 98 "data/maps/Route1/scripts.pory"
 	releaseall
 	return
 
 
 Route1_EventScript_Boy_Text_0:
-# 41 "data/maps/Route1/scripts.pory"
+# 43 "data/maps/Route1/scripts.pory"
 	.string "Use them wisely.$"
 
 Route1_EventScript_Boy_Text_1:
-# 44 "data/maps/Route1/scripts.pory"
+# 46 "data/maps/Route1/scripts.pory"
 	.string "Ok then.$"
 
+Route1_EventScript_Boy_Text_2:
+# 50 "data/maps/Route1/scripts.pory"
+	.string "Make sure to use those well.$"
+
 girl_trainer_btl_Text_0:
-# 56 "data/maps/Route1/scripts.pory"
+# 62 "data/maps/Route1/scripts.pory"
 	.string "You beat me fair and square.$"
 
 girl_not_so_fast_Text_0:
-# 68 "data/maps/Route1/scripts.pory"
+# 74 "data/maps/Route1/scripts.pory"
 	.string "Hey lets do a rematch\n>:)$"
 
 intro_txt_girl_trainer_btl::
-# 48 "data/maps/Route1/scripts.pory"
+# 54 "data/maps/Route1/scripts.pory"
 	.string "You're toast if you didnt heal!$"
 
 lose_text_girl_trainer_btl::
-# 51 "data/maps/Route1/scripts.pory"
+# 57 "data/maps/Route1/scripts.pory"
 	.string "Oh i didnt expect that!$"
