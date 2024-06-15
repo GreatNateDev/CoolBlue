@@ -101,25 +101,21 @@ ViridianCity_Text_TooBusyForTeachyTV::
 
 ViridianCity_Text_CitySign::
     .string "VIRIDIAN CITY \n"
-    .string "The Eternally Green Paradise$"
+    .string "Nice city$"
 
 ViridianCity_Text_CatchMonsForEasierBattles::
-    .string "TRAINER TIPS\p"
+    .string "TIPS\p"
     .string "Catch POKéMON and expand your\n"
-    .string "collection.\p"
+    .string "slave collection.\p"
     .string "The more you have, the easier it\n"
-    .string "is to battle.$"
+    .string "get stuff done$"
 
 ViridianCity_Text_MovesLimitedByPP::
-    .string "TRAINER TIPS\p"
-    .string "The battle moves of POKéMON are\n"
-    .string "limited by their POWER POINTS, PP.\p"
-    .string "To replenish PP, rest your tired\n"
-    .string "POKéMON at a POKéMON CENTER.$"
+    .string "This sign was vandalized$"
 
 ViridianCity_Text_GymSign::
-    .string "VIRIDIAN CITY POKéMON GYM$"
+    .string "GYM$"
 
 ViridianCity_Text_GymDoorsAreLocked::
-    .string "VIRIDIAN GYM's doors are locked…$"
+    .string "Its Locked.....$"
 

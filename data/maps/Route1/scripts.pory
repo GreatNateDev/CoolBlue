@@ -104,20 +104,20 @@ text rvl_end_btl {
     "HOW did YOU beat ME!"
 }
 script Rival_battle_rt_1 {
-    call_if_eq(var(VAR_STARTER_MON) 0,rival_btl_sobble)
-    call_if_eq(var(VAR_STARTER_MON) 1, rival_btl_litten)
-    call_if_eq(var(VAR_STARTER_MON) 2, rival_btl_sprigatito)
+    call_if_eq(VAR_STARTER_MON, 0 , rival_btl_sobble)
+    call_if_eq(VAR_STARTER_MON, 1 , rival_btl_litten)
+    call_if_eq(VAR_STARTER_MON, 2 , rival_btl_sprigatito)
     
 }
 script rival_btl_sobble {
     trainerbattle_single(rt_1_rvl_0,rvl_start_btl,rvl_end_btl)
     msgbox("Good Game")
 }
-script rvl_btl_litten {
+script rival_btl_litten {
     trainerbattle_single(rt_1_rvl_1,rvl_start_btl,rvl_end_btl)
     msgbox("Good Game")
 }
-script rvl_btl_sprigatito {
+script rival_btl_sprigatito {
     trainerbattle_single(rt_1_rvl_2,rvl_start_btl,rvl_end_btl)
     msgbox("Good Game")    
 }
