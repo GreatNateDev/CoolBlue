@@ -5729,4 +5729,4 @@ static const u16 sSobbleLevelUpLearnset[] = {
     LEVEL_UP_MOVE(12, MOVE_WATER_PULSE),
     LEVEL_UP_MOVE(36, MOVE_RAIN_DANCE),
     LEVEL_UP_END
-}
+};
