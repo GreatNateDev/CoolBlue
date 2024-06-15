@@ -37,9 +37,9 @@ ViridianCity_Text_GoShoppingInPewterOccasionally::
     .string "VIRIDIAN FOREST when I go.$"
 
 ViridianCity_Text_ThisIsPrivateProperty::
-    .string "I absolutely forbid you from\n"
-    .string "going through here!\p"
-    .string "This is private property!$"
+    .string "I hurt my back it hurts so\n"
+    .string "bad brooooooo\p"
+    .string "OWWWWWWWWWWWWWWWWWw!$"
 
 ViridianCity_Text_ShowYouHowToCatchMons::
     .string "Well, now, I've had my coffee, and\n"

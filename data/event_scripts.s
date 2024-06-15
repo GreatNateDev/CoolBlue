@@ -888,7 +888,8 @@ gText_PkmnFainted3::
 Text_WelcomeWantToHealPkmn::
 	.string "Welcome to our POKéMON CENTER!\p"
 	.string "Would you like me to heal your\n"
-	.string "POKéMON back to perfect health?$"
+	.string "POKéMON back to perfect health?\p"
+	.string "It only costs 100$"
 
 Text_TakeYourPkmnForFewSeconds::
 	.string "Okay, I'll take your POKéMON for a\n"

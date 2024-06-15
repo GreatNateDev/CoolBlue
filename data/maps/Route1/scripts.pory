@@ -104,11 +104,12 @@ text rvl_end_btl {
     "HOW did YOU beat ME!"
 }
 script Rival_battle_rt_1 {
+    playse(SE_PIN)
     setvar(fought_rvl_rt_one,1)
+    setvar(VAR_MAP_SCENE_ROUTE22, 2)
     call_if_eq(VAR_STARTER_MON, 0 , rival_btl_sobble)
     call_if_eq(VAR_STARTER_MON, 1 , rival_btl_litten)
     call_if_eq(VAR_STARTER_MON, 2 , rival_btl_sprigatito)
-    
 }
 script rival_btl_sobble {
     trainerbattle_single(rt_1_rvl_0,rvl_start_btl,rvl_end_btl)

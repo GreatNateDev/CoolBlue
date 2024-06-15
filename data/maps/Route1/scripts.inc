@@ -192,79 +192,83 @@ run_mvnt_on_girl::
 
 Rival_battle_rt_1::
 # 107 "data/maps/Route1/scripts.pory"
-	setvar fought_rvl_rt_one, 1
+	playse SE_PIN
 # 108 "data/maps/Route1/scripts.pory"
-	call_if_eq VAR_STARTER_MON, 0, rival_btl_sobble
+	setvar fought_rvl_rt_one, 1
 # 109 "data/maps/Route1/scripts.pory"
-	call_if_eq VAR_STARTER_MON, 1, rival_btl_litten
+	setvar VAR_MAP_SCENE_ROUTE22, 2
 # 110 "data/maps/Route1/scripts.pory"
+	call_if_eq VAR_STARTER_MON, 0, rival_btl_sobble
+# 111 "data/maps/Route1/scripts.pory"
+	call_if_eq VAR_STARTER_MON, 1, rival_btl_litten
+# 112 "data/maps/Route1/scripts.pory"
 	call_if_eq VAR_STARTER_MON, 2, rival_btl_sprigatito
 	return
 
 
 rival_btl_sobble::
-# 114 "data/maps/Route1/scripts.pory"
-	trainerbattle_single rt_1_rvl_0, rvl_start_btl, rvl_end_btl
 # 115 "data/maps/Route1/scripts.pory"
-	msgbox rival_btl_sobble_Text_0
+	trainerbattle_single rt_1_rvl_0, rvl_start_btl, rvl_end_btl
+# 116 "data/maps/Route1/scripts.pory"
+	msgbox rival_btl_sobble_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 rival_btl_litten::
-# 118 "data/maps/Route1/scripts.pory"
-	trainerbattle_single rt_1_rvl_1, rvl_start_btl, rvl_end_btl
 # 119 "data/maps/Route1/scripts.pory"
-	msgbox rival_btl_sobble_Text_0
+	trainerbattle_single rt_1_rvl_1, rvl_start_btl, rvl_end_btl
+# 120 "data/maps/Route1/scripts.pory"
+	msgbox rival_btl_sobble_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 rival_btl_sprigatito::
-# 122 "data/maps/Route1/scripts.pory"
-	trainerbattle_single rt_1_rvl_2, rvl_start_btl, rvl_end_btl
 # 123 "data/maps/Route1/scripts.pory"
-	msgbox rival_btl_sobble_Text_0
+	trainerbattle_single rt_1_rvl_2, rvl_start_btl, rvl_end_btl
+# 124 "data/maps/Route1/scripts.pory"
+	msgbox rival_btl_sobble_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 rvl_one::
-# 126 "data/maps/Route1/scripts.pory"
-	applymovement 4, girl_not_so_fast_exc
 # 127 "data/maps/Route1/scripts.pory"
+	applymovement 4, girl_not_so_fast_exc
+# 128 "data/maps/Route1/scripts.pory"
 	call Rival_battle_rt_1
 	return
 
 
 rvl_two::
-# 130 "data/maps/Route1/scripts.pory"
-	applymovement 4, girl_not_so_fast_exc
 # 131 "data/maps/Route1/scripts.pory"
-	applymovement 4, left_one
+	applymovement 4, girl_not_so_fast_exc
 # 132 "data/maps/Route1/scripts.pory"
+	applymovement 4, left_one
+# 133 "data/maps/Route1/scripts.pory"
 	call Rival_battle_rt_1
 	return
 
 
 rvl_three::
-# 135 "data/maps/Route1/scripts.pory"
-	applymovement 4, girl_not_so_fast_exc
 # 136 "data/maps/Route1/scripts.pory"
-	applymovement 4, left_two
+	applymovement 4, girl_not_so_fast_exc
 # 137 "data/maps/Route1/scripts.pory"
+	applymovement 4, left_two
+# 138 "data/maps/Route1/scripts.pory"
 	call Rival_battle_rt_1
 	return
 
 
-# 139 "data/maps/Route1/scripts.pory"
-left_one:
 # 140 "data/maps/Route1/scripts.pory"
+left_one:
+# 141 "data/maps/Route1/scripts.pory"
 	walk_left
 	step_end
 
-# 142 "data/maps/Route1/scripts.pory"
+# 143 "data/maps/Route1/scripts.pory"
 left_two:
-# 143 "data/maps/Route1/scripts.pory"
+# 144 "data/maps/Route1/scripts.pory"
 	walk_left
-# 143 "data/maps/Route1/scripts.pory"
+# 144 "data/maps/Route1/scripts.pory"
 	walk_left
 	step_end
 
@@ -289,7 +293,7 @@ girl_not_so_fast_Text_0:
 	.string "Hey lets do a rematch\n>:)$"
 
 rival_btl_sobble_Text_0:
-# 115 "data/maps/Route1/scripts.pory"
+# 116 "data/maps/Route1/scripts.pory"
 	.string "Good Game$"
 
 intro_txt_girl_trainer_btl::

@@ -246,3 +246,8 @@ script fat_man_btl {
     trainerbattle_single(fat_man_vir,"No poke center for u","Never mind.")
     msgbox("Nice job kid.",MSGBOX_AUTOCLOSE)
 }
+script who_likes_school {
+    msgbox("From Team Rocket:\n
+    We shut this down because\p
+    WHO LIKES SCHOOL",MSGBOX_AUTOCLOSE)
+}

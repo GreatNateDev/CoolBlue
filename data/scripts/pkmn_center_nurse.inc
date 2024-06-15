@@ -10,6 +10,12 @@ EventScript_PkmnCenterNurse::
 	end
 
 EventScript_PkmnCenterNurse_HealPkmn::
+	checkmoney 100
+	goto_if_eq VAR_RESULT, TRUE, healup
+	
+
+healup::
+	removemoney 100
 	incrementgamestat GAME_STAT_USED_POKECENTER
 	message Text_TakeYourPkmnForFewSeconds
 	waitmessage

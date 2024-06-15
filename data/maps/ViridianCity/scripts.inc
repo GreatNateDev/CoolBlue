@@ -491,6 +491,12 @@ fat_man_btl::
 	return
 
 
+who_likes_school::
+# 250 "data/maps/ViridianCity/scripts.pory"
+	msgbox who_likes_school_Text_0, MSGBOX_AUTOCLOSE
+	return
+
+
 fat_man_btl_Text_0:
 # 246 "data/maps/ViridianCity/scripts.pory"
 	.string "No poke center for u$"
@@ -502,3 +508,9 @@ fat_man_btl_Text_1:
 fat_man_btl_Text_2:
 # 247 "data/maps/ViridianCity/scripts.pory"
 	.string "Nice job kid.$"
+
+who_likes_school_Text_0:
+# 250 "data/maps/ViridianCity/scripts.pory"
+	.string "From Team Rocket:\n"
+	.string "    We shut this down because\p"
+	.string "    WHO LIKES SCHOOL$"
