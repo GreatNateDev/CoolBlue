@@ -2719,4 +2719,4 @@ const u8 gDeoxysPokedexText[] = _(
 
 const u8 gDeoxysPokedexTextUnused[] = _("");
 const u8 gLittenPokedexText[] = _("Litten from PKMN SUN/MOON");
-const u8 gSobblePokedexText[] = _("Sobble from PKMN SWORD/SHEILD")
+const u8 gSobblePokedexText[] = _("Sobble from PKMN SWORD/SHIELD");

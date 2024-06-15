@@ -5047,10 +5047,11 @@ const struct PokedexEntry gPokedexEntries[] =
         .categoryName = _("DNA"),
         .height = 15,
         .weight = 15,
-        .description = gSobblePokedexText
+        .description = gSobblePokedexText,
         .pokemonScale = 293,
         .pokemonOffset = 0,
         .trainerScale = 337,
         .trainerOffset = 2,
+        
     }
 };
