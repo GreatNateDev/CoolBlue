@@ -33,6 +33,18 @@ Route1_EventScript_RouteSign::
 	end
 
 `
+
+script Route1_EventScript_Boy {
+    msgbox(kid_candy_txt,MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        giveitem(ITEM_RARE_CANDY, 20)
+        msgbox("Use them wisely.")
+    }
+    elif (var(VAR_RESULT) == NO) {
+        msgbox("Ok then.")
+    }
+}
+
 text intro_txt_girl_trainer_btl {
     "You're toast if you didnt heal!"
 }
