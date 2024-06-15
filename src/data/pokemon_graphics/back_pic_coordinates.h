@@ -2203,7 +2203,7 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_LITTEN] = 
     {
         .size = MON_COORDS_SIZE(64, 64),
-        .y_offset = 1,
+        .y_offset = 11,
     },
 };
 
