@@ -2458,6 +2458,13 @@ extern const u32 gMonStillFrontPic_Sobble[];
 extern const u8 gMonIcon_Sobble[];
 extern const u8 gMonFootprint_Sobble[];
 
+extern const u32 gMonFrontPic_Sprigatito[];
+extern const u32 gMonPalette_Sprigatito[];
+extern const u32 gMonBackPic_Sprigatito[];
+extern const u32 gMonShinyPalette_Sprigatito[];
+extern const u32 gMonStillFrontPic_Sprigatito[];
+extern const u8 gMonIcon_Sprigatito[];
+extern const u8 gMonFootprint_Sprigatito[];
 
 
 

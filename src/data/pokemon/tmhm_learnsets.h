@@ -9386,5 +9386,6 @@ static const u32 sTMHMLearnsets[][2] =
                                         | TMHM(HM05_FLASH)),
     [SPECIES_LITTEN] = TMHM_LEARNSET(TMHM(HM01_CUT)),
     [SPECIES_SOBBLE] = TMHM_LEARNSET(TMHM(HM01_CUT)),
+    [SPECIES_SPRIGATITO] = TMHM_LEARNSET(TMHM(HM01_CUT)),
 
 };

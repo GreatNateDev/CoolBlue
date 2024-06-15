@@ -414,4 +414,5 @@ const u16 *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_CHIMECHO] = sChimechoLevelUpLearnset,
     [SPECIES_LITTEN] = sLittenLevelUpLearnset,
     [SPECIES_SOBBLE] = sSobbleLevelUpLearnset,
+    [SPECIES_SPRIGATITO] = sSpringatitoLevelUpLearnset,
 };

@@ -5053,5 +5053,17 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerScale = 337,
         .trainerOffset = 2,
         
-    }
+    },
+    [NATIONAL_DEX_SPRIGATITO] = 
+    {
+        .categoryName = _("DNA"),
+        .height = 15,
+        .weight = 15,
+        .description = gSprigatitoPokedexText,
+        .pokemonScale = 293,
+        .pokemonOffset = 0,
+        .trainerScale = 337,
+        .trainerOffset = 2,
+        
+    },
 };

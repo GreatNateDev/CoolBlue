@@ -442,4 +442,5 @@ const struct CompressedSpriteSheet gMonBackPicTable[] =
     SPECIES_SPRITE(UNOWN_QMARK, gMonBackPic_UnownQuestionMark),
     SPECIES_SPRITE(LITTEN, gMonBackPic_Litten),
     SPECIES_SPRITE(SOBBLE, gMonBackPic_Sobble),
+    SPECIES_SPRITE(SPRIGATITO, gMonBackPic_Sprigatito),
 };

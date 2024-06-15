@@ -2845,3 +2845,10 @@ const u32 gMonBackPic_Sobble[] = INCBIN_U32("graphics/pokemon/sobble/back.4bpp.l
 const u32 gMonShinyPalette_Sobble[] = INCBIN_U32("graphics/pokemon/sobble/shiny.gbapal.lz");
 const u8 gMonIcon_Sobble[] = INCBIN_U8("graphics/pokemon/sobble/icon.4bpp");
 const u8 gMonFootprint_Sobble[] = INCBIN_U8("graphics/pokemon/sobble/footprint.1bpp");
+
+const u32 gMonFrontPic_Sprigatito[] = INCBIN_U32("graphics/pokemon/sprigatito/front.4bpp.lz");
+const u32 gMonPalette_Sprigatito[] = INCBIN_U32("graphics/pokemon/sprigatito/normal.gbapal.lz");
+const u32 gMonBackPic_Sprigatito[] = INCBIN_U32("graphics/pokemon/sprigatito/back.4bpp.lz");
+const u32 gMonShinyPalette_Sprigatito[] = INCBIN_U32("graphics/pokemon/sprigatito/shiny.gbapal.lz");
+const u8 gMonIcon_Sprigatito[] = INCBIN_U8("graphics/pokemon/sprigatito/icon.4bpp");
+const u8 gMonFootprint_Sprigatito[] = INCBIN_U8("graphics/pokemon/sprigatito/footprint.1bpp");

@@ -468,6 +468,7 @@ const u8 *const gMonIconTable[] = {
     [SPECIES_UNOWN_QMARK] = gMonIcon_UnownQuestionMark,
     [SPECIES_LITTEN] = gMonIcon_Litten,
     [SPECIES_SOBBLE] = gMonIcon_Sobble,
+    [SPECIES_SPRIGATITO] = gMonIcon_Sprigatito,
 };
 
 const u8 gMonIconPaletteIndices[] = {
@@ -913,6 +914,7 @@ const u8 gMonIconPaletteIndices[] = {
     [SPECIES_UNOWN_QMARK] = 0,
     [SPECIES_LITTEN] = 0,
     [SPECIES_SOBBLE] = 0,
+    [SPECIES_SPRIGATITO] = 0,
 };
 
 const struct SpritePalette gMonIconPaletteTable[] = {

@@ -196,6 +196,7 @@ const u16 gPokedexOrder_Alphabetical[] =
     NATIONAL_DEX_LINOONE,
     NATIONAL_DEX_LITTEN,
     NATIONAL_DEX_SOBBLE,
+    NATIONAL_DEX_SPRIGATITO,
     NATIONAL_DEX_LOMBRE,
     NATIONAL_DEX_LOTAD,
     NATIONAL_DEX_LOUDRED,
@@ -806,6 +807,7 @@ const u16 gPokedexOrder_Weight[] =
     NATIONAL_DEX_GROUDON,
     NATIONAL_DEX_LITTEN,
     NATIONAL_DEX_SOBBLE,
+    NATIONAL_DEX_SPRIGATITO,
 };
 
 const u16 gPokedexOrder_Height[] =
@@ -1198,6 +1200,7 @@ const u16 gPokedexOrder_Height[] =
     NATIONAL_DEX_WAILORD,
     NATIONAL_DEX_LITTEN,
     NATIONAL_DEX_SOBBLE,
+    NATIONAL_DEX_SPRIGATITO,
 };
 
 const u16 gPokedexOrder_Type[] =
