@@ -2205,5 +2205,10 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = MON_COORDS_SIZE(64, 64),
         .y_offset = 11,
     },
+    [SPECIES_SOBBLE] = 
+    {
+        .size = MON_COORDS_SIZE(64,64),
+        .y_offset = 11,
+    },
 };
 

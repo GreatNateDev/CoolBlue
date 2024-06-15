@@ -2838,3 +2838,10 @@ const u32 gMonBackPic_Litten[] = INCBIN_U32("graphics/pokemon/litten/back.4bpp.l
 const u32 gMonShinyPalette_Litten[] = INCBIN_U32("graphics/pokemon/litten/shiny.gbapal.lz");
 const u8 gMonIcon_Litten[] = INCBIN_U8("graphics/pokemon/litten/icon.4bpp");
 const u8 gMonFootprint_Litten[] = INCBIN_U8("graphics/pokemon/litten/footprint.1bpp");
+
+const u32 gMonFrontPic_Sobble[] = INCBIN_U32("graphics/pokemon/sobble/front.4bpp.lz");
+const u32 gMonPalette_Sobble[] = INCBIN_U32("graphics/pokemon/sobble/normal.gbapal.lz");
+const u32 gMonBackPic_Sobble[] = INCBIN_U32("graphics/pokemon/sobble/back.4bpp.lz");
+const u32 gMonShinyPalette_Sobble[] = INCBIN_U32("graphics/pokemon/sobble/shiny.gbapal.lz");
+const u8 gMonIcon_Sobble[] = INCBIN_U8("graphics/pokemon/sobble/icon.4bpp");
+const u8 gMonFootprint_Sobble[] = INCBIN_U8("graphics/pokemon/sobble/footprint.1bpp");

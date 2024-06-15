@@ -5721,3 +5721,12 @@ static const u16 sLittenLevelUpLearnset[] = {
     LEVEL_UP_MOVE(46, MOVE_OUTRAGE),
     LEVEL_UP_END
 };
+static const u16 sSobbleLevelUpLearnset[] = {
+    LEVEL_UP_MOVE(1, MOVE_GROWL),
+    LEVEL_UP_MOVE(1, MOVE_POUND),
+    LEVEL_UP_MOVE(6,MOVE_WATER_GUN),
+    LEVEL_UP_MOVE(8, MOVE_BIND),
+    LEVEL_UP_MOVE(12, MOVE_WATER_PULSE),
+    LEVEL_UP_MOVE(36, MOVE_RAIN_DANCE),
+    LEVEL_UP_END
+}
