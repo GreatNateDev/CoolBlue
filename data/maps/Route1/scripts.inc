@@ -65,39 +65,6 @@ Route1_EventScript_RouteSign::
 # 33 "data/maps/Route1/scripts.pory"
 	end
 
-Route1_EventScript_Boy::
-# 38 "data/maps/Route1/scripts.pory"
-	goto_if_set has_taken_kid_candy, Route1_EventScript_Boy_1
-# 50 "data/maps/Route1/scripts.pory"
-	msgbox Route1_EventScript_Boy_Text_2, MSGBOX_AUTOCLOSE
-	return
-
-Route1_EventScript_Boy_1:
-# 39 "data/maps/Route1/scripts.pory"
-	msgbox kid_candy_txt, MSGBOX_YESNO
-# 40 "data/maps/Route1/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq Route1_EventScript_Boy_4
-# 45 "data/maps/Route1/scripts.pory"
-	compare VAR_RESULT, NO
-	goto_if_eq Route1_EventScript_Boy_5
-	return
-
-Route1_EventScript_Boy_4:
-# 41 "data/maps/Route1/scripts.pory"
-	giveitem ITEM_RARE_CANDY, 20
-# 42 "data/maps/Route1/scripts.pory"
-	setflag has_taken_kid_candy
-# 43 "data/maps/Route1/scripts.pory"
-	msgbox Route1_EventScript_Boy_Text_0, MSGBOX_AUTOCLOSE
-	return
-
-Route1_EventScript_Boy_5:
-# 46 "data/maps/Route1/scripts.pory"
-	msgbox Route1_EventScript_Boy_Text_1, MSGBOX_AUTOCLOSE
-	return
-
-
 girl_trainer_btl::
 # 61 "data/maps/Route1/scripts.pory"
 	trainerbattle_single ROUTE1_EMILY, intro_txt_girl_trainer_btl, lose_text_girl_trainer_btl
@@ -190,17 +157,39 @@ run_mvnt_on_girl::
 	return
 
 
-Route1_EventScript_Boy_Text_0:
-# 43 "data/maps/Route1/scripts.pory"
-	.string "Use them wisely.$"
+Rival_battle_rt_1::
+# 107 "data/maps/Route1/scripts.pory"
+	call_if_eq var ( VAR_STARTER_MON ) 0, rival_btl_sobble
+# 108 "data/maps/Route1/scripts.pory"
+	call_if_eq var ( VAR_STARTER_MON ) 1, rival_btl_litten
+# 109 "data/maps/Route1/scripts.pory"
+	call_if_eq var ( VAR_STARTER_MON ) 2, rival_btl_sprigatito
+	return
 
-Route1_EventScript_Boy_Text_1:
-# 46 "data/maps/Route1/scripts.pory"
-	.string "Ok then.$"
 
-Route1_EventScript_Boy_Text_2:
-# 50 "data/maps/Route1/scripts.pory"
-	.string "Make sure to use those well.$"
+rival_btl_sobble::
+# 113 "data/maps/Route1/scripts.pory"
+	trainerbattle_single rt_1_rvl_0, rvl_start_btl, rvl_end_btl
+# 114 "data/maps/Route1/scripts.pory"
+	msgbox rival_btl_sobble_Text_0
+	return
+
+
+rvl_btl_litten::
+# 117 "data/maps/Route1/scripts.pory"
+	trainerbattle_single rt_1_rvl_1, rvl_start_btl, rvl_end_btl
+# 118 "data/maps/Route1/scripts.pory"
+	msgbox rival_btl_sobble_Text_0
+	return
+
+
+rvl_btl_sprigatito::
+# 121 "data/maps/Route1/scripts.pory"
+	trainerbattle_single rt_1_rvl_2, rvl_start_btl, rvl_end_btl
+# 122 "data/maps/Route1/scripts.pory"
+	msgbox rival_btl_sobble_Text_0
+	return
+
 
 girl_trainer_btl_Text_0:
 # 62 "data/maps/Route1/scripts.pory"
@@ -210,6 +199,10 @@ girl_not_so_fast_Text_0:
 # 74 "data/maps/Route1/scripts.pory"
 	.string "Hey lets do a rematch\n>:)$"
 
+rival_btl_sobble_Text_0:
+# 114 "data/maps/Route1/scripts.pory"
+	.string "Good Game$"
+
 intro_txt_girl_trainer_btl::
 # 54 "data/maps/Route1/scripts.pory"
 	.string "You're toast if you didnt heal!$"
@@ -217,3 +210,11 @@ intro_txt_girl_trainer_btl::
 lose_text_girl_trainer_btl::
 # 57 "data/maps/Route1/scripts.pory"
 	.string "Oh i didnt expect that!$"
+
+rvl_start_btl::
+# 100 "data/maps/Route1/scripts.pory"
+	.string "Fight me loser$"
+
+rvl_end_btl::
+# 103 "data/maps/Route1/scripts.pory"
+	.string "HOW did YOU beat ME!$"
