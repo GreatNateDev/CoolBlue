@@ -2161,7 +2161,7 @@ PalletTown_ProfessorOaksLab_EventScript_BulbasaurBall::
 # 1081 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar PLAYER_STARTER_SPECIES, SPECIES_LITTEN
 # 1082 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
-	setvar RIVAL_STARTER_SPECIES, SPECIES_CHARMANDER
+	setvar RIVAL_STARTER_SPECIES, SPECIES_SOBBLE
 # 1083 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar RIVAL_STARTER_ID, LOCALID_CHARMANDER_BALL
 # 1084 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
@@ -2475,7 +2475,7 @@ PalletTown_ProfessorOaksLab_EventScript_CharmanderBall::
 # 1238 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar PLAYER_STARTER_NUM, 2
 # 1239 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
-	setvar PLAYER_STARTER_SPECIES, SPECIES_CHARMANDER
+	setvar PLAYER_STARTER_SPECIES, SPECIES_SOBBLE
 # 1240 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar RIVAL_STARTER_SPECIES, SPECIES_SQUIRTLE
 # 1241 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
