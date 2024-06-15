@@ -112,15 +112,15 @@ script Rival_battle_rt_1 {
 }
 script rival_btl_sobble {
     trainerbattle_single(rt_1_rvl_0,rvl_start_btl,rvl_end_btl)
-    msgbox("Good Game")
+    msgbox("Good Game",MSGBOX_AUTOCLOSE)
 }
 script rival_btl_litten {
     trainerbattle_single(rt_1_rvl_1,rvl_start_btl,rvl_end_btl)
-    msgbox("Good Game")
+    msgbox("Good Game",MSGBOX_AUTOCLOSE)
 }
 script rival_btl_sprigatito {
     trainerbattle_single(rt_1_rvl_2,rvl_start_btl,rvl_end_btl)
-    msgbox("Good Game")    
+    msgbox("Good Game",MSGBOX_AUTOCLOSE)    
 }
 script rvl_one {
     applymovement(4,girl_not_so_fast_exc)
