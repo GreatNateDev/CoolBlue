@@ -104,19 +104,3 @@ EventScript_PalletTown_PlayersHouse_2F_ShutDownPC::
 	releaseall
 # 53 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
 	end
-
-cht::
-# 57 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	giveitem ITEM_RARE_CANDY, 999
-# 58 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, mov_lft
-	return
-
-
-# 60 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-mov_lft:
-# 61 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	face_left
-# 62 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	walk_left
-	step_end

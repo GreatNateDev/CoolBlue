@@ -53,11 +53,3 @@ EventScript_PalletTown_PlayersHouse_2F_ShutDownPC::
 	end
 
 `
-script cht {
-    giveitem(ITEM_RARE_CANDY,999)
-    applymovement(OBJ_EVENT_ID_PLAYER,mov_lft)
-}
-movement mov_lft {
-    face_left
-    walk_left    
-}
