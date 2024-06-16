@@ -1,10 +1,32 @@
+# 1 "data/maps/Route2_ViridianForest_SouthEntrance/scripts.pory"
+
+# 2 "data/maps/Route2_ViridianForest_SouthEntrance/scripts.pory"
 Route2_ViridianForest_SouthEntrance_MapScripts::
+# 3 "data/maps/Route2_ViridianForest_SouthEntrance/scripts.pory"
 	.byte 0
+# 4 "data/maps/Route2_ViridianForest_SouthEntrance/scripts.pory"
 
+# 5 "data/maps/Route2_ViridianForest_SouthEntrance/scripts.pory"
 Route2_ViridianForest_SouthEntrance_EventScript_Woman1::
+# 6 "data/maps/Route2_ViridianForest_SouthEntrance/scripts.pory"
 	msgbox Route2_ViridianForest_SouthEntrance_Text_ForestIsMaze, MSGBOX_NPC
+# 7 "data/maps/Route2_ViridianForest_SouthEntrance/scripts.pory"
+	end
+# 8 "data/maps/Route2_ViridianForest_SouthEntrance/scripts.pory"
+
+# 9 "data/maps/Route2_ViridianForest_SouthEntrance/scripts.pory"
+Route2_ViridianForest_SouthEntrance_EventScript_Woman2::
+# 10 "data/maps/Route2_ViridianForest_SouthEntrance/scripts.pory"
+	msgbox Route2_ViridianForest_SouthEntrance_Text_RattataHasWickedBite, MSGBOX_NPC
+# 11 "data/maps/Route2_ViridianForest_SouthEntrance/scripts.pory"
 	end
 
-Route2_ViridianForest_SouthEntrance_EventScript_Woman2::
-	msgbox Route2_ViridianForest_SouthEntrance_Text_RattataHasWickedBite, MSGBOX_NPC
-	end
+thanks::
+# 15 "data/maps/Route2_ViridianForest_SouthEntrance/scripts.pory"
+	msgbox thanks_Text_0
+	return
+
+
+thanks_Text_0:
+# 15 "data/maps/Route2_ViridianForest_SouthEntrance/scripts.pory"
+	.string "Thanks for playing the\pBETA$"

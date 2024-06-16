@@ -7485,4 +7485,15 @@ const struct Trainer gTrainers[] = {
 
 
 },
+[geo_btl_rt_2] = {
+        .trainerClass = TRAINER_CLASS_BOSS,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
+        .trainerPic = TRAINER_PIC_LEADER_GIOVANNI,
+        .trainerName = _("GIOVANNI"),
+        .items = {ITEM_FULL_RESTORE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .party = NO_ITEM_DEFAULT_MOVES(sPartyGeoRt2),
+
+},
 };

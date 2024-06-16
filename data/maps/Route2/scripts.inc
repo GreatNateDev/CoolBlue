@@ -1,10 +1,42 @@
+# 1 "data/maps/Route2/scripts.pory"
+
+# 2 "data/maps/Route2/scripts.pory"
 Route2_MapScripts::
+# 3 "data/maps/Route2/scripts.pory"
 	.byte 0
 
-Route2_EventScript_RouteSign::
-	msgbox Route2_Text_RouteSign, MSGBOX_SIGN
-	end
+geo_btl::
+# 6 "data/maps/Route2/scripts.pory"
+	applymovement 7, exc
+# 7 "data/maps/Route2/scripts.pory"
+	playbgm SE_PIN, FALSE
+# 8 "data/maps/Route2/scripts.pory"
+	call btl
+	return
 
-Route2_EventScript_DiglettsCaveSign::
-	msgbox Route2_Text_DiglettsCave, MSGBOX_SIGN
-	end
+
+# 10 "data/maps/Route2/scripts.pory"
+exc:
+# 11 "data/maps/Route2/scripts.pory"
+	emote_exclamation_mark
+	step_end
+
+btl::
+# 14 "data/maps/Route2/scripts.pory"
+	trainerbattle_single geo_btl_rt_2, btl_Text_0, btl_Text_1
+# 15 "data/maps/Route2/scripts.pory"
+	msgbox btl_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
+btl_Text_0:
+# 14 "data/maps/Route2/scripts.pory"
+	.string "Hi hows it going sweety$"
+
+btl_Text_1:
+# 14 "data/maps/Route2/scripts.pory"
+	.string "You found me out >:($"
+
+btl_Text_2:
+# 15 "data/maps/Route2/scripts.pory"
+	.string "Goodluck you mid trainer$"

@@ -4909,12 +4909,12 @@ const struct WildPokemonInfo sRoute1_LeafGreen_LandMonsInfo = { 21, sRoute1_Leaf
 #ifdef FIRERED
 const struct WildPokemon sRoute2_FireRed_LandMons[] =
 {
-    { 3, 3, SPECIES_RATTATA },
-    { 3, 3, SPECIES_PIDGEY },
+    { 15, 20, SPECIES_RATTATA },
+    { 6, 7, SPECIES_PIDGEY },
     { 4, 4, SPECIES_RATTATA },
     { 4, 4, SPECIES_PIDGEY },
     { 2, 2, SPECIES_RATTATA },
-    { 2, 2, SPECIES_PIDGEY },
+    { 5, 10, SPECIES_PICHU },
     { 5, 5, SPECIES_RATTATA },
     { 5, 5, SPECIES_PIDGEY },
     { 4, 4, SPECIES_CATERPIE },

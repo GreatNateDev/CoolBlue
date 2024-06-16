@@ -10884,3 +10884,10 @@ static const struct TrainerMonNoItemDefaultMoves sParty_fat_man_vir[] = {
         .species = SPECIES_SQUIRTLE,
     },
 };
+static const struct TrainerMonNoItemDefaultMoves sPartyGeoRt2[] = {
+{
+    .iv = 20,
+    .lvl = 20,
+    .species = SPECIES_ALAKAZAM,
+},
+};

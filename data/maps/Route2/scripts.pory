@@ -1,0 +1,16 @@
+raw `
+Route2_MapScripts::
+	.byte 0
+`
+script geo_btl {
+    applymovement(7,exc)
+    playbgm(SE_PIN,FALSE)
+    call(btl)
+}
+movement exc {
+    emote_exclamation_mark
+}
+script btl {
+    trainerbattle_single(geo_btl_rt_2,"Hi hows it going sweety", "You found me out >:(")
+    msgbox("Goodluck you mid trainer", MSGBOX_AUTOCLOSE)
+}
