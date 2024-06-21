@@ -1319,8 +1319,8 @@
 #define FLAG_0x501               0x501
 #define FLAG_0x502               0x502
 #define has_taken_kid_candy      0x503
-#define kicked_old_man           0x504
-#define TRAINER_FLAGS_START      (has_taken_kid_candy + 1)
+#define girl_rt_one_battle_two   0x504
+#define TRAINER_FLAGS_START      (girl_rt_one_battle_two + 1)
 #define TRAINER_FLAGS_END        (TRAINER_FLAGS_START + MAX_TRAINERS_COUNT - 1) // 0x7FF
 
 // SYSTEM FLAGS

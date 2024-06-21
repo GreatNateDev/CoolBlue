@@ -274,9 +274,73 @@ left_two:
 
 girl_not_so_fast_two::
 # 147 "data/maps/Route1/scripts.pory"
-	msgbox girl_not_so_fast_two_Text_0
+	goto_if_unset girl_rt_one_battle_two, girl_not_so_fast_two_1
+# 159 "data/maps/Route1/scripts.pory"
+	goto_if_set girl_rt_one_battle_two, girl_not_so_fast_two_2
 	return
 
+girl_not_so_fast_two_1:
+# 148 "data/maps/Route1/scripts.pory"
+	setflag girl_rt_one_battle_two
+# 149 "data/maps/Route1/scripts.pory"
+	lockall
+# 150 "data/maps/Route1/scripts.pory"
+	applymovement 3, girl_not_so_fast_exc
+# 151 "data/maps/Route1/scripts.pory"
+	playse SE_PIN
+# 152 "data/maps/Route1/scripts.pory"
+	waitmovement 3
+# 153 "data/maps/Route1/scripts.pory"
+	delay 48
+# 154 "data/maps/Route1/scripts.pory"
+	applymovement 3, girl_not_so_fast_mvnt_two
+# 155 "data/maps/Route1/scripts.pory"
+	waitmovement 3
+# 156 "data/maps/Route1/scripts.pory"
+	msgbox girl_not_so_fast_two_Text_0, MSGBOX_AUTOCLOSE
+# 157 "data/maps/Route1/scripts.pory"
+	trainerbattle_single ROUTE1_EMILY_REMATCH_TWO, intro_txt_girl_trainer_btl, lose_text_girl_trainer_btl, run_mvnt_on_girl
+	return
+
+girl_not_so_fast_two_2:
+# 160 "data/maps/Route1/scripts.pory"
+	releaseall
+	return
+
+
+# 163 "data/maps/Route1/scripts.pory"
+girl_not_so_fast_mvnt_two:
+# 164 "data/maps/Route1/scripts.pory"
+	face_up
+# 165 "data/maps/Route1/scripts.pory"
+	walk_up
+# 166 "data/maps/Route1/scripts.pory"
+	face_right
+# 167 "data/maps/Route1/scripts.pory"
+	walk_right
+# 167 "data/maps/Route1/scripts.pory"
+	walk_right
+# 167 "data/maps/Route1/scripts.pory"
+	walk_right
+# 167 "data/maps/Route1/scripts.pory"
+	walk_right
+# 167 "data/maps/Route1/scripts.pory"
+	walk_right
+# 167 "data/maps/Route1/scripts.pory"
+	walk_right
+# 167 "data/maps/Route1/scripts.pory"
+	walk_right
+# 167 "data/maps/Route1/scripts.pory"
+	walk_right
+# 168 "data/maps/Route1/scripts.pory"
+	face_up
+# 169 "data/maps/Route1/scripts.pory"
+	walk_up
+# 169 "data/maps/Route1/scripts.pory"
+	walk_up
+# 169 "data/maps/Route1/scripts.pory"
+	walk_up
+	step_end
 
 Route1_EventScript_Boy_Text_0:
 # 43 "data/maps/Route1/scripts.pory"
@@ -303,8 +367,8 @@ rival_btl_sobble_Text_0:
 	.string "Good Game$"
 
 girl_not_so_fast_two_Text_0:
-# 147 "data/maps/Route1/scripts.pory"
-	.string "beta$"
+# 156 "data/maps/Route1/scripts.pory"
+	.string "Hey lets do another rematch\n>:)$"
 
 intro_txt_girl_trainer_btl::
 # 54 "data/maps/Route1/scripts.pory"

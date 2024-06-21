@@ -144,5 +144,27 @@ movement left_two {
     walk_left * 2
 }
 script girl_not_so_fast_two {
-    msgbox("beta")   
+    if (flag(girl_rt_one_battle_two) == false) {
+        setflag(girl_rt_one_battle_two)
+        lockall
+        applymovement(3,girl_not_so_fast_exc)
+        playse(SE_PIN)
+        waitmovement(3)
+        delay(48)
+        applymovement(3,girl_not_so_fast_mvnt_two)
+        waitmovement(3)
+        msgbox("Hey lets do another rematch\n>:)", MSGBOX_AUTOCLOSE)
+        trainerbattle_single(ROUTE1_EMILY_REMATCH_TWO, intro_txt_girl_trainer_btl, lose_text_girl_trainer_btl,run_mvnt_on_girl)
+    }
+    elif (flag(girl_rt_one_battle_two) == true) {
+        releaseall
+    }
+}
+movement girl_not_so_fast_mvnt_two {
+    face_up
+    walk_up * 1
+    face_right
+    walk_right * 8
+    face_up
+    walk_up * 3
 }
