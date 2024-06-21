@@ -122,6 +122,15 @@
       "var": "fought_rvl_rt_one",
       "var_value": "0",
       "script": "rvl_two"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "girl_not_so_fast_two"
     }
   ],
   "bg_events": [

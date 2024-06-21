@@ -327,18 +327,18 @@ const struct WildPokemonInfo sSevenIslandTanobyRuinsViapoisChamber_LeafGreen_Lan
 #ifdef FIRERED
 const struct WildPokemon sViridianForest_FireRed_LandMons[] =
 {
-    { 4, 4, SPECIES_CATERPIE },
-    { 4, 4, SPECIES_WEEDLE },
-    { 5, 5, SPECIES_CATERPIE },
-    { 5, 5, SPECIES_WEEDLE },
-    { 3, 3, SPECIES_CATERPIE },
-    { 3, 3, SPECIES_WEEDLE },
-    { 5, 5, SPECIES_METAPOD },
-    { 5, 5, SPECIES_KAKUNA },
-    { 4, 4, SPECIES_KAKUNA },
-    { 3, 3, SPECIES_PIKACHU },
-    { 6, 6, SPECIES_KAKUNA },
-    { 5, 5, SPECIES_PIKACHU },
+    { 4, 20, SPECIES_CATERPIE },
+    { 4, 20, SPECIES_WEEDLE },
+    { 5, 20, SPECIES_CATERPIE },
+    { 5, 20, SPECIES_WEEDLE },
+    { 3, 20, SPECIES_CATERPIE },
+    { 3, 20, SPECIES_WEEDLE },
+    { 5, 20, SPECIES_METAPOD },
+    { 5, 20, SPECIES_KAKUNA },
+    { 4, 20, SPECIES_KAKUNA },
+    { 3, 20, SPECIES_PIKACHU },
+    { 6, 20, SPECIES_KAKUNA },
+    { 5, 20, SPECIES_PIKACHU },
 };
 
 const struct WildPokemonInfo sViridianForest_FireRed_LandMonsInfo = { 14, sViridianForest_FireRed_LandMons };

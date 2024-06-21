@@ -272,6 +272,12 @@ left_two:
 	walk_left
 	step_end
 
+girl_not_so_fast_two::
+# 147 "data/maps/Route1/scripts.pory"
+	msgbox girl_not_so_fast_two_Text_0
+	return
+
+
 Route1_EventScript_Boy_Text_0:
 # 43 "data/maps/Route1/scripts.pory"
 	.string "Use them wisely.$"
@@ -295,6 +301,10 @@ girl_not_so_fast_Text_0:
 rival_btl_sobble_Text_0:
 # 116 "data/maps/Route1/scripts.pory"
 	.string "Good Game$"
+
+girl_not_so_fast_two_Text_0:
+# 147 "data/maps/Route1/scripts.pory"
+	.string "beta$"
 
 intro_txt_girl_trainer_btl::
 # 54 "data/maps/Route1/scripts.pory"

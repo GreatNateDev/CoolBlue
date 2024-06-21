@@ -1081,6 +1081,7 @@ PalletTown_ProfessorOaksLab_EventScript_BulbasaurBall::
 	setvar PLAYER_STARTER_SPECIES, SPECIES_LITTEN
 	setvar RIVAL_STARTER_SPECIES, SPECIES_SOBBLE
 	setvar RIVAL_STARTER_ID, LOCALID_CHARMANDER_BALL
+	giveitem ITEM_POKE_BALL, 20
 	setflag FLAG_0x500
 	goto_if_ge VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 3, PalletTown_ProfessorOaksLab_EventScript_LastPokeBall
 	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 2, PalletTown_ProfessorOaksLab_EventScript_ConfirmStarterChoice
@@ -1225,6 +1226,7 @@ PalletTown_ProfessorOaksLab_EventScript_SquirtleBall::
 	setvar PLAYER_STARTER_SPECIES, SPECIES_SPRIGATITO
 	setvar RIVAL_STARTER_SPECIES, SPECIES_LITTEN
 	setvar RIVAL_STARTER_ID, LOCALID_BULBASAUR_BALL
+	giveitem ITEM_POKE_BALL, 20	
 	setflag FLAG_0x500
 	goto_if_ge VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 3, PalletTown_ProfessorOaksLab_EventScript_LastPokeBall
 	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 2, PalletTown_ProfessorOaksLab_EventScript_ConfirmStarterChoice
@@ -1240,6 +1242,7 @@ PalletTown_ProfessorOaksLab_EventScript_CharmanderBall::
 	setvar RIVAL_STARTER_SPECIES, SPECIES_SPRIGATITO
 	setvar RIVAL_STARTER_ID, LOCALID_SQUIRTLE_BALL
 	setflag FLAG_0x500
+	giveitem ITEM_POKE_BALL, 20
 	goto_if_ge VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 3, PalletTown_ProfessorOaksLab_EventScript_LastPokeBall
 	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 2, PalletTown_ProfessorOaksLab_EventScript_ConfirmStarterChoice
 	msgbox PalletTown_ProfessorOaksLab_Text_ThoseArePokeBalls

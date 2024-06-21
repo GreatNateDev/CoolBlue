@@ -143,3 +143,6 @@ movement left_one {
 movement left_two {
     walk_left * 2
 }
+script girl_not_so_fast_two {
+    msgbox("beta")   
+}
