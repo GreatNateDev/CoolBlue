@@ -14,3 +14,8 @@ script btl {
     trainerbattle_single(geo_btl_rt_2,"Hi hows it going sweety", "You found me out >:(")
     msgbox("Goodluck you mid trainer", MSGBOX_AUTOCLOSE)
 }
+script DiglettsCaveSignRt2 {
+    lockall
+    msgbox("Digletts Shortcut",MSGBOX_AUTOCLOSE)
+    releaseall
+}

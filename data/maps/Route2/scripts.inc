@@ -29,6 +29,16 @@ btl::
 	return
 
 
+DiglettsCaveSignRt2::
+# 18 "data/maps/Route2/scripts.pory"
+	lockall
+# 19 "data/maps/Route2/scripts.pory"
+	msgbox DiglettsCaveSignRt2_Text_0, MSGBOX_AUTOCLOSE
+# 20 "data/maps/Route2/scripts.pory"
+	releaseall
+	return
+
+
 btl_Text_0:
 # 14 "data/maps/Route2/scripts.pory"
 	.string "Hi hows it going sweety$"
@@ -40,3 +50,7 @@ btl_Text_1:
 btl_Text_2:
 # 15 "data/maps/Route2/scripts.pory"
 	.string "Goodluck you mid trainer$"
+
+DiglettsCaveSignRt2_Text_0:
+# 19 "data/maps/Route2/scripts.pory"
+	.string "Digletts Shortcut$"

@@ -20,13 +20,3 @@ Route2_ViridianForest_SouthEntrance_EventScript_Woman2::
 	msgbox Route2_ViridianForest_SouthEntrance_Text_RattataHasWickedBite, MSGBOX_NPC
 # 11 "data/maps/Route2_ViridianForest_SouthEntrance/scripts.pory"
 	end
-
-thanks::
-# 15 "data/maps/Route2_ViridianForest_SouthEntrance/scripts.pory"
-	msgbox thanks_Text_0
-	return
-
-
-thanks_Text_0:
-# 15 "data/maps/Route2_ViridianForest_SouthEntrance/scripts.pory"
-	.string "Thanks for playing the\pBETA$"

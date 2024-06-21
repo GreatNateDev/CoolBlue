@@ -11,6 +11,3 @@ Route2_ViridianForest_SouthEntrance_EventScript_Woman2::
 	end
 
 `
-script thanks {
-    msgbox("Thanks for playing the\pBETA")
-}

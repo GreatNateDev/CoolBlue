@@ -3164,6 +3164,7 @@ static void Cmd_getexp(void)
             }
 
             calculatedExp = gSpeciesInfo[gBattleMons[gBattlerFainted].species].expYield * gBattleMons[gBattlerFainted].level / 7;
+            calculatedExp = calculatedExp * 3;
 
             if (viaExpShare) // at least one mon is getting exp via exp share
             {
