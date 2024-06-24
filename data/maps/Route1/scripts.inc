@@ -68,8 +68,8 @@ Route1_EventScript_RouteSign::
 Route1_EventScript_Boy::
 # 38 "data/maps/Route1/scripts.pory"
 	goto_if_set ! has_taken_kid_candy, Route1_EventScript_Boy_1
-# 50 "data/maps/Route1/scripts.pory"
-	msgbox Route1_EventScript_Boy_Text_2, MSGBOX_AUTOCLOSE
+# 49 "data/maps/Route1/scripts.pory"
+	goto_if_set has_taken_kid_candy, Route1_EventScript_Boy_2
 	return
 
 Route1_EventScript_Boy_1:
@@ -77,13 +77,18 @@ Route1_EventScript_Boy_1:
 	msgbox kid_candy_txt, MSGBOX_YESNO
 # 40 "data/maps/Route1/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq Route1_EventScript_Boy_4
+	goto_if_eq Route1_EventScript_Boy_5
 # 45 "data/maps/Route1/scripts.pory"
 	compare VAR_RESULT, NO
-	goto_if_eq Route1_EventScript_Boy_5
+	goto_if_eq Route1_EventScript_Boy_6
 	return
 
-Route1_EventScript_Boy_4:
+Route1_EventScript_Boy_2:
+# 50 "data/maps/Route1/scripts.pory"
+	msgbox Route1_EventScript_Boy_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+Route1_EventScript_Boy_5:
 # 41 "data/maps/Route1/scripts.pory"
 	giveitem ITEM_RARE_CANDY, 20
 # 42 "data/maps/Route1/scripts.pory"
@@ -92,7 +97,7 @@ Route1_EventScript_Boy_4:
 	msgbox Route1_EventScript_Boy_Text_0, MSGBOX_AUTOCLOSE
 	return
 
-Route1_EventScript_Boy_5:
+Route1_EventScript_Boy_6:
 # 46 "data/maps/Route1/scripts.pory"
 	msgbox Route1_EventScript_Boy_Text_1, MSGBOX_AUTOCLOSE
 	return
@@ -332,8 +337,12 @@ girl_not_so_fast_mvnt_two:
 	walk_right
 # 167 "data/maps/Route1/scripts.pory"
 	walk_right
+# 167 "data/maps/Route1/scripts.pory"
+	walk_right
 # 168 "data/maps/Route1/scripts.pory"
 	face_up
+# 169 "data/maps/Route1/scripts.pory"
+	walk_up
 # 169 "data/maps/Route1/scripts.pory"
 	walk_up
 # 169 "data/maps/Route1/scripts.pory"

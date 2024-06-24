@@ -10888,6 +10888,6 @@ static const struct TrainerMonNoItemDefaultMoves sPartyGeoRt2[] = {
 {
     .iv = 20,
     .lvl = 20,
-    .species = SPECIES_ALAKAZAM,
+    .species = SPECIES_ABRA,
 },
 };

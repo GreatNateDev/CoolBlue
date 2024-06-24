@@ -46,7 +46,7 @@ script Route1_EventScript_Boy {
         msgbox("Ok then.", MSGBOX_AUTOCLOSE)
     }
     }
-    else {
+    elif (flag(has_taken_kid_candy)) {
         msgbox("Make sure to use those well.",MSGBOX_AUTOCLOSE)
     }
 }
@@ -164,7 +164,7 @@ movement girl_not_so_fast_mvnt_two {
     face_up
     walk_up * 1
     face_right
-    walk_right * 8
+    walk_right * 9
     face_up
-    walk_up * 3
+    walk_up * 4
 }
