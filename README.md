@@ -1,2 +1,2 @@
 # POKEMON COOL BLUE
-Made by Nate for George
+Made by Nate and Sam for George

@@ -66,7 +66,7 @@ ViridianForest_EventScript_Charlie::
 `
 script oak {
     lockall
-    msgbox("Hey what are you doing out here\nthis is not a good place to be at!\pbut i guess if your out here just\nto complete your pokedex then its\lfine but anyways i have to go!\pso goodbye!")
+    msgbox("Hey what are you doing out here\nthis is not a good place to be at!\pbut i guess if your out here just\nto complete your pokedex then its\lfine but anyways i have to go!\pso goodbye!",MSGBOX_AUTOCLOSE)
     applymovement(1,oak_mov)
     waitmovement(1)
     setflag(FLAG_HIDE_OAK_FOREST)

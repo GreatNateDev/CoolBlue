@@ -10891,3 +10891,20 @@ static const struct TrainerMonNoItemDefaultMoves sPartyGeoRt2[] = {
     .species = SPECIES_ABRA,
 },
 };
+static const struct TrainerMonNoItemDefaultMoves sParty_rvl_pewter[] = {
+    {
+        .iv = 10,
+        .lvl = 17,
+        .species = SPECIES_BULBASAUR,
+    },
+    {
+        .iv = 10,
+        .lvl = 17,
+        .species = SPECIES_CHARMANDER,
+    },
+    {
+        .iv = 10,
+        .lvl = 20,
+        .species = SPECIES_SQUIRTLE,
+    },
+};
