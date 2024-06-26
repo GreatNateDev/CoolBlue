@@ -280,15 +280,6 @@
       "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "rvl_two_pewter"
-    },
-    {
-      "type": "trigger",
-      "x": 23,
-      "y": 37,
-      "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "cht"
     }
   ],
   "bg_events": [
