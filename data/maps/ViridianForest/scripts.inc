@@ -128,3 +128,47 @@ ViridianForest_EventScript_Charlie::
 	msgbox ViridianForest_Text_CharliePostBattle, MSGBOX_AUTOCLOSE
 # 65 "data/maps/ViridianForest/scripts.pory"
 	end
+
+oak::
+# 68 "data/maps/ViridianForest/scripts.pory"
+	lockall
+# 69 "data/maps/ViridianForest/scripts.pory"
+	msgbox oak_Text_0
+# 70 "data/maps/ViridianForest/scripts.pory"
+	applymovement 1, oak_mov
+# 71 "data/maps/ViridianForest/scripts.pory"
+	waitmovement 1
+# 72 "data/maps/ViridianForest/scripts.pory"
+	setflag FLAG_HIDE_OAK_FOREST
+	return
+
+
+# 74 "data/maps/ViridianForest/scripts.pory"
+oak_mov:
+# 75 "data/maps/ViridianForest/scripts.pory"
+	face_left
+# 76 "data/maps/ViridianForest/scripts.pory"
+	walk_left
+# 77 "data/maps/ViridianForest/scripts.pory"
+	face_down
+# 78 "data/maps/ViridianForest/scripts.pory"
+	walk_down
+# 78 "data/maps/ViridianForest/scripts.pory"
+	walk_down
+# 78 "data/maps/ViridianForest/scripts.pory"
+	walk_down
+# 78 "data/maps/ViridianForest/scripts.pory"
+	walk_down
+# 78 "data/maps/ViridianForest/scripts.pory"
+	walk_down
+# 78 "data/maps/ViridianForest/scripts.pory"
+	walk_down
+# 78 "data/maps/ViridianForest/scripts.pory"
+	walk_down
+# 78 "data/maps/ViridianForest/scripts.pory"
+	walk_down
+	step_end
+
+oak_Text_0:
+# 69 "data/maps/ViridianForest/scripts.pory"
+	.string "Hey what are you doing out here\nthis is not a good place to be at!\pbut i guess if your out here just\nto complete your pokedex then its\lfine but anyways i have to go!\pso goodbye!$"
