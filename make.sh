@@ -1,6 +1,6 @@
 clear
 rm "Cool Blue.gba"
-rmdir "/build/" --ignore-fail-on-non-empty
+rm -rf build
 make -j8
 rm pokefirered.elf
 mv pokefirered.gba "Cool Blue.gba"
