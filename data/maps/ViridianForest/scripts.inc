@@ -133,7 +133,7 @@ oak::
 # 68 "data/maps/ViridianForest/scripts.pory"
 	lockall
 # 69 "data/maps/ViridianForest/scripts.pory"
-	msgbox oak_Text_0
+	msgbox oak_Text_0, MSGBOX_AUTOCLOSE
 # 70 "data/maps/ViridianForest/scripts.pory"
 	applymovement 1, oak_mov
 # 71 "data/maps/ViridianForest/scripts.pory"
