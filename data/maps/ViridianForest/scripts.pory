@@ -64,8 +64,5 @@ ViridianForest_EventScript_Charlie::
 	msgbox ViridianForest_Text_CharliePostBattle, MSGBOX_AUTOCLOSE
 	end
 `
-script potion_ball_sam {
-    lockall
-    giveitem(ITEM_POTION, 1)
-    releaseal}
+
 

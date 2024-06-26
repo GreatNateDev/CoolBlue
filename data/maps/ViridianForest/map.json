@@ -292,8 +292,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "potion_ball_sam",
-      "flag": "0"
+      "script": "ViridianFOREST_SAM_BALL",
+      "flag": "hide_sam_ball"
     }
   ],
   "warp_events": [
