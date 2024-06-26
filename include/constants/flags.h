@@ -190,7 +190,7 @@
 #define FLAG_HIDE_SAFFRON_CITY_POKECENTER_SABRINA_JOURNALS 0x0AE
 
 // Unused?
-#define FLAG_0x0AF               0x0AF
+#define FLAG_HIDE_OAK_FOREST               0x0AF
 #define FLAG_0x0B0               0x0B0
 #define FLAG_0x0B1               0x0B1
 #define FLAG_0x0B2               0x0B2
@@ -530,7 +530,7 @@
 #define FLAG_HIDE_SILPH_CO_4F_TM41                              0x1FE
 
 // Unused?
-#define hide_sam_ball               0x1FF
+#define hide_sam_ball            0x1FF
 #define FLAG_0x200               0x200
 #define FLAG_0x201               0x201
 #define FLAG_0x202               0x202

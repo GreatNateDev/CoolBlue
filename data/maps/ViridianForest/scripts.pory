@@ -64,5 +64,16 @@ ViridianForest_EventScript_Charlie::
 	msgbox ViridianForest_Text_CharliePostBattle, MSGBOX_AUTOCLOSE
 	end
 `
-
-
+script oak {
+    lockall
+    msgbox("Hey what are you doing out here\nthis is not a good place to be at!\pbut i guess if your out here just\nto complete your pokedex then its\lfine but anyways i have to go!\pso goodbye!")
+    applymovement(1,oak_mov)
+    waitmovement(1)
+    setflag(FLAG_HIDE_OAK_FOREST)
+}
+movement oak_mov {
+    face_left
+    walk_left
+    face_down
+    walk_down * 8    
+}
