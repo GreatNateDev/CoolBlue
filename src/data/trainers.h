@@ -7506,4 +7506,14 @@ const struct Trainer gTrainers[] = {
          .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
          .party = NO_ITEM_DEFAULT_MOVES(sParty_Emily_rt_one),
 },
+[rvl_pewter] = {
+         .trainerClass = TRAINER_CLASS_RIVAL_EARLY,
+         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+         .trainerPic = TRAINER_PIC_RIVAL_EARLY,
+         .trainerName = _("LarryJR 3.0"),
+         .items = {ITEM_FULL_RESTORE},
+         .doubleBattle = FALSE,
+         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+         .party = NO_ITEM_DEFAULT_MOVES(sParty_rvl_pewter),
+}
 };
