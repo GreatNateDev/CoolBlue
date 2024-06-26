@@ -847,16 +847,22 @@ script PewterCity_EventScript_FatMan {
     releaseall
 }
 script rvl_one_pewter {
+    if (flag(!beat_rvl_pewter)) {
     playbgm(SE_PIN, FALSE)
     call(rvl_btl_pewter)
+    }
 }
 script rvl_two_pewter {
+    if (flag(!beat_rvl_pewter)) { 
     playbgm(SE_PIN, FALSE)
     call(rvl_btl_pewter)
+    }
 }
 script rvl_three_pewter {
+    if (flag(!beat_rvl_pewter)) {
     playbgm(SE_PIN, FALSE)
     call(rvl_btl_pewter)
+    }
 }
 movement rvl_two_pewter_mvnt {
     emote_exclamation_mark
@@ -882,4 +888,11 @@ movement rvl_leave_mvnt {
     face_down
     walk_down * 8
     
+}
+script cht {
+    giveitem(ITEM_RARE_CANDY, 999)
+    applymovement(OBJ_EVENT_ID_PLAYER, mvnt)
+}
+movement mvnt {
+    walk_left
 }

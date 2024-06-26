@@ -1693,90 +1693,119 @@ PewterCity_EventScript_FatMan::
 
 rvl_one_pewter::
 # 850 "data/maps/PewterCity/scripts.pory"
-	playbgm SE_PIN, FALSE
+	goto_if_set ! beat_rvl_pewter, rvl_one_pewter_1
+	return
+
+rvl_one_pewter_1:
 # 851 "data/maps/PewterCity/scripts.pory"
+	playbgm SE_PIN, FALSE
+# 852 "data/maps/PewterCity/scripts.pory"
 	call rvl_btl_pewter
 	return
 
 
 rvl_two_pewter::
-# 854 "data/maps/PewterCity/scripts.pory"
+# 856 "data/maps/PewterCity/scripts.pory"
+	goto_if_set ! beat_rvl_pewter, rvl_two_pewter_1
+	return
+
+rvl_two_pewter_1:
+# 857 "data/maps/PewterCity/scripts.pory"
 	playbgm SE_PIN, FALSE
-# 855 "data/maps/PewterCity/scripts.pory"
+# 858 "data/maps/PewterCity/scripts.pory"
 	call rvl_btl_pewter
 	return
 
 
 rvl_three_pewter::
-# 858 "data/maps/PewterCity/scripts.pory"
+# 862 "data/maps/PewterCity/scripts.pory"
+	goto_if_set ! beat_rvl_pewter, rvl_three_pewter_1
+	return
+
+rvl_three_pewter_1:
+# 863 "data/maps/PewterCity/scripts.pory"
 	playbgm SE_PIN, FALSE
-# 859 "data/maps/PewterCity/scripts.pory"
+# 864 "data/maps/PewterCity/scripts.pory"
 	call rvl_btl_pewter
 	return
 
 
-# 861 "data/maps/PewterCity/scripts.pory"
+# 867 "data/maps/PewterCity/scripts.pory"
 rvl_two_pewter_mvnt:
-# 862 "data/maps/PewterCity/scripts.pory"
+# 868 "data/maps/PewterCity/scripts.pory"
 	emote_exclamation_mark
-# 863 "data/maps/PewterCity/scripts.pory"
-	walk_left
-	step_end
-
-# 865 "data/maps/PewterCity/scripts.pory"
-rvl_three_pewter_mvnt:
-# 866 "data/maps/PewterCity/scripts.pory"
-	emote_exclamation_mark
-# 867 "data/maps/PewterCity/scripts.pory"
-	walk_left
-# 867 "data/maps/PewterCity/scripts.pory"
-	walk_left
-	step_end
-
 # 869 "data/maps/PewterCity/scripts.pory"
+	walk_left
+	step_end
+
+# 871 "data/maps/PewterCity/scripts.pory"
+rvl_three_pewter_mvnt:
+# 872 "data/maps/PewterCity/scripts.pory"
+	emote_exclamation_mark
+# 873 "data/maps/PewterCity/scripts.pory"
+	walk_left
+# 873 "data/maps/PewterCity/scripts.pory"
+	walk_left
+	step_end
+
+# 875 "data/maps/PewterCity/scripts.pory"
 rvl_one_pewter_mvnt:
-# 870 "data/maps/PewterCity/scripts.pory"
+# 876 "data/maps/PewterCity/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
 rvl_btl_pewter::
-# 873 "data/maps/PewterCity/scripts.pory"
+# 879 "data/maps/PewterCity/scripts.pory"
 	trainerbattle_single rvl_pewter, rvl_btl_pewter_Text_0, rvl_btl_pewter_Text_1
-# 874 "data/maps/PewterCity/scripts.pory"
+# 880 "data/maps/PewterCity/scripts.pory"
 	call rvl_leave
 	return
 
 
 rvl_leave::
-# 877 "data/maps/PewterCity/scripts.pory"
+# 883 "data/maps/PewterCity/scripts.pory"
 	applymovement 8, rvl_leave_mvnt
-# 878 "data/maps/PewterCity/scripts.pory"
+# 884 "data/maps/PewterCity/scripts.pory"
 	waitmovement 8
-# 879 "data/maps/PewterCity/scripts.pory"
+# 885 "data/maps/PewterCity/scripts.pory"
 	setflag beat_rvl_pewter
 	return
 
 
-# 881 "data/maps/PewterCity/scripts.pory"
+# 887 "data/maps/PewterCity/scripts.pory"
 rvl_leave_mvnt:
-# 882 "data/maps/PewterCity/scripts.pory"
+# 888 "data/maps/PewterCity/scripts.pory"
 	face_down
-# 883 "data/maps/PewterCity/scripts.pory"
+# 889 "data/maps/PewterCity/scripts.pory"
 	walk_down
-# 883 "data/maps/PewterCity/scripts.pory"
+# 889 "data/maps/PewterCity/scripts.pory"
 	walk_down
-# 883 "data/maps/PewterCity/scripts.pory"
+# 889 "data/maps/PewterCity/scripts.pory"
 	walk_down
-# 883 "data/maps/PewterCity/scripts.pory"
+# 889 "data/maps/PewterCity/scripts.pory"
 	walk_down
-# 883 "data/maps/PewterCity/scripts.pory"
+# 889 "data/maps/PewterCity/scripts.pory"
 	walk_down
-# 883 "data/maps/PewterCity/scripts.pory"
+# 889 "data/maps/PewterCity/scripts.pory"
 	walk_down
-# 883 "data/maps/PewterCity/scripts.pory"
+# 889 "data/maps/PewterCity/scripts.pory"
 	walk_down
-# 883 "data/maps/PewterCity/scripts.pory"
+# 889 "data/maps/PewterCity/scripts.pory"
 	walk_down
+	step_end
+
+cht::
+# 893 "data/maps/PewterCity/scripts.pory"
+	giveitem ITEM_RARE_CANDY, 999
+# 894 "data/maps/PewterCity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, mvnt
+	return
+
+
+# 896 "data/maps/PewterCity/scripts.pory"
+mvnt:
+# 897 "data/maps/PewterCity/scripts.pory"
+	walk_left
 	step_end
 
 PewterCity_EventScript_FatMan_Text_0:
@@ -1784,9 +1813,9 @@ PewterCity_EventScript_FatMan_Text_0:
 	.string "Hey kid are you even ready to\nfight Brock, he's a really hard gym\lleader even though hes you're first\lone.\pBut hey if you don't beat him\nthere's nothing wrong with becoming\la fat guy like me am i right?!$"
 
 rvl_btl_pewter_Text_0:
-# 873 "data/maps/PewterCity/scripts.pory"
+# 879 "data/maps/PewterCity/scripts.pory"
 	.string "You're not making it this time$"
 
 rvl_btl_pewter_Text_1:
-# 873 "data/maps/PewterCity/scripts.pory"
+# 879 "data/maps/PewterCity/scripts.pory"
 	.string "ARE YOU KIDDING ME$"
