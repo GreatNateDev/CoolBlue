@@ -6,7 +6,7 @@ TOFIX:RIVAL
 
 #To build:
 ```
-sudo apt install git
+sudo apt install build-essential binutils-arm-none-eabi git libpng-dev -y
 git clone --recursive https://github.com/GreatNateDev/CoolBlue/ 
 rm -rf agbcc
 cd CoolBlue
