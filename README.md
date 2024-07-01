@@ -14,7 +14,7 @@ rm -rf agbcc
 git clone https://github.com/pret/agbcc
 cd agbcc
 ./build.sh
-./install.sh ../CoolBlue
+./install.sh ../../CoolBlue
 cd ..
 ./build.sh
 ```
