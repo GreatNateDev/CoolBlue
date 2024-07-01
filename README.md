@@ -20,3 +20,4 @@ cd agbcc
 cd ..
 ./make.sh
 ```
+Then whenever you want to build later run ```./make.sh```
