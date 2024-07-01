@@ -1,12 +1,12 @@
 # POKEMON COOL BLUE
 Made by Nate and Sam for George
 TOFIX:RIVAL
-To build:
 
 
 
-
+#To build:
 ```
+git clone --recursive https://github.com/GreatNateDev/CoolBlue/ 
 rm -rf agbcc/*
 git clone https://github.com/pret/agbcc
 cd agbcc
