@@ -16,5 +16,5 @@ cd agbcc
 ./build.sh
 ./install.sh ../../CoolBlue
 cd ..
-./build.sh
+./make.sh
 ```
