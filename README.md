@@ -8,7 +8,9 @@ TOFIX:RIVAL
 ```
 sudo apt install git
 git clone --recursive https://github.com/GreatNateDev/CoolBlue/ 
-rm -rf agbcc/*
+rm -rf agbcc
+cd CoolBlue
+rm -rf agbcc
 git clone https://github.com/pret/agbcc
 cd agbcc
 ./build.sh
