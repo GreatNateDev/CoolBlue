@@ -12,6 +12,6 @@ Then whenever you want to build later run ```./make.sh```
 # Optional
 for porymap (BTW poryscript is already added to this project)
 ```
-git clone --recursive https://github.com/huderlem/porymap && sudo apt-get install qt6-declarative-dev -y && cd porymap && qmake && makevar=$(nproc) && make -j$makevar && ./porymap
+git clone --recursive https://github.com/huderlem/porymap && sudo apt-get install qt6-declarative-dev qtdeclarative5-dev -y && cd porymap && qmake && makevar=$(nproc) && make -j$makevar && ./porymap
 ```
 Then whenever you want to run porymap just ```./porymap```
